@@ -3,7 +3,7 @@ import {Http} from "../utils/http"
 class ClassicModel{
   // 获取上一篇或下一篇推荐
   static async getClassic(index,nextOrPre){
-    let str = nextOrPre=="next"?"/next":"previous";
+    let str = nextOrPre=="next"?"/next":"/previous";
     let res = await Http.request({
       url:"/classic/"+index+str
     })

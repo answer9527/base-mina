@@ -1,2 +1,4 @@
 <!--pages/classic/index.wxml-->
 <text>pages/classic/index.wxml</text>
+<navigator url="/pages/login/index">去登录</navigator>
+<navigator url="/pages/my/index">我的</navigator>

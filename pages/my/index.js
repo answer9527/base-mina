@@ -1,6 +1,6 @@
-// pages/classic/index.js
-import {ClassicModel} from "../../models/classic"
-const app = getApp()
+// pages/my/index.js
+const app  =  getApp();
+
 Page({
 
   /**
@@ -11,22 +11,10 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载1
+   * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      // console.log(app)
-      ClassicModel.getClassic(1,"next").then(res=>{
-        console.log(res)
-      })
-
-
-      ClassicModel.getClassic(2,"pre").then(res=>{
-        console.log(res)
-      })
-
-      ClassicModel.getLatest().then(res=>{
-        console.log(res)
-      })
+    console.log(app.globalData)
   },
 
   /**
@@ -55,7 +43,7 @@ Page({
    */
   onUnload: function () {
 
-  },  
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
