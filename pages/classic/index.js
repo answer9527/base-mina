@@ -7,26 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    classicData:{}
   },
 
   /**
    * 生命周期函数--监听页面加载1
    */
-  onLoad: function (options) {
-      // console.log(app)
-      ClassicModel.getClassic(1,"next").then(res=>{
-        console.log(res)
-      })
-
-
-      ClassicModel.getClassic(2,"pre").then(res=>{
-        console.log(res)
-      })
-
-      ClassicModel.getLatest().then(res=>{
-        console.log(res)
-      })
+  onLoad: async function (options) {
+      // ClassicModel.getClassic(2,"pre").then(res=>{
+      //   console.log(res)
+      // })
+      
+    let result =await this.getLatest();
+    this.setData({
+      classicData:result.data
+    })
+    
   },
 
   /**
@@ -76,5 +72,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 获取最新的
+  async getLatest(){
+    return await ClassicModel.getLatest({})
+  },
+  // 获取下一个
+  async getNextClassic(id){
+    let classicResult=await ClassicModel.getClassicRecommend(id,"next")
+    this.setData({
+      classicData:classicResult.data
+    }) 
+  },
+  // 获取上一个
+  async getPreviousClassic(id){
+    let classicResult =await ClassicModel.getClassicRecommend(id,"previous")
+    this.setData({
+      classicData:classicResult.data
+    })
+    
   }
+
+
 })

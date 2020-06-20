@@ -1,0 +1,5 @@
+<!--components/classic/music/index.wxml-->
+<text>{{image}}</text>
+<text>{{intro}}</text>
+<text>{{src}}</text>
+
