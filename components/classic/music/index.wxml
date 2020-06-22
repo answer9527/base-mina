@@ -1,5 +1,9 @@
 <!--components/classic/music/index.wxml-->
-<text>{{image}}</text>
-<text>{{intro}}</text>
-<text>{{src}}</text>
+<view class="container">
+  <image class="classic-img {{playing?'roll':''}}" src="{{image}}"/>
+  <image class="player-img" src="{{playing?playSrc:pauseSrc}}" bindtap="playOrPause"/>
+  <image src="./images/music@tag.png" class="tag"/>
+  <text class="intro">{{intro}}</text>
+</view>
+
 

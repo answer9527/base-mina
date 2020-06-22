@@ -3,4 +3,16 @@
 <navigator url="/pages/login/index">去登录</navigator>
 <navigator url="/pages/my/index">我的</navigator> -->
 
-<v-music image="{{classicData.image}}" intro="{{classicData.intro}}" src="{{classicData.url}}"></v-music>
+
+
+
+<view class="container" hover-class="none" hover-stop-propagation="false">
+    <view class="header">
+        <v-epsoide time="{{classicData.createTime}}" class="epsoide"></v-epsoide>
+        <v-like class="like"  count="{{classicData.like_count}}" bind:like="changeLike"></v-like>
+    </view>
+    <v-essay image="{{classicData.image}}" intro="{{classicData.intro}}" wx:if="{{classicData.type==100}}"></v-essay>
+    <v-music image="{{classicData.image}}" intro="{{classicData.intro}}" src="{{classicData.url}}" title="{{classicData.title}}" wx:if="{{classicData.type==200}}"></v-music>
+    <v-movie image="{{classicData.image}}" intro="{{classicData.intro}}" wx:if="{{classicData.type==300}}"></v-movie>
+    <v-navi title="{{classicData.title}}" latest="{{latest}}"  first="{{first}}" index="{{classicData.id}}" bind:left="getNextClassic" bind:right="getPreviousClassic" class="navi"/>   
+</view>

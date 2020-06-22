@@ -7,22 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classicData:{}
+    classicData:{},
+    first:false,
+    latest:false,
   },
 
   /**
    * 生命周期函数--监听页面加载1
    */
   onLoad: async function (options) {
-      // ClassicModel.getClassic(2,"pre").then(res=>{
-      //   console.log(res)
-      // })
-      
-    let result =await this.getLatest();
-    this.setData({
-      classicData:result.data
-    })
-    
+  //获取最新的一条 
+    this.getLatest()  
   },
 
   /**
@@ -74,24 +69,42 @@ Page({
 
   },
   // 获取最新的
-  async getLatest(){
-    return await ClassicModel.getLatest({})
+  getLatest(){
+    ClassicModel.getLatest({}).then(res=>{
+      this.setData({
+        classicData:res.data,
+        latest:true
+      })
+      wx.setStorageSync('latest',res.data.id)
+    })
   },
   // 获取下一个
-  async getNextClassic(id){
-    let classicResult=await ClassicModel.getClassicRecommend(id,"next")
-    this.setData({
-      classicData:classicResult.data
-    }) 
+  getNextClassic(e){
+    let id = this.data.classicData.id
+    ClassicModel.getClassicRecommend(id,"next").then(res=>{
+        this.setData({
+          classicData:res.data,
+          latest:ClassicModel.isLatest(res.data.id)
+        }) 
+      })
+
   },
   // 获取上一个
-  async getPreviousClassic(id){
-    let classicResult =await ClassicModel.getClassicRecommend(id,"previous")
-    this.setData({
-      classicData:classicResult.data
-    })
-    
-  }
+  getPreviousClassic(e){
+    let id = this.data.classicData.id
+    ClassicModel.getClassicRecommend(id,"previous").then(res=>{
+      this.setData({
+        classicData:res.data,
+        latest:ClassicModel.isLatest(res.data.id)
+      })
+    })    
+  },
 
+  changeLike(e){
+      let behavior = e.detail.behavior
+      let cid = this.data.classicData.id
+      ClassicModel.likeIt(behavior,cid)
+  }
+  
 
 })

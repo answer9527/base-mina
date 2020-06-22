@@ -19,7 +19,16 @@ const promisic = function(func){
     return new Promise((resolve,reject)=>{
       const args = Object.assign(params,{
         success:res=>{
-          resolve(res)
+          if(res.data.code){
+            wx.showToast({
+              title: res.data.message,
+              icon: 'none',
+              duration: 2000
+            })
+          }else{
+            resolve(res)
+          }
+         
         },
         fail:err=>{
           reject(err)
@@ -46,6 +55,16 @@ const promisic2 = function(func){
   }
 }
 
+// paging传参方式
+class Paging{
+  constructor(page,size,key,keyword){
+    this.page = page;
+    this.size = size;
+    this.key = key;
+    this.keyword = keyword;
+  }
+}
+
 export{
-  promisic,promisic2
+  promisic,promisic2,Paging
 }

@@ -1,1 +1,42 @@
-/* components/classic/music/index.wxss */
+@import "../common.wxss";
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .classic-img{
+    width: 422rpx;
+    height: 422rpx;
+    margin-top: 60rpx;
+    border-radius: 50%;
+    
+  }
+  .roll{
+    animation: myAnimation 6s;	
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes myAnimation{
+    form {
+          transform: rotate(0deg);
+      }
+    to {
+                  transform: rotate(360deg);
+      }
+  
+  }
+  .player-img{
+    width: 120rpx;
+    height:120rpx;
+    position: relative;
+    bottom: 270rpx;
+  }
+  .tag{
+    width: 46rpx;
+    height: 128rpx;
+    position: relative;
+    bottom: 160rpx;
+    right: 300rpx
+  }

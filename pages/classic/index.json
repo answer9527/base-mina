@@ -2,6 +2,9 @@
   "usingComponents": {
     "v-music":"/components/classic/music/index",
     "v-movie":"/components/classic/movie/index",
-    "v-essay":"/components/classic/essay/index"
+    "v-essay":"/components/classic/verse/index",
+    "v-navi":"/components/navi/index",
+    "v-like":"/components/like/index",
+    "v-epsoide":"/components/epsoide/index"
   }
 }
