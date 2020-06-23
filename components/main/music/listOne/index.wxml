@@ -1,2 +1,14 @@
 <!--components/main/music/listOne/index.wxml-->
-<text>components/main/music/listOne/index.wxml</text>
+<view class="music_row">
+    <view class="row_left">
+        <image src="{{image}}" class="image_logo"/>
+    </view>
+    <view class="row_right">
+        <view class="intro">
+            {{intro}}
+        </view>
+        <view class="title">
+            {{title}}  |  {{author}}
+        </view>
+    </view>
+</view>
