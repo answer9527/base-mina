@@ -1,29 +1,29 @@
-// pages/home/index.js
-import {Paging} from "../../utils/util"
+// pages/homeDetail/index.js
 import {ClassicModel} from "../../models/classic"
+const app =  getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    classicList:[],
-    // 分页传参
-    activeKey:200,
-    page:1,
-    size:10,
+    classic:{
 
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
 
-    this.getClassicListByType(paging)
-    
-
+    let id = options.id
+    ClassicModel.getDetailById(id).then(res=>{
+      this.setData({
+        classic:res.data
+      })
+    })
   },
 
   /**
@@ -65,29 +65,15 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
-  changeTabs(e){
-    this.setData({
-      activeKey:e.detail.activeKey,
-      page:1
-    })
-    let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
-    this.getClassicListByType(paging)
-  },
-  // 获取列表
-  getClassicListByType(Paging){
-    ClassicModel.getByListType(Paging).then(res=>{
-      this.setData({
-        classicList:res.data
-      })
-    })
-  }
+  // 获取详情
+
 })

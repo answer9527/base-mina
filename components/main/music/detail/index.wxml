@@ -1,0 +1,5 @@
+<!--components/main/music/detail/index.wxml-->
+<text>{{title}}</text>
+<text>
+    {{intro}}
+</text>

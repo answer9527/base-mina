@@ -27,7 +27,7 @@ App({
                 let token = res.data.token;
                 // wx.setStorageSync("token",token);
                 this.globalData.token=token;
-                wx.setStorageSync("token",token)
+                wx.setStorageSync("token",token);
               }
             })
         }

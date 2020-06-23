@@ -5,13 +5,18 @@
     "pages/index/index",
     "pages/login/index",
     "pages/my/index",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/homeDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "陈湖旧事",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index",
+    "l-tag":"/miniprogram_npm/lin-ui/tag/index"
   },
   "tabBar": {
     "selectedColor": "#2c2c2c",

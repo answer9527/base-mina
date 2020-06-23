@@ -1,0 +1,4 @@
+/* components/main/mood/listOne/index.wxss */
+.avter-content{
+    font-size: 28rpx;
+}

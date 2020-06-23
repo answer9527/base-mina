@@ -1,0 +1,4 @@
+<!--pages/homeDetail/index.wxml-->
+<view class="">
+    <v-music-detail title="{{classic.title}}" intro="{{classic.intro}}"/>
+</view>

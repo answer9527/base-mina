@@ -40,6 +40,13 @@ class ClassicModel{
       method:"POST"
     })
   }
+
+  // 根据classic获取详情
+  static async getDetailById(id){
+    return await Http.request({
+      url:"/classic/detail/"+id
+    })
+  }
 }
 export{
   ClassicModel

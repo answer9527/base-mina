@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 30rpx;
+    padding:30rpx 40rpx;
+    /* border-bottom: 1px dashed #cccccc; */
 }
 .row_left{
 
@@ -13,6 +14,7 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 0 30rpx;
+    flex: 1;
 }
 .row_right view{
     line-height: 50rpx;

@@ -3,12 +3,15 @@
     <view class="row_left">
         <image src="{{image}}" class="image_logo"/>
     </view>
-    <view class="row_right">
+    <navigator url="/pages/homeDetail/index?id={{ids}}" class="row_right">
         <view class="intro">
             {{intro}}
         </view>
         <view class="title">
             {{title}}  |  {{author}}
         </view>
-    </view>
+    </navigator>
+    <!-- <view>
+        播放
+    </view> -->
 </view>

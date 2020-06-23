@@ -2,6 +2,8 @@
   "usingComponents": {
     "l-tabs":"/miniprogram_npm/lin-ui/tabs/index",
     "l-tabpanel":"/miniprogram_npm/lin-ui/tabpanel/index",
-    "v-music-one":"/components/main/music/listOne/index"
+    "v-music-one":"/components/main/music/listOne/index",
+    "v-mood-one":"/components/main/mood/listOne/index",
+    "v-story-one":"/components/main/story/listOne/index"
   }
 }

@@ -1,11 +1,11 @@
 <!--pages/home/index.wxml-->
-<l-tabs bind:linchange="changeTabs" scrollable="true" equal-width="false" swipeable="true">
+<l-tabs  bind:linchange="changeTabs" scrollable="true" equal-width="false" swipeable="true">
     <l-tabpanel tab="音乐" key="200" slot="200">
     <view class="tab-content">
       <view>
         <block wx:for="{{classicList}}">
           <!-- <text>{{item.title}}</text> -->
-          <v-music-one image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}"/>
+          <v-music-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
         </block>
       </view>
     </view>
@@ -33,12 +33,26 @@
   </l-tabpanel>
 
   <l-tabpanel tab="故事" key="500" slot="500">
-    <view class="tab-content">故事</view>
+    <view class="tab-content">
+        <view>
+        <block wx:for="{{classicList}}">
+          
+          <v-story-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+        </block>
+      </view>    
+    </view>
   </l-tabpanel>
   <l-tabpanel tab="随记" key="600" slot="600">
     <view class="tab-content">随记</view>
   </l-tabpanel>
   <l-tabpanel tab="树洞" key="700" slot="700">
-    <view class="tab-content">树洞</view>
+    <view class="tab-content">
+      <view>
+        <block wx:for="{{classicList}}">
+          
+          <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+        </block>
+      </view>
+    </view>
   </l-tabpanel>
 </l-tabs>

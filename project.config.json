@@ -72,6 +72,21 @@
 					"id": -1,
 					"name": "pages/home/index",
 					"pathName": "pages/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=3",
 					"scene": null
 				}
 			]
