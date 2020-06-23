@@ -1,1 +1,31 @@
 /* components/main/music/listOne/index.wxss */
+.music_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30rpx;
+}
+.row_left{
+
+}
+.row_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 30rpx;
+}
+.row_right view{
+    line-height: 50rpx;
+}
+.row_right .intro{
+    font-size: 24rpx;
+}
+.row_right .title{
+    font-size: 20rpx;
+    color: #cccccc;
+}
+.image_logo{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+}

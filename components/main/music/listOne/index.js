@@ -4,7 +4,18 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    image:{
+      type:String
+    },
+    title:{
+      type:String
+    },
+    intro:{
+      type:String
+    },
+    author:{
+      type:String
+    }
   },
 
   /**
