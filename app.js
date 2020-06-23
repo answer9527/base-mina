@@ -34,7 +34,7 @@ App({
       })
     }
 
-
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -53,7 +53,7 @@ App({
           })
         }
       }
-    })
+    }) 
 
   },
   globalData: {
