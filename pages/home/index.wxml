@@ -6,7 +6,7 @@
       <view>
         <block wx:for="{{classicList}}">
           <!-- <text>{{item.title}}</text> -->
-          <v-essay-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+          <v-essay-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" likeCount="{{item.like_count}}"/>
         </block>
       </view>
     </view>
@@ -48,7 +48,7 @@
         <view>
         <block wx:for="{{classicList}}">
           
-          <v-story-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+          <v-story-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" likeCount="{{item.like_count}}"/>
         </block>
       </view>    
     </view>
@@ -60,7 +60,6 @@
     <view class="tab-content">
       <view>
         <block wx:for="{{classicList}}">
-          
           <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
         </block>
       </view>

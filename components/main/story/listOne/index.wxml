@@ -1,13 +1,20 @@
     <l-card type="cover" 
             l-title-class="title-class"
             image="https://mina.huzhihua.cn/static/uploads/classic/20200303/1583246391-music.1.png"
-            title="年味儿的科技大升级">
+            title="{{title}}">
         <view class="content">
           <view class="content_in">
             <text class="">一部分人回乡，一部分人把父母接到了身边,还有一部分人，干脆把假期变成了真正属于自己的时间。总有- -些科技，升级了生活方式，延展了过年形式的体验，还有一些欲...
             </text>
-            <view class="">
-              
+            <view class="flex-row row-end count-row">
+              <view class="flex-row count-box">
+                <l-icon name="like" size="32" color="#000000"/>
+                <text class="count">{{likeCount}}</text>
+              </view>
+              <view class="flex-row count-box">
+                  <l-icon name="comment" size="32" color="#000000"/>
+                  <text class="count">20</text>
+              </view>
             </view>
           </view>
         </view>

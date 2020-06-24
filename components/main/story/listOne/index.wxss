@@ -1,8 +1,18 @@
 /* components/main/story/listOne/index.wxss */
+@import "/common/common.wxss";
 .title-class{
     font-weight: bold;
     font-size: 28rpx!important;
 }
 .content_in text{
     font-size: 24rpx;
+}
+.count-row{
+    padding-top: 10rpx;
+}
+.count-box{
+    padding-left: 40rpx;
+}
+.count{
+   padding: 0 8rpx;
 }

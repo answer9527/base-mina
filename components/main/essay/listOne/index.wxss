@@ -1,4 +1,5 @@
 /* components/main/essay/listOne/index.wxss */
+@import "/common/common.wxss";
 .essayCard{
   margin: 20rpx 0;
   padding: 40rpx;
@@ -27,4 +28,8 @@
 .essay_bottom>.essay_time{
   font-size: 24rpx;
   color: #c3c3c3;
+}
+.count{
+  padding:0 8rpx;
+  font-size: 24rpx;
 }

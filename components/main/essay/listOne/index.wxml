@@ -1,19 +1,27 @@
+<wxs src="../../filter.wxs" module="filter"></wxs>
 <view class="essayCard">
-  <view class="essay_title">还是太年轻</view>
+  <view class="essay_title">{{title}}</view>
   <view class="essay_author">
-    文 / 余秋雨
+    文 / {{author}}
   </view>
   <view class="essay_intro">
-    一分钟一块钱，一辈子可咋算？
+    {{intor}}
   </view>
   <view class="image_box">
-    <image src="https://imgm.gmw.cn/attachement/jpg/site215/20200428/5200283398831947912.jpg"
+    <image src="{{image}}"
      style="width:100%;height:320rpx;border-radius:10rpx"></image>
   </view>
   <view class="essay_bottom">
-    <text class="essay_time">6月23日</text>
-    <view>
-      1643
+    <text class="essay_time">{{filter.formatTime(createTime,"-",1)}}</text>
+    <view class="flex-row">
+      <view class="flex-row">
+        <l-icon name="like" size="32" color="#000000"/>
+        <text class="count">{{likeCount}}</text>
+      </view>
+      <view class="flex-row">
+          <l-icon name="comment" size="32" color="#000000"/>
+          <text class="count">20</text>
+      </view>
     </view>
   </view>
 </view>
