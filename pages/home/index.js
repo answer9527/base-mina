@@ -9,9 +9,9 @@ Page({
   data: {
     classicList:[],
     // 分页传参
-    activeKey:200,
+    activeKey:400,
     page:1,
-    size:10,
+    size:10
 
   },
 
@@ -22,7 +22,8 @@ Page({
     let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
 
     this.getClassicListByType(paging)
-    
+    console.log(this.data.classicList)
+
 
   },
 

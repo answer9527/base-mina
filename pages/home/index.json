@@ -4,6 +4,8 @@
     "l-tabpanel":"/miniprogram_npm/lin-ui/tabpanel/index",
     "v-music-one":"/components/main/music/listOne/index",
     "v-mood-one":"/components/main/mood/listOne/index",
-    "v-story-one":"/components/main/story/listOne/index"
+    "v-story-one":"/components/main/story/listOne/index",
+    "v-essay-one":"/components/main/essay/listOne/index",
+    "v-movie-one":"/components/main/movie/listOne/index"
   }
 }

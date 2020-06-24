@@ -1,1 +1,30 @@
 /* components/main/essay/listOne/index.wxss */
+.essayCard{
+  margin: 20rpx 0;
+  padding: 40rpx;
+  border-bottom: 14rpx solid #e8e8e8;
+}
+.essay_title{
+  font-weight: bolder;
+  font-family: 黑体;
+}
+.essay_author{
+  font-size: 20rpx;
+  color: #c3c3c3;
+  padding:12rpx 0 20rpx 0;
+}
+.essay_intro{
+  font-size: 24rpx;
+}
+.image_box{
+  padding: 10rpx 0 20rpx 0;
+}
+.essay_bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.essay_bottom>.essay_time{
+  font-size: 24rpx;
+  color: #c3c3c3;
+}

@@ -20,4 +20,5 @@ Component({
   methods: {
 
   }
+
 })
