@@ -21,6 +21,10 @@
 }
 .row_right .intro{
     font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:1;
+    overflow: hidden;
 }
 .row_right .title{
     font-size: 20rpx;

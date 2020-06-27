@@ -1,7 +1,36 @@
 <!--pages/home/index.wxml-->
 <l-tabs  bind:linchange="changeTabs" scrollable="true" equal-width="false" swipeable="true">
-  <l-tabpanel tab="文章" key="400" slot="400">
-    <view class="tab-content">
+    <l-tabpanel tab="电影" key="100" slot="100" >
+    <view class="tab-content" wx:if="{{activeKey==100}}">
+      <view>
+        <block wx:for="{{classicList}}">
+          <v-movie-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" likeCount="{{item.like_count}}"/>
+        </block>
+      </view>
+     
+    </view>
+  </l-tabpanel>
+  <l-tabpanel tab="音乐" key="200" slot="200" >
+    <view class="tab-content" wx:if="{{activeKey==200}}">
+      <view>
+        <block wx:for="{{classicList}}">
+          <!-- <text>{{item.title}}</text> -->
+          <v-music-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+        </block>
+      </view>
+    </view>
+  </l-tabpanel>
+  <l-tabpanel tab="诗句" key="300" slot="300" >
+    <view class="tab-content" wx:if="{{activeKey==300}}">
+      <view>
+        <block wx:for="{{classicList}}">
+          <v-verse-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+        </block>
+      </view>
+    </view>
+  </l-tabpanel>
+  <l-tabpanel tab="文章" key="400" slot="400" >
+    <view class="tab-content" wx:if="{{activeKey==400}}">
     
       <view>
         <block wx:for="{{classicList}}">
@@ -11,40 +40,8 @@
       </view>
     </view>
   </l-tabpanel>
-  <l-tabpanel tab="电影" key="100" slot="100">
-    <view class="tab-content">
-      <view>
-        <block wx:for="{{classicList}}">
-          <text>{{item.title}}</text>
-        </block>
-      </view>
-     
-    </view>
-  </l-tabpanel>
-    <l-tabpanel tab="音乐" key="200" slot="200">
-    <view class="tab-content">
-      <view>
-        <block wx:for="{{classicList}}">
-          <!-- <text>{{item.title}}</text> -->
-          <v-music-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
-        </block>
-      </view>
-    </view>
-  </l-tabpanel>
-
-  <l-tabpanel tab="诗句" key="300" slot="300">
-    <view class="tab-content">
-      <view>
-        <block wx:for="{{classicList}}">
-          <text>{{item.title}}</text>
-        </block>
-      </view>
-    </view>
-  </l-tabpanel>
-
-
-  <l-tabpanel tab="故事" key="500" slot="500">
-    <view class="tab-content">
+  <l-tabpanel tab="故事" key="500" slot="500" >
+    <view class="tab-content" wx:if="{{activeKey==500}}">
         <view>
         <block wx:for="{{classicList}}">
           
@@ -53,14 +50,14 @@
       </view>    
     </view>
   </l-tabpanel>
-  <l-tabpanel tab="随记" key="600" slot="600">
-    <view class="tab-content">随记</view>
+  <l-tabpanel tab="随记" key="600" slot="600" >
+    <view class="tab-content" wx:if="{{activeKey==600}}">随记</view>
   </l-tabpanel>
-  <l-tabpanel tab="树洞" key="700" slot="700">
-    <view class="tab-content">
+  <l-tabpanel tab="树洞" key="700" slot="700" >
+    <view class="tab-content" wx:if="{{activeKey==700}}">
       <view>
         <block wx:for="{{classicList}}">
-          <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
+          <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" />
         </block>
       </view>
     </view>

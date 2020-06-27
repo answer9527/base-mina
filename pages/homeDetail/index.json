@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "v-music-detail":"/components/main/music/detail/index"
+    "v-music-detail":"/components/main/music/detail/index",
+    "v-input-box":"/components/main/common/input-box/index",
+    "v-like":"/components/like/index"
   }
 }

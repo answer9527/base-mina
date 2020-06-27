@@ -1,0 +1,4 @@
+<!--components/main/common/bottom-bar/index.wxml-->
+<view class="input_btn" hover-class="none" hover-stop-propagation="false">
+    {{input_txt}}
+</view>

@@ -74,6 +74,7 @@ Component({
 
   },
   attached(){
+    console.log(this.properties.src)
     this.recoverStatus();
     this.lookSwitch()
     

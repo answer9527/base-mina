@@ -6,6 +6,7 @@
     "v-mood-one":"/components/main/mood/listOne/index",
     "v-story-one":"/components/main/story/listOne/index",
     "v-essay-one":"/components/main/essay/listOne/index",
-    "v-movie-one":"/components/main/movie/listOne/index"
+    "v-movie-one":"/components/main/movie/listOne/index",
+    "v-verse-one":"/components/main/verse/listOne/index"
   }
 }

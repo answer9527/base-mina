@@ -20,6 +20,9 @@ let classic_list_beh=Behavior({
         },
         author:{
             type:String
+        },
+        content:{
+            type:String
         }
 
 
