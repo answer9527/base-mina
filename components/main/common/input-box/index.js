@@ -1,19 +1,17 @@
-// components/main/movie/listOne/index.js
-import {classic_list_beh} from "../../classic_list_beh"
+// components/main/common/bottom-bar/index.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors:[classic_list_beh],
   properties: {
-
+    
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    input_txt:"请输入您的点评！"
   },
 
   /**
@@ -22,5 +20,4 @@ Component({
   methods: {
 
   }
-
 })

@@ -1,0 +1,16 @@
+<view class="movie_con">
+    <view class="flex-row flex-between movie_box">
+        <view class="movie_left">
+            <view class="movie_title">{{title}}</view>
+            <view class="movie_intro">{{intro}}</view>
+            <view class="count_row" >
+                <block>{{author}} </block> 
+                <block>  {{likeCount}} 喜欢  </block>
+                <block> 123  评论  </block>
+            </view>
+        </view>
+        <view class="movie_right">
+            <image class="movie_thum" src="{{image}}" ></image>
+        </view>
+    </view>
+</view>

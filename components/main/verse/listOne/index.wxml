@@ -1,2 +1,7 @@
 <!--components/main/verse/listOne/index.wxml-->
-<text>components/main/verse/listOne/index.wxml</text>
+<view class="verse_con">
+    <view class="verse_box">
+        <image class="verse_image" src="{{image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <text class="verse_title">{{title}}</text>
+    </view>
+</view>

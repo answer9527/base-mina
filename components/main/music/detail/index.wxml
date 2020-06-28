@@ -1,5 +1,32 @@
 <!--components/main/music/detail/index.wxml-->
-<text>{{title}}</text>
-<text>
-    {{intro}}
-</text>
+<view class="music_detail">
+    <view class="first_row" hover-class="none" hover-stop-propagation="false">
+        <view class="first_left" hover-class="none" hover-stop-propagation="false">
+            <view class="detail_title" hover-class="none" hover-stop-propagation="false">
+            {{title}}
+            </view>
+            <view class="detail_author" hover-class="none" hover-stop-propagation="false">
+                —— {{author}}
+            </view>
+        </view>
+        <view class="" bindtap="playOrPause">
+             <image class="play_icon {{playing?'roll':''}}" src="/images/music_icon.png" mode="aspectFit|aspectFill|widthFix" > </image>
+        </view>
+
+    </view>
+   
+    <view class="detail_intro" hover-class="none" hover-stop-propagation="false">
+        
+        <view class="intro_left_box" hover-class="none" hover-stop-propagation="false">
+            <image class="intro_left" src="/images/intro_left.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </view>
+        <view class="intro_txt" hover-class="none" hover-stop-propagation="false">{{intro}}</view>
+        <view class="intro_right_box" hover-class="none" hover-stop-propagation="false">
+            <image class="intro_right" src="/images/intro_right.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </view> 
+    </view>
+    <view class="detail_content" hover-class="none" hover-stop-propagation="false">
+        <rich-text class="" nodes="{{content}}"></rich-text>
+    </view>
+    
+</view>

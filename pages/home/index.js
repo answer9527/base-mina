@@ -9,7 +9,7 @@ Page({
   data: {
     classicList:[],
     // 分页传参
-    activeKey:400,
+    activeKey:100,
     page:1,
     size:10
 

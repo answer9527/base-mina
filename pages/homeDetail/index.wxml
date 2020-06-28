@@ -1,4 +1,26 @@
 <!--pages/homeDetail/index.wxml-->
-<view class="">
-    <v-music-detail title="{{classic.title}}" intro="{{classic.intro}}"/>
+<view class="detail_page">
+    <image class="" src="{{classic.image}}" class="top_img"></image>
+    <view class="detail_box" hover-class="none" hover-stop-propagation="false">
+        <v-music-detail title="{{classic.title}}" intro="{{classic.intro}}" author="{{classic.author}}" content="{{classic.content}}" src="{{classic.url}}"/>
+    </view>
+    <view class="bottom-bar">
+        <v-input-box bind:tap="showDialog"/>
+        <v-like/>
+    </view>
+    <view class="{{show_dialog?'mask':''}}" bind:tap="hideDialog"></view>
+    <view class="dialog_form" animation="{{ani}}">
+        <view class="dialog_form_in" hover-class="none" hover-stop-propagation="false">
+            <view class="send_row">
+                <view>
+                    
+                </view>
+                <view>
+                    发送
+                </view>
+            </view>
+            <textarea  class="dialog_txt" placeholder="文明发言,理性讨论！"></textarea>
+        </view>
+    </view>
 </view>
+

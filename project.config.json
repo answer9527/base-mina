@@ -24,8 +24,12 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+<<<<<<< HEAD
 		"useIsolateContext": true,
 		"useCompilerModule": false,
+=======
+		"useCompilerModule": true,
+>>>>>>> bab64e6a10909db00f47bcce00e8b355bace4bab
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -88,6 +92,55 @@
 					"name": "pages/homeDetail/index",
 					"pathName": "pages/homeDetail/index",
 					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

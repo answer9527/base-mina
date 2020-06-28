@@ -8,9 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classic:{
-
-    }
+    classic:{},
+    show_dialog:false,
+    ani:null,
   },
 
   /**
@@ -74,6 +74,30 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 获取详情
+
+  // 弹出输入框
+  showDialog(){
+    var animation = wx.createAnimation({
+      duration:800,
+      timingFunction: 'ease',
+    })
+    animation.height("360rpx").step()
+    this.setData({
+      show_dialog:true,
+      ani:  animation.export()
+    })
+  },
+  // 隐藏输入框
+  hideDialog(){
+    var animation = wx.createAnimation({
+      duration:200,
+      timingFunction: 'ease',
+    })
+    animation.height("0rpx").step()
+    this.setData({
+      show_dialog:false,
+      ani:  animation.export()
+    })
+  }
 
 })
