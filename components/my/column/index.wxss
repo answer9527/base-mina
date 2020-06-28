@@ -1,0 +1,26 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2rpx solid #F3F3F3;
+  padding: 30rpx 0;
+  justify-content: space-between
+}
+.colLeft{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.colLeft image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.colLeft text{
+  font-size: 28rpx;
+  padding-left:20rpx; 
+}
+.colRight{
+  width: 40rpx;
+  height: 40rpx;
+}

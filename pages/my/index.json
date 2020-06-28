@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "v-my-col":"/components/my/column/index",
+    "v-my-tab":"/components/my/tab/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#10DFAB",
+  "navigationBarTitleText": "陈湖旧事",
+  "navigationBarTextStyle": "white"
 }

@@ -1,1 +1,74 @@
-/* pages/my/index.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center
+  }
+  .tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    box-sizing: border-box;
+    border-bottom: 5rpx solid #F3F3F3;
+    border-top: 5rpx solid #F3F3F3;
+  
+    padding: 40rpx 0;
+    margin: 30rpx 0;
+  }
+  .userInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:30rpx 50rpx 50rpx 50rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #10DFAB;
+  }
+  .login{
+    width: 90%;
+    font-size: 28rpx;
+  }
+  .avatar{
+    width: 100rpx;
+    height:100rpx;
+    border-radius: 50%
+  }
+  .nickName{
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+  .about_icon{
+      background: #10DFAB;
+      color: #FFFFFF;
+      padding: 8rpx 20rpx;
+      border-radius: 10rpx;
+      /* position: relative;
+      top: 56rpx; */
+      margin-top: 40rpx;
+
+      
+  }
+  /* .score{
+    width: 90%;
+    height: 200rpx;
+    background-image: linear-gradient(#e66465, #9198e5);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14rpx;
+    margin: 20rpx 0
+  } */
+  .score text{
+    color:#FFFFFF
+  }
+  .score text:nth-child(2){
+    font-size:38rpx;
+    color:#FFFFFF
+  }
+  .column{
+    width: 90%;
+  }
