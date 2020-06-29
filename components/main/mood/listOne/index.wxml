@@ -1,4 +1,4 @@
-<wxs src="../../filter.wxs" module="filter"></wxs>
+<wxs src="../../../../utils/filter.wxs" module="filter"></wxs>
 <view class="">
         <l-card type="avatar" l-class="card" image="https://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEKxunnAaggd0xMsx9W2I3icItzvAo61VgD2Kb8CcnXaibjHscibp71sUeYPRO1CeWgDHjCvZZArsMyzA/132"
                 title="{{author}}" describe="{{filter.formatTime(createTime,'-',1)}}">

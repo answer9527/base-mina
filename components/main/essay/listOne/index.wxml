@@ -1,4 +1,4 @@
-<wxs src="../../filter.wxs" module="filter"></wxs>
+<wxs src="../../../../utils/filter.wxs" module="filter"></wxs>
 <view class="essayCard">
   <view class="essay_title">{{title}}</view>
   <view class="essay_author">

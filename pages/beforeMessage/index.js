@@ -1,11 +1,13 @@
 // pages/beforeMessage/index.js
+import {LetterModel} from "../../models/letter"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showContent:false
+    showContent:false,
+    letter:null
   },
 
   /**
@@ -63,16 +65,26 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 去展示书信
   goMessage(){
     var animation = wx.createAnimation({
       duration:2000,
       timingFunction: 'ease',
     })
     animation.opacity(0).step().height("0rpx").step()
+    this.getMyLetter()
     this.setData({
       showContent:true,
       ani: animation.export()
     })
   },
+  // 获取我的书信详情
+  async getMyLetter(){
+    let result = await LetterModel.getMyLetter({});
+    this.setData({
+      letter:result.data
+    })
+  }
+
 
 })

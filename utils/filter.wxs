@@ -1,6 +1,5 @@
 
 var formatTime=function(time_str,str,type=1){
-    console.log(time_str)
     var time = getDate(time_str);
     var y = time.getFullYear();
     var m = time.getMonth()+1;
