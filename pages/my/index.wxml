@@ -1,10 +1,11 @@
 <!--pages/my/index.wxml-->
 <view class="container">
-  <view class="userInfo" wx:if="{{hasUserInfo}}">
-    <image src="{{userInfo.avatarUrl}}" class="avatar"/>
-    <text class="nickName">{{userInfo.nickName}}</text>
+  <view class="userInfo">
+    <image src="{{userInfo.avatarUrl||default_avatar}}" class="avatar"/>
+    <text class="nickName">{{userInfo.nickName||'未登陆'}}</text>
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login">授权登录</button>
   </view>
-  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login"> 点击授权登录 </button>
+  
   <!-- <view class="score">
     <text>积分值：</text>
     <text>46.1</text>
@@ -14,7 +15,7 @@
   </view>
   <view class="tab">
     <block wx:for="{{tabList}}">
-      <v-my-tab tagName="{{item.tabName}}" tagImage="{{item.tabImage}}"/>
+      <v-my-tab tagName="{{item.tabName}}" tagImage="{{item.tabImage}}" tagUrl="{{item.tagUrl}}"/>
     </block>
   </view>
   <view class="column">
@@ -25,3 +26,4 @@
 
 
 </view>
+<l-toast/>

@@ -1,4 +1,4 @@
-<view class="container">
+<navigator url="{{tagUrl}}" class="container">
   <image src="{{tagImage}}" class="tagImage"/>
   <text class="tagName">{{tagName}}</text>
-</view>
+</navigator>

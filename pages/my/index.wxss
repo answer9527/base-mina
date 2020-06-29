@@ -24,11 +24,22 @@
     width: 100%;
     box-sizing: border-box;
     background-color: #10DFAB;
+    position: relative;
   }
   .login{
-    width: 90%;
+    /* background: #FFC107; */
+    background: #10DFAB;
+    color: #FFFFFF;
     font-size: 28rpx;
+    border: 1rpx solid #FFFFFF;
+    border-radius:10rpx;
+    padding: 15rpx 30rpx;
+    margin: 0;
+    line-height: 1;
+    position: absolute;
+    right: 20rpx;
   }
+
   .avatar{
     width: 100rpx;
     height:100rpx;
@@ -41,13 +52,14 @@
     color: #FFFFFF;
   }
   .about_icon{
-      background: #10DFAB;
-      color: #FFFFFF;
-      padding: 8rpx 20rpx;
-      border-radius: 10rpx;
+      /* background: #10DFAB;
+      color: #FFFFFF; */
+      padding: 8rpx 0;
+      /* border-radius: 10rpx; */
       /* position: relative;
       top: 56rpx; */
       margin-top: 40rpx;
+      border-bottom: 4rpx solid #10DFAB;
 
       
   }

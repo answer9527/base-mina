@@ -1,0 +1,31 @@
+<!--pages/beforeMessage/index.wxml-->
+<view class="page_box">
+    <image class="wave_icon" src="/images/wave_icon.png"  mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bind:longtap="goMessage"  animation="{{ani}}"></image>
+    <image class="page_bg" src="/images/message_bg.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" animation="{{ani}}"></image>
+    <view class="pageContent" wx:if="{{showContent}}" hover-class="none" hover-stop-propagation="false">
+        <view class="secret_top_bg" hover-class="none" hover-stop-propagation="false" bind:tap="test">
+           <image class="secret_icon" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+         </view>
+         <view class="secret_content_card" hover-class="none" hover-stop-propagation="false">
+             <view class="letter_title" hover-class="none" hover-stop-propagation="false">
+                 <!-- {{letter.title}} -->
+                 写给十年后的胡渣
+             </view>
+             <view class="letter_content" hover-class="none" hover-stop-propagation="false">
+                 <!-- {{letter.content}} -->
+                 对于未来，我们是我们无法掌握的，只有现在才是真正攥在手里的。
+
+                十年，我们都会改变，都会遗忘，曾经坚定的目标，也许都成为了空想，曾经的期望，也许早已烟消云散。
+
+                我们一生会经常遇到挫折时，感到迷茫、绝望，怀疑自己，但当我们重新走过曾经的路，心中却又会升起希望...
+             </view>
+             <view class="bottom_row" hover-class="none" hover-stop-propagation="false">
+                <view class="create_time">创建时间:2012-06-28</view>
+                <view class="remaining">剩余寄达:<text>2年零10天</text></view>
+             </view>
+             <view class="detail_btn">
+                 查看详情
+             </view>
+         </view>
+    </view>
+</view>

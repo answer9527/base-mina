@@ -6,7 +6,8 @@
     "pages/login/index",
     "pages/my/index",
     "pages/home/index",
-    "pages/homeDetail/index"
+    "pages/homeDetail/index",
+    "pages/beforeMessage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,9 +16,9 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "l-icon":"/miniprogram_npm/lin-ui/icon/index",
-    "l-tag":"/miniprogram_npm/lin-ui/tag/index",
-    "l-button":"/miniprogram_npm/lin-ui/button/index"
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+    "l-tag": "/miniprogram_npm/lin-ui/tag/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index"
   },
   "tabBar": {
     "selectedColor": "#2c2c2c",
