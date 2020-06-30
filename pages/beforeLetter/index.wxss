@@ -55,16 +55,20 @@ page{
     width: 300rpx;
     height: 400rpx;
 }
+.notfound_icon{
+    width: 400rpx;
+    height: 400rpx;
+}
 
 .secret_content_card{
     width: 90%;
     background: #ffffff;
-    height: 460rpx;
+    /* height: 460rpx; */
     position: relative;
     top: -90rpx;
     border-radius: 10rpx;
     border: 2rpx solid #F5F5F5;
-    padding:30rpx 40rpx 80rpx 40rpx;
+    padding:30rpx 40rpx 60rpx 40rpx;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -79,6 +83,12 @@ page{
 .secret_content_card>.letter_content{
     font-size: 28rpx;
     text-indent: 56rpx;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:8;
+    overflow: hidden;
+    /* overflow: hidden; */
+
 }
 .bottom_row{
     display: flex;

@@ -7,7 +7,8 @@
     "pages/my/index",
     "pages/home/index",
     "pages/homeDetail/index",
-    "pages/beforeMessage/index"
+    "pages/beforeLetter/index",
+    "pages/letterDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

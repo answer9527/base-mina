@@ -5,24 +5,27 @@
     <image class="page_bg" src="/images/message_bg.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" animation="{{ani}}"></image>
     <view class="pageContent" wx:if="{{showContent}}" hover-class="none" hover-stop-propagation="false">
         <view class="secret_top_bg" hover-class="none" hover-stop-propagation="false" bind:tap="test">
-           <image class="secret_icon" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+           <image class="secret_icon" wx:if="{{letter!=null}}" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+           <image class="notfound_icon"  wx:if="{{letter==null}}" src="/images/notfound.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
          </view>
-         <view class="secret_content_card" hover-class="none" hover-stop-propagation="false">
+         <view class="secret_content_card" wx:if="{{letter!=null}}" hover-class="none" hover-stop-propagation="false">
              <view class="letter_title" hover-class="none" hover-stop-propagation="false">
                  {{letter.title}}
                  
              </view>
-             <view class="letter_content" hover-class="none" hover-stop-propagation="false">
+             <view class="letter_content">
                  {{letter.content}}
-
              </view>
              <view class="bottom_row" hover-class="none" hover-stop-propagation="false">
                 <view class="create_time">创建时间:{{filter.formatTime(letter.createTime,"-",2)}}</view>
-                <view class="remaining">剩余寄达:<text>2年零10天</text></view>
+                <view class="remaining">剩余寄达:<text>{{filter.formatOver(letter.createTime,letter.planTime)}}</text></view>
              </view>
-             <view class="detail_btn">
+             <navigator url="/pages/letterDetail/index"  class="detail_btn">
                  查看详情
-             </view>
+             </navigator>
+         </view>
+         <view class="" wx:if="{{letter==null}}" hover-class="none" hover-stop-propagation="false">
+             去写一封
          </view>
     </view>
 </view>

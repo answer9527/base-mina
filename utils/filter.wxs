@@ -26,9 +26,24 @@ var add0=function(m){
     return m<10?'0'+m:m 
 }
 
+var formatOver = function(start,end){
+    var t1 = getDate(start)
+    var t2 = getDate(end)
+    var time_num = t2.getTime()-t1.getTime()
+    var year =Math.floor(time_num/(24*3600*1000*365))
+    var days = Math.floor(time_num/(24*3600*1000))
+    var str;
+    if(year>0){
+        str= year+"年零"+days+"天"
+    }else{
+        str= days+"天"
+    }
+    return str
+}
 
 
 
 module.exports={
-    formatTime:formatTime
+    formatTime:formatTime,
+    formatOver:formatOver
 }

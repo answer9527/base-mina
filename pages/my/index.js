@@ -22,7 +22,7 @@ Page({
       {
         "tabName": "时光邮局",
         "tabImage": "./images/mail@tag.png",
-        "tagUrl": "/pages/beforeMessage/index"
+        "tagUrl": "/pages/beforeLetter/index"
       },
       {
         "tabName": "树洞",

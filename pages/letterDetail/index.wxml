@@ -1,0 +1,29 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="top_box" hover-class="none" hover-stop-propagation="false">
+    <image src="/images/future.png" class="top_img" />
+</view>
+<view class="detail_box" hover-class="none" hover-stop-propagation="false">
+    <view class="title">{{letter.title}}</view>
+    <view class="userInfo_row" hover-class="none" hover-stop-propagation="false">
+        <view class="user_name">{{userInfo.nickName}}</view>
+        <view class="create_time" hover-class="none" hover-stop-propagation="false">
+            {{filter.formatTime(letter.createTime,"-",1)}}
+        </view>
+    </view>
+    <view class="sub_box" hover-class="none" hover-stop-propagation="false">
+        <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">
+            <view class="sub_title" hover-class="none" hover-stop-propagation="false">
+                给自己的信
+            </view>
+            <view class="line"></view>
+        </view>
+    </view>
+    <view class="letter_content" hover-class="none" hover-stop-propagation="false">
+      {{letter.content}}
+    </view>
+   
+    <view class="post_time" hover-class="none" hover-stop-propagation="false">
+        送达日期：{{filter.formatTime(letter.planTime,"-",2)}}
+    </view>
+
+</view>
