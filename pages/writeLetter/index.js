@@ -1,5 +1,6 @@
 // pages/writeLetter/index.js
 var dateTimePicker = require('../../utils/dateTimePicker.js');
+import {LetterModel} from "../../models/letter"
 Page({
 
   /**
@@ -78,6 +79,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 设置时间的回调
   changeDateTimeColumn(e) {
 
     var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
@@ -90,5 +92,11 @@ Page({
       dateTime: arr,
       day: dateArr[2][arr[2]].substring(0, 3),
     });
+  },
+  // 提交信件
+  send_letter(){
+    LetterModel.insertLetter({}).then(res=>{
+      console.log(res)
+    })
   }
 })

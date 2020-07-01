@@ -5,6 +5,13 @@ class LetterModel{
             url:"/letter/myletter"
         })
     }
+    static async insertLetter(data){
+        return await Http.request({
+            url:"/letter/insert",
+            data,
+            method:"POST"
+        })
+    }
 }
 export {
     LetterModel

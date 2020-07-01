@@ -47,7 +47,7 @@
         </view>
     </view>
     <view class="block_three">
-        <view class="send_btn">寄给未来的你</view>
+        <view class="send_btn" bind:tap="send_letter">寄给未来的你</view>
     </view>
 
 </view>
