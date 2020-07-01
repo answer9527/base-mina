@@ -24,8 +24,8 @@
                  查看详情
              </navigator>
          </view>
-         <view class="" wx:if="{{letter==null}}" hover-class="none" hover-stop-propagation="false">
-             去写一封
-         </view>
+         <navigator url="/pages/writeLetter/index" class="go_write" wx:if="{{letter==null}}" >
+             写一封
+         </navigator>
     </view>
 </view>

@@ -1,0 +1,53 @@
+<view class="write_page">
+    <view class="block_one">
+        <view class="block_title_row">
+            <view class="block_title">填写内容</view>
+        </view>
+        <view class="block_content">
+            <view class="form_row">
+                <label for="" class="">标题:</label>
+                <input type="text" placeholder="请填写标题" />
+            </view>
+            <view class="content_in">
+                <label class="content_label">
+                    请填写您的书信内容:
+                </label>
+                <textarea class="content_txt"  maxlength="5000" style="height:500rpx" placeholder="请填写您的书信内容"></textarea>
+            </view>
+        </view>
+    </view>
+    <view class="block_two">
+        <view class="block_title_row">
+            <view class="block_title">
+                基本信息
+            </view>
+        </view>
+        <view class="block_content">
+            <view class="content_intro" selectable="false" space="false" decode="false">
+                请留下您的接受信件的电子邮箱以及接受信件的日期。届时系统将会自动投递信件至您的邮箱。
+            </view>
+            <view style="padding:20rpx 0">
+                <view class="form_row">
+                    <image class="" src="/images/mail_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <view class="form_title">电子邮箱</view>
+                    <input type="text" placeholder="请填写接收邮箱"/>
+                </view>
+                <view class="form_row" hover-class="none" hover-stop-propagation="false">
+                    <image class="" src="/images/time_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <view class="form_title">邮寄时间</view>
+                    <view class="placeholder date">
+                        <picker mode="multiSelector" value="{{dateTime}}" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+                            <view class="tui-picker-detail">
+                                {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{day}}
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="block_three">
+        <view class="send_btn">寄给未来的你</view>
+    </view>
+
+</view>
