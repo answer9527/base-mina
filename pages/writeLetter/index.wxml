@@ -6,13 +6,13 @@
         <view class="block_content">
             <view class="form_row">
                 <label for="" class="">标题:</label>
-                <input type="text" placeholder="请填写标题" />
+                <input type="text" placeholder="请填写标题"  value="{{post_title}}" bindinput="changeTitle"/>
             </view>
             <view class="content_in">
                 <label class="content_label">
                     请填写您的书信内容:
                 </label>
-                <textarea class="content_txt"  maxlength="5000" style="height:500rpx" placeholder="请填写您的书信内容"></textarea>
+                <textarea class="content_txt"  maxlength="5000" style="height:500rpx" placeholder="请填写您的书信内容" value="{{post_content}}" bindinput="changeContent"></textarea>
             </view>
         </view>
     </view>
@@ -30,7 +30,7 @@
                 <view class="form_row">
                     <image class="" src="/images/mail_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
                     <view class="form_title">电子邮箱</view>
-                    <input type="text" placeholder="请填写接收邮箱"/>
+                    <input type="text" placeholder="请填写接收邮箱" value="{{post_email}}" bindinput="changeEmail"/>
                 </view>
                 <view class="form_row" hover-class="none" hover-stop-propagation="false">
                     <image class="" src="/images/time_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
@@ -51,3 +51,4 @@
     </view>
 
 </view>
+<l-toast/>
