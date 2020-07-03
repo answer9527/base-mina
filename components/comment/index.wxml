@@ -1,0 +1,5 @@
+<!--components/comment/index.wxml-->
+<text>components/comment/index.wxml</text>
+<view class="" hover-class="none" hover-stop-propagation="false" wx:for="{{commentList}}">
+    {{item.content}}
+</view>

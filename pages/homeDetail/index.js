@@ -1,5 +1,6 @@
 // pages/homeDetail/index.js
 import {ClassicModel} from "../../models/classic"
+import {CommentModel} from "../../models/comment"
 const app =  getApp();
 
 Page({
@@ -9,20 +10,23 @@ Page({
    */
   data: {
     classic:{},
+    commentList:[],
     show_dialog:false,
+    comment_txt:"",
     ani:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
 
     let id = options.id
-    ClassicModel.getDetailById(id).then(res=>{
-      this.setData({
-        classic:res.data
-      })
+    let classicDetail = await this.getClassicDetail(id)
+    let commentList = await this.getClassicComment(id)
+    this.setData({
+      classic:classicDetail,
+      commentList:commentList
     })
   },
 
@@ -74,7 +78,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  changeCommentTxt(e){
+    this.setData({
+      comment_txt:e.detail.value
+    })
+  },
   // 弹出输入框
   showDialog(){
     var animation = wx.createAnimation({
@@ -98,6 +106,31 @@ Page({
       show_dialog:false,
       ani:  animation.export()
     })
+  },
+  // 获取classic的详情
+  async getClassicDetail(id){
+    let res = await ClassicModel.getDetailById(id)
+    return res.data
+  },
+  // 获取评论列表
+  async getClassicComment(cid){
+    let res = await CommentModel.getCommentByCid(cid)
+    return res.data
+  },
+  sendRootComment(){
+
+    CommentModel.insertComment({
+      content:this.data.comment_txt,
+      classicId:this.data.classic.id
+    }).then(res=>{
+      wx.showToast({
+        title: res.message,
+        icon: 'none',
+        duration: 2000
+      })
+      this.hideDialog()
+    })
   }
+
 
 })

@@ -3,6 +3,7 @@
     <image class="" src="{{classic.image}}" class="top_img"></image>
     <view class="detail_box" hover-class="none" hover-stop-propagation="false">
         <v-music-detail title="{{classic.title}}" intro="{{classic.intro}}" author="{{classic.author}}" content="{{classic.content}}" src="{{classic.url}}"/>
+        <v-comment commentList="{{commentList}}"/>
     </view>
     <view class="bottom-bar">
         <v-input-box bind:tap="showDialog"/>
@@ -15,11 +16,11 @@
                 <view>
                     
                 </view>
-                <view>
+                <view bind:tap="sendRootComment">
                     发送
                 </view>
             </view>
-            <textarea  class="dialog_txt" placeholder="文明发言,理性讨论！"></textarea>
+            <textarea  class="dialog_txt" placeholder="文明发言,理性讨论！" value="{{comment_txt}}" bindinput="changeCommentTxt"></textarea>
         </view>
     </view>
 </view>
