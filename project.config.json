@@ -24,22 +24,22 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-<<<<<<< HEAD
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-=======
-		"useCompilerModule": true,
->>>>>>> bab64e6a10909db00f47bcce00e8b355bace4bab
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.2",
 	"appid": "wx50c794bc3a1857fe",
 	"projectname": "base-mina",
+	"cloudfunctionTemplateRoot": "",
+	"watchOptions": {
+		"ignore": []
+	},
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -56,7 +56,6 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"gamePlugin": {
@@ -96,16 +95,9 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "2",
+					"name": "pages/writeLetter/index",
+					"pathName": "pages/writeLetter/index",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -113,62 +105,6 @@
 					"name": "pages/homeDetail/index",
 					"pathName": "pages/homeDetail/index",
 					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "id=2",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "id=2",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/homeDetail/index",
-					"pathName": "pages/homeDetail/index",
-					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/index",
-					"pathName": "pages/my/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/login/index",
-					"pathName": "pages/login/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/index",
-					"pathName": "pages/my/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/index",
-					"pathName": "pages/my/index",
-					"query": "",
 					"scene": null
 				}
 			]

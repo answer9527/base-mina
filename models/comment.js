@@ -1,9 +1,10 @@
 import {Http} from "../utils/http"
 
 class CommentModel{
-    static async getCommentByCid(id){
+    static async getCommentByCid(data){
         return await Http.request({
-            url:"/comment/selectByCid/"+id,
+            url:"/comment/selectByCid",
+            data,
             method:"POST"
         })
     }   

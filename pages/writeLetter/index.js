@@ -27,6 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(new Date())
     var obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     var time = dateTimePicker.getHourMinu();
     obj.dateTime[2] = parseInt((obj.defaultDay).substring(0, 2)) - 1; //day 字符串 'xx日' 转 'int'

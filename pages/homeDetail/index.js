@@ -23,7 +23,10 @@ Page({
 
     let id = options.id
     let classicDetail = await this.getClassicDetail(id)
-    let commentList = await this.getClassicComment(id)
+    let paging = {
+      "key":id
+    }
+    let commentList = await this.getClassicComment(paging)
     this.setData({
       classic:classicDetail,
       commentList:commentList

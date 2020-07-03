@@ -1,5 +1,37 @@
-<!--components/comment/index.wxml-->
-<text>components/comment/index.wxml</text>
-<view class="" hover-class="none" hover-stop-propagation="false" wx:for="{{commentList}}">
-    {{item.content}}
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="comment_page">
+    <view class="root_comment" hover-class="none" hover-stop-propagation="false" wx:for="{{commentList}}">
+        <view class="row_one">
+            <image class="avatar" src="{{item.userAvatar}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="">
+                <view class="nickName" hover-class="none" hover-stop-propagation="false">{{item.userName}}</view>
+                <view class="createTime" hover-class="none" hover-stop-propagation="false">
+                  {{filter.formatTime(item.createTime,'-',1)}}
+                </view>
+            </view>
+        </view>
+        <view class="comment_content">{{item.content}}</view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            <view class="child_comment_row"  hover-class="none" hover-stop-propagation="false" wx:for="{{item.child}}" wx:for-item="child">
+                <view class="child_left" hover-class="none" hover-stop-propagation="false">
+                    <image class="avatar" src="{{child.userAvatar}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </view>
+                <view class="child_right" hover-class="none" hover-stop-propagation="false">
+                    <view class="right_top">
+                        <view class="nickName">{{child.userName}}</view>
+                        <view style="padding:0 12rpx">回复</view>
+                        <view class="nickName">{{child.userName_r}} : </view>
+                        <view class="childContent">{{child.content}}</view>
+                    </view>
+                    <view class="right_bottom">
+                        <view>{{filter.formatTime(item.createTime,'-',1)}}</view>
+                        <view class="" hover-class="none" hover-stop-propagation="false">回复</view>
+                    </view>
+                </view>
+                
+                
+            </view>
+        </view>
+    </view>
 </view>
+
