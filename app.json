@@ -9,7 +9,9 @@
     "pages/homeDetail/index",
     "pages/beforeLetter/index",
     "pages/letterDetail/index",
-    "pages/writeLetter/index"
+    "pages/writeLetter/index",
+    "pages/aboutUs/index",
+    "pages/version/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

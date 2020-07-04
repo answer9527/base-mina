@@ -121,29 +121,7 @@ Page({
       comment_txt:"",
       comment_other:{}
     })
-    console.log(this.data.comment_other)
-    var animation = wx.createAnimation({
-      duration:800,
-      timingFunction: 'ease',
-    })
-    animation.height("360rpx").step()
-    this.setData({
-      show_dialog:true,
-      ani:  animation.export()
-    })
-  },
-  // 其他回复弹出的输入框
-  showReplay(e){
-    console.log(e)
-    this.setData({
-      placeholder:e.detail.placeholder,
-      comment_txt:"",
-      comment_other:{
-        pid:e.detail.pid,
-        uid_r:e.detail.uid_r
-      }
-    })
-    console.log(this.data.comment_other)
+
     var animation = wx.createAnimation({
       duration:800,
       timingFunction: 'ease',
@@ -155,6 +133,27 @@ Page({
     })
   },
   // 其他子评论点击后的弹出输入框
+  showReplay(e){
+    console.log(e)
+    this.setData({
+      placeholder:e.detail.placeholder,
+      comment_txt:"",
+      comment_other:{
+        pid:e.detail.pid,
+        uid_r:e.detail.uid_r
+      }
+    })
+    var animation = wx.createAnimation({
+      duration:800,
+      timingFunction: 'ease',
+    })
+    animation.height("360rpx").step()
+    this.setData({
+      show_dialog:true,
+      ani:  animation.export()
+    })
+  },
+ 
 
   // 隐藏输入框
   hideDialog(){

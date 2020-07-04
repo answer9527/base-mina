@@ -113,6 +113,20 @@
 					"pathName": "pages/homeDetail/index",
 					"query": "id=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/version/index",
+					"pathName": "pages/version/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/aboutUs/index",
+					"pathName": "pages/aboutUs/index",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}
