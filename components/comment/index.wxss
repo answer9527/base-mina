@@ -2,17 +2,48 @@
 .comment_page{
 
 }
+.comment_page_in{
+    padding:0 20rpx;
+}
+.comment_nav{
+    font-size: 32rpx;
+    font-weight: bold;
+    padding: 40rpx 0;
+    border-bottom: 1rpx solid #cccccc;
+    margin-bottom: 30rpx;
+}
+.comment_nav::before{
+    content: " ";
+    padding:0 8rpx;
+    margin-right: 20rpx;
+    border-radius: 10rpx;
+    background: #FF8375;
+    
+}
 .root_comment{
-    padding: 20rpx;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #cccccc;
 }
 .row_one{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .avatar{
     width: 80rpx;
     height: 80rpx;
     border-radius: 10rpx;
+}
+.root_left{
+    display: flex;
+    flex-direction: row;
+}
+.root_center{
+    padding: 0 10rpx;
+}
+.root_right{
+    padding: 0 12rpx;
+    font-size: 28rpx;
 }
 .nickName{
     font-size: 28rpx;
@@ -22,9 +53,8 @@
 }
 
 .comment_content{
-    border-bottom: 1rpx dashed #cccccc;
-    padding-bottom: 24rpx;
-    margin-bottom: 36rpx;
+  padding: 10rpx;
+  font-size: 28rpx;
 }
 
 .child_comment_row{
@@ -32,12 +62,18 @@
     flex-direction: row;
 
 }
+.child_comment_row:nth-child(1){
+   border-top: 1rpx dashed #cccccc;
+   padding-top: 30rpx;
+}
 .child_comment_row>.child_left{
     padding-left: 40rpx;
 }
 .child_comment_row>.child_right{
+    padding: 0 12rpx;
     display: flex;
     flex-direction:column ;
+    flex: 1;
 }
 .right_top>view{
     display: inline;
@@ -49,4 +85,14 @@
 .right_top>.childContent{
     flex-wrap: wrap;
     flex: 1;
+}
+.child_right>.right_bottom{
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.replay_color{
+    color: #295C9D; 
 }

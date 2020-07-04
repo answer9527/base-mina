@@ -106,6 +106,13 @@
 					"pathName": "pages/homeDetail/index",
 					"query": "id=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeDetail/index",
+					"pathName": "pages/homeDetail/index",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}
