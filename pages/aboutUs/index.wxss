@@ -1,1 +1,88 @@
 /* pages/aboutUs/index.wxss */
+.about_top_row{
+    width: 100%;
+    padding: 10rpx 60rpx 20rpx 20rpx;
+    box-sizing: border-box;
+    background: #2B4ADC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.about_top_row>.top_left{
+    display: flex;
+    flex-direction: column;
+}
+.about_top_row>.top_left>view{
+    flex-wrap: wrap;
+    padding-right:40rpx;
+}
+.app_name{
+    font-size: 60rpx;
+    color: #FFFFFF;
+    font-family: 黑体;
+    font-weight: bold;
+    padding: 20rpx 0;
+    
+}
+.app_intro{
+    font-size: 24rpx;
+    color: #FFFFFF;
+    
+}
+.about_top_row>.right_img{
+    width:200rpx;
+    height: 165rpx;
+}
+.sub_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+.sub_box_in{
+    position: relative;
+    padding: 30rpx 0;
+}
+.sub_title{
+    display: inline;
+    font-size: 40rpx;
+    font-weight: bold;
+    padding: 0 30rpx;
+}
+.line{
+    height: 20rpx;
+    width: auto;
+    background: #FFC107;
+    border-radius: 10rpx;
+    position: relative;
+    top: -16rpx;
+    z-index: -1;
+}
+.sub_detail{
+    font-size: 28rpx;
+    text-indent: 56rpx;
+}
+
+.person_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    padding: 10rpx 30rpx;
+    box-sizing: border-box;
+}
+.job_name{
+    background:#EBF0F9;
+    color: #4D73C3;
+    font-size: 24rpx;
+    padding: 6rpx 0rpx;
+    width: 140rpx;
+    text-align: center;
+}
+.user_name{
+    font-size: 32rpx;
+    padding-left: 30rpx;
+    color: #596C8E;
+}

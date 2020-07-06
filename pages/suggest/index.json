@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#0AB6FE",
+  "navigationBarTitleText": "意见反馈",
+  "navigationBarTextStyle": "white"
+}

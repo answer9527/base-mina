@@ -1,7 +1,7 @@
-<view class="container">
+<navigator url="{{colUrl}}" class="container">
   <view class="colLeft">
     <image src="{{colImage}}"/>
     <text>{{colName}}</text>
   </view>
   <image src="./images/right.png" class="colRight"/>
-</view>
+</navigator>

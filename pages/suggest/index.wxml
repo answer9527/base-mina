@@ -1,0 +1,29 @@
+<!--pages/suggest/index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="page_container">
+   <view class="search_out">
+        <l-search-bar placeholder="搜索"
+                bg-color="#f6f6f6"
+                show-cancel="{{false}}"
+                shape="circle"
+                bind:linchange="changeSearch"
+                >
+        </l-search-bar>
+   </view>
+    <view class="suggest_list">
+        <view class="suggest_item" wx:for="{{suggest_list}}">
+            <view class="sug_row">
+                <!-- <view class="sug_tag">意见</view> -->
+                <view class="sug_detail">{{item.suggestInfo}}</view>
+            </view>
+            <view class="reply_row" wx:if="{{item.replyInfo}}">
+                <view class="reply_detail">{{item.replyInfo}}</view>
+            </view>
+            <view class="replyer_row" wx:if="{{item.replyInfo}}">
+                <image class="replyer_avatar" src="https://wx.qlogo.cn/mmopen/vi_32/PiajxSqBRaEKneMyKiaqv5D7zBkr0VEF1ibqKNy4CV3ZcqZBIrSfH4EqqYHibVAxaiciaYp1vKNuYBCHBjyR3agJ0ia3w/132" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="replyer">渣叔</view>
+                <view class="reply_time">答复于{{filter.formatTime(item.createTime,"-",2)}}</view>
+           </view>
+        </view>
+    </view>
+</view>

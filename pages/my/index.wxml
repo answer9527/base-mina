@@ -20,7 +20,7 @@
   </view>
   <view class="column">
     <block wx:for="{{colList}}">
-      <v-my-col colName="{{item.colName}}" colImage="{{item.colImage}}"/>
+      <v-my-col colName="{{item.colName}}" colImage="{{item.colImage}}" colUrl="{{item.colUrl}}"/>
     </block>
   </view>
 

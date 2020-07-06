@@ -1,0 +1,74 @@
+/* pages/suggest/index.wxss */
+page{
+   
+    background: #EEEEEE;
+    position: relative;
+}
+.page_container{
+    /* padding: 20rpx; */
+  
+    box-sizing: border-box;    
+}
+.search_out{
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(to bottom,#0AB6FE,#258FFD);
+    padding: 30rpx 20rpx 50rpx 20rpx;
+    
+}
+.suggest_list{
+    margin-top: 150rpx;
+    padding: 20rpx;
+}
+.suggest_item{
+    width: 100%;
+    background: #FFFFFF;
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+}
+.sug_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.sug_row>.sug_detail::before{
+    content: "意见";
+    background: #4C6AFE;
+    color: #FFFFFF;
+    font-size: 24rpx;
+    padding: 8rpx 25rpx;
+    border-radius: 10rpx;
+    margin-right: 10rpx;
+    font-weight: 500;
+}
+.sug_row>.sug_detail{
+    font-weight: bold;
+    font-size: 30rpx;
+   line-height: 40rpx;
+}
+.reply_row{
+    padding: 12rpx 0;
+}
+.reply_row>.reply_detail{
+    font-size: 28rpx;
+    color: #858585;
+}
+.replyer_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 28rpx;
+    color: #7F7F7F;
+}
+.replyer_row>.replyer_avatar{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+.replyer_row>.replyer{
+    padding: 0 30rpx 0 10rpx;
+}

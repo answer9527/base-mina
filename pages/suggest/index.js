@@ -1,20 +1,22 @@
-// pages/aboutUs/index.js
-
-
+// pages/suggest/index.js
+import {SuggestModel} from "../../models/suggest" 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    aboutDetail:""
+    suggest_list:[],
+    page:1,
+    size:10,
+    keyword:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 通过id获取详情
+    this.getSuggestList()
 
   },
 
@@ -65,5 +67,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  changeSearch(e){
+    let keyword = e.detail.value;
+    this.setData({
+      page:1,
+      keyword:keyword
+    })
+    this.getSuggestList()
+  },
+  getSuggestList(){
+    let paging = {
+      page:this.data.page,
+      size:this.data.size,
+      keyword:this.data.keyword
+    }
+    SuggestModel.getList(paging).then(res=>{
+      this.setData({
+        suggest_list:res.data
+      })
+    })
   }
 })

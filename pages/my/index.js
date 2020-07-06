@@ -39,17 +39,17 @@ Page({
       {
         "colName": "意见反馈",
         "colImage": "./images/idea@col.png",
-        "colUrl": ""
+        "colUrl": "/pages/suggest/index"
       },
       {
         "colName": "关于我们",
         "colImage": "./images/about@col.png",
-        "colUrl": ""
+        "colUrl": "/pages/aboutUs/index"
       },
       {
         "colName": "版本说明",
         "colImage": "./images/version@col.png",
-        "colUrl": ""
+        "colUrl": "/pages/version/index"
       },
       {
         "colName": "联系我们",

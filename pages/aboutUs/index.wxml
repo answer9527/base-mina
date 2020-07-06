@@ -1,2 +1,74 @@
 <!--pages/aboutUs/index.wxml-->
+<view class="" hover-class="none" hover-stop-propagation="false">
+    <view class="about_top_row" hover-class="none" hover-stop-propagation="false">
+        <view class="top_left" hover-class="none" hover-stop-propagation="false">
+            <view class="app_name" hover-class="none" hover-stop-propagation="false">
+                陈湖旧事
+            </view>
+            <view class="app_intro" hover-class="none" hover-stop-propagation="false">
+                做有深度的阅读、有回音的倾诉、有温度的树洞。
+            </view>
+        </view>
+        <image class="right_img" src="/images/about_top_bg.png"/>
+    </view>
+    <view class="sub_box" hover-class="none" hover-stop-propagation="false">
+        <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">
+            <view class="sub_title" hover-class="none" hover-stop-propagation="false">
+                由来
+            </view>
+            <view class="line"></view>
+        </view> 
+        <view class="sub_detail">
+            我所在的城市南昌是一座名副其实的湖城，城中大大小小的湖泊数不胜数。东有南昌“马尔代夫”瑶湖、踏青胜地艾溪湖、青山湖。西有省府重地的前湖。南有抚河古道挖土烧窑挖出来的象湖，北有碟子湖、黄家湖等等。但最后我选用陈湖作为小程序的名称，实际上南昌并没有陈湖这个湖，湖沿岸的村民一般称陈家湖，但由于我不姓陈，所有在这里就称它陈湖。
+        </view>  
+        <view class="sub_detail">
+            陈湖是鄱阳湖众多子湖中的一小湖汊，它是我出生的地方，我的祖祖辈辈们都生养于此。电影《从你的全世界路过》中提到过每个人心中都应该有自己的稻城亚丁。陈湖就是我心中住着的稻城亚丁，不同的是稻城是要带自己心爱的人去，而陈湖只适合你自己一个人去。我希望陈湖旧事小程序能成为你所向往的故乡，你可以像在故乡面前一样倾诉自己情感、分享自己的喜悦，也可以在这立下大志，畅想未来。
+        </view>   
+        <view  class="sub_detail">
+            最后愿你在快节奏的都市生活中疲倦时能在陈湖旧事中感受到故乡般的温暖。
+        </view>
+    </view>
+    <view class="sub_box" hover-class="none" hover-stop-propagation="false">
+        <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">
+            <view class="sub_title" hover-class="none" hover-stop-propagation="false">
+                起点
+            </view>
+            <view class="line"></view>
+        </view> 
+        <view class="sub_detail">
+            前几年我很喜欢一个app叫犀牛故事，大致是一个撰写、分享故事的app，曾经还上过苹果应用市场的月推荐榜单，但是很不幸这个app已经运营不下去关闭了，所以也就萌生了自己开发一个类似应用的想法。说来也好笑，我一直梦想成为一名出租车司机，因为司机们每天面对的都是各式各样的人，而乘客似乎也喜欢将生活中的喜怒哀乐倾诉给出租车司机听，这也是做这个应用的另外一个原因。
+        </view>     
+    </view>
+    <view class="sub_box" hover-class="none" hover-stop-propagation="false">
+        <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">
+            <view class="sub_title" hover-class="none" hover-stop-propagation="false">
+                情况描述
+            </view>
+            <view class="line"></view>
+        </view> 
+        <view class="sub_detail">
+           由于白天还有的本职工作，该项目前后暂时只有自己一个人来开发，所以功能并没有做的那么完善。关于内容素材本来是准备开发给用户来自己撰写的，但是考虑到现在写内容的人不多，所以内容暂时由我和我女票更新，大家有好的素材想分享可以发送至我的邮箱( 516994147@qq.com )。后续是否需要该功能视情况而定。
+        </view>     
+    </view>
+    <view class="sub_box" hover-class="none" hover-stop-propagation="false">
+        <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">
+            <view class="sub_title" hover-class="none" hover-stop-propagation="false">
+                团队成员
+            </view>
+            <view class="line"></view>
+        </view>    
+        <view class="person_row">
+            <view class="job_name">作者</view>
+            <view class="user_name">渣叔</view>
+        </view>
+        <view class="person_row">
+            <view class="job_name">编辑</view>
+            <view class="user_name">渣叔、阿珂</view>
+        </view>
+        <view class="person_row">
+            <view class="job_name">贡献人员</view>
+            <view class="user_name">微信朋友圈大哥、大姐</view>
+        </view>
+    </view>
 
+</view>

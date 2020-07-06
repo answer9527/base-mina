@@ -3,7 +3,7 @@
     
     <view class="comment_page_in" >
         <view class="comment_nav">相关评论</view>
-        <view class="root_comment" hover-class="none" hover-stop-propagation="false" wx:for="{{commentList}}">
+        <view class="root_comment" hover-class="none" hover-stop-propagation="false" wx:for="{{commentList}}" wx:if="{{commentList.length>0}}">
             <view class="row_one">
                 <view class="root_left" hover-class="none" hover-stop-propagation="false">
                     <image class="avatar" src="{{item.userAvatar}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
@@ -39,7 +39,13 @@
                     
                 </view>
             </view>
-        </view>        
+        </view>    
+        <view class="no_more_box" hover-class="none" hover-stop-propagation="false" wx:if="{{commentList.length<=0}}">
+            <image class="no_more" src="/images/no_more.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                暂无评论
+            </view>
+        </view>    
     </view>
     
 </view>

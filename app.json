@@ -11,7 +11,8 @@
     "pages/letterDetail/index",
     "pages/writeLetter/index",
     "pages/aboutUs/index",
-    "pages/version/index"
+    "pages/version/index",
+    "pages/suggest/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
