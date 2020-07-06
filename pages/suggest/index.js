@@ -17,7 +17,6 @@ Page({
    */
   onLoad: function (options) {
     this.getSuggestList()
-
   },
 
   /**
@@ -59,7 +58,19 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let page = this.data.page+1;
+    let paging = {
+      page:page,
+      size:this.data.size,
+      keyword:this.data.keyword
+    }
+    SuggestModel.getList(paging).then(res=>{
+      let suggest_list =this.data.suggest_list.concat(res.data); 
+      this.setData({
+        suggest_list:suggest_list,
+        page:page
+      })
+    })
   },
 
   /**
@@ -68,6 +79,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 输入搜索框
   changeSearch(e){
     let keyword = e.detail.value;
     this.setData({
@@ -76,6 +88,15 @@ Page({
     })
     this.getSuggestList()
   },
+  // 清除搜索框
+  clearSearch(){
+    this.setData({
+      page:1,
+      keyword:""
+    })
+    this.getSuggestList()
+  },
+  // 获取意见列表
   getSuggestList(){
     let paging = {
       page:this.data.page,

@@ -18,7 +18,7 @@
              </view>
              <view class="bottom_row" hover-class="none" hover-stop-propagation="false">
                 <view class="create_time">创建时间:{{filter.formatTime(letter.createTime,"-",2)}}</view>
-                <view class="remaining">剩余寄达:<text>{{filter.formatOver(letter.createTime,letter.planTime)}}</text></view>
+                <view class="remaining">剩余寄达:<text>{{filter.formatOver(letter.planTime)}}</text></view>
              </view>
              <navigator url="/pages/letterDetail/index"  class="detail_btn">
                  查看详情

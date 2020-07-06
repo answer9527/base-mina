@@ -26,8 +26,8 @@ var add0=function(m){
     return m<10?'0'+m:m 
 }
 
-var formatOver = function(start,end){
-    var t1 = getDate(start)
+var formatOver = function(end){
+    var t1 = getDate()
     var t2 = getDate(end)
     var time_num = t2.getTime()-t1.getTime()
     var year =Math.floor(time_num/(24*3600*1000*365))
