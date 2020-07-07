@@ -9,7 +9,11 @@ Page({
     suggest_list:[],
     page:1,
     size:10,
-    keyword:""
+    keyword:"",
+    show_dialog:false,
+    ani:null,
+    placeholder:"请填写您的宝贵意见",
+    suggest_txt:""
   },
 
   /**
@@ -96,7 +100,6 @@ Page({
     })
     this.getSuggestList()
   },
-  // 获取意见列表
   getSuggestList(){
     let paging = {
       page:this.data.page,
@@ -107,6 +110,57 @@ Page({
       this.setData({
         suggest_list:res.data
       })
+    })
+  },
+  // 展示输入框
+  showDialog(){
+    var animation = wx.createAnimation({
+      duration:800,
+      timingFunction: 'ease',
+    })
+    animation.height("360rpx").step()
+    this.setData({
+      show_dialog:true,
+      ani:  animation.export()
+    })
+  },
+  // 隐藏输入框
+  hideDialog(){
+    var animation = wx.createAnimation({
+      duration:200,
+      timingFunction: 'ease',
+    })
+    animation.height("0rpx").step()
+    this.setData({
+      show_dialog:false,
+      ani:  animation.export()
+    })
+  },
+  // 修改输入框的内容
+  changeSuggestTxt(e){
+    this.setData({
+      suggest_txt:e.detail.value
+    })
+  },
+  // 提交反馈意见
+  sendSuggest(){
+    let param = {
+      "suggestInfo":this.data.suggest_txt
+    }
+    SuggestModel.insert(param).then(res=>{
+      console.log(res)
+      let {code,message} = res;
+      this.setData({
+        page:1,
+        keyword:""
+      })
+      wx.showToast({
+        title:message,
+        icon: 'none',
+        duration: 2000
+      })
+      this.hideDialog()
+      this.getSuggestList()
     })
   }
 })

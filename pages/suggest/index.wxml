@@ -27,4 +27,22 @@
            </view>
         </view>
     </view>
+    <view class="suggest_btn" bind:tap="showDialog">
+        <image class="suggest_icon" src="/images/suggest_icon.png" />
+    </view>
+    
+    <view class="dialog_form" animation="{{ani}}">
+        <view class="dialog_form_in" hover-class="none" hover-stop-propagation="false">
+            <view class="send_row">
+                <view>
+                    
+                </view>
+                <view bind:tap="sendSuggest">
+                    发送
+                </view>
+            </view>
+            <textarea  class="dialog_txt" placeholder="{{placeholder}}" value="{{suggest_txt}}" bindinput="changeSuggestTxt"></textarea>
+        </view>
+    </view>
 </view>
+<view class="{{show_dialog?'mask':''}}" bind:tap="hideDialog"></view>

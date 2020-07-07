@@ -1,0 +1,12 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="page_container">
+<!-- 自定义描述内容 -->
+<l-steps direction="column" active-index="{{version_list.length}}">
+  <l-step title="{{filter.formatTime(item.createTime,'-',2)}}" wx:for="{{version_list}}">
+    <view class="describe-container" slot="describe">
+        <view class="v_icon">v{{item.release}}</view>
+      {{item.intro}}
+    </view>
+  </l-step>
+</l-steps>
+</view>

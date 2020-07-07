@@ -1,1 +1,18 @@
 /* pages/version/index.wxss */
+.page_container{
+    padding: 40rpx;
+}
+.describe-container{
+    /* display: flex; */
+    padding: 10rpx 0;
+}
+
+.describe-container>.v_icon{
+    width: 80rpx;
+    text-align: center;
+    background: #F48041;
+    color: #FFFFFF;
+    border-radius: 5rpx;
+    margin-right: 20rpx;
+    display: inline-block;
+}

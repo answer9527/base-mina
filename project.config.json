@@ -165,9 +165,15 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
+					"name": "pages/version/index",
+					"pathName": "pages/version/index",
+					"query": "id=2",
+=======
 					"name": "pages/suggest/index",
 					"pathName": "pages/suggest/index",
 					"query": "id=1",
+>>>>>>> b9a1af4108f2457dc2d94a0c67fbd2982355cd63
 					"scene": null
 				}
 			]
