@@ -21,7 +21,6 @@ Page({
    */
   onLoad: function (options) {
     this.getSuggestList()
-
   },
 
   /**
@@ -84,6 +83,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 输入搜索框
   changeSearch(e){
     let keyword = e.detail.value;
     this.setData({
