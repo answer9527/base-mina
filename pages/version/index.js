@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    version_list:[]
   },
 
   /**
@@ -15,6 +15,9 @@ Page({
   onLoad: function (options) {
     VersionModel.getVersionList().then(res=>{
       console.log(res)
+      this.setData({
+        version_list:res.data
+      })
     })
   },
 

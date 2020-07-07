@@ -2,12 +2,15 @@
 page{
    
     background: #EEEEEE;
-    position: relative;
+    
+    height: 100%;
 }
 .page_container{
     /* padding: 20rpx; */
-  
-    box-sizing: border-box;    
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;  
+    
 }
 .search_out{
     width: 100%;
@@ -71,4 +74,54 @@ page{
 }
 .replyer_row>.replyer{
     padding: 0 30rpx 0 10rpx;
+}
+.suggest_btn{
+    position: fixed;
+    right: 60rpx;
+    bottom: 160rpx;
+}
+.suggest_btn>.suggest_icon{
+    width: 60rpx;
+    height: 60rpx;
+}
+
+
+.mask{
+    width: 100%;
+    height:100%;
+    background: #000000;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    opacity: 0.4;
+
+}
+.dialog_form{
+    width: 100%;
+    height: 500rpx;
+    height: 0;
+    position:fixed;
+    bottom: 0;
+    z-index: 1001;
+    background: #FFFFFF;
+}
+.dialog_form_in{
+    width: 100%;
+    padding: 0 40rpx 40rpx 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.send_row{
+    padding: 20rpx 0 20rpx 0;
+    color: #cccccc;
+}
+.dialog_txt{
+    padding: 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    border-radius: 10rpx;
+    height: 200rpx;
 }

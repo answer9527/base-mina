@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-steps":"/miniprogram_npm/lin-ui/steps/index",
+    "l-step":"/miniprogram_npm/lin-ui/step/index"
+  },
+  "navigationBarTitleText": "版本说明"
 }
