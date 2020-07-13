@@ -1,10 +1,11 @@
 <!--pages/home/index.wxml-->
-<l-tabs  bind:linchange="changeTabs" scrollable="true" equal-width="false" swipeable="true">
+<l-tabs  l-header-class="tab-header"  bind:linchange="changeTabs" scrollable="true" equal-width="false"  >
   <l-tabpanel tab="电影" key="100" slot="100" >
     <view class="tab-content" wx:if="{{activeKey==100}}">
       <view>
         <block wx:for="{{classicList}}">
-          <v-movie-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" likeCount="{{item.like_count}}"/>
+          <!-- <v-movie-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" likeCount="{{item.like_count}}"/> -->
+           <v-music-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" />
         </block>
       </view>
       
@@ -44,17 +45,13 @@
     <view class="tab-content" wx:if="{{activeKey==500}}">
         <view>
         <block wx:for="{{classicList}}">
-          
           <v-story-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" likeCount="{{item.like_count}}"/>
         </block>
       </view>    
     </view>
   </l-tabpanel>
   <l-tabpanel tab="随记" key="600" slot="600" >
-    <view class="tab-content" wx:if="{{activeKey==600}}">随记</view>
-  </l-tabpanel>
-  <l-tabpanel tab="树洞" key="700" slot="700" >
-    <view class="tab-content" wx:if="{{activeKey==700}}">
+    <view class="tab-content" wx:if="{{activeKey==600}}">
       <view>
         <block wx:for="{{classicList}}">
           <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" />
@@ -62,4 +59,16 @@
       </view>
     </view>
   </l-tabpanel>
+  <!-- <l-tabpanel tab="树洞" key="700" slot="700" >
+    <view class="tab-content" wx:if="{{activeKey==700}}">
+      <view>
+        <block wx:for="{{classicList}}">
+          <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" />
+        </block>
+      </view>
+    </view>
+  </l-tabpanel> -->
+  
 </l-tabs>
+<view style="height:1rpx"></view>
+

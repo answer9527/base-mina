@@ -1,0 +1,93 @@
+/* pages/hot_movie/hot_movie.wxss */
+page{
+    background: #ECF7E7;
+}
+.list-wrapper {
+    width: 750rpx;
+    height: 900rpx;
+    /* background: red; */
+  }
+  .card_list{
+    position: fixed;
+    left: 0;
+    margin-top: 20rpx;
+    padding: 0 100rpx;
+    color: #999;
+    height: 860rpx;
+    width: calc(550rpx*15);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+  }
+  .card-item{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 550rpx;
+    height: 800rpx;
+    padding: 30rpx;
+    background-color: #ffffff;
+    border-radius: 45rpx;
+    box-shadow: 3rpx 3rpx 15rpx 3rpx rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+    transform: scale(0.6) translateY(-2rem);
+    word-break: break-all;
+  }
+  .active{
+    transform: scale(1) translateY(0);
+  }
+  .next, .prev {
+    transform: scale(0.8) translateY(-1rem) translateX(0);
+    opacity: 0.6;
+  }
+  .user_name{
+      text-align: center;
+      color: #F38E26;
+      padding-bottom: 20rpx;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  }
+  .user_name>view{
+      font-size: 60rpx;
+      line-height: 30rpx;
+      padding: 0 10rpx;
+  }
+  .man{
+      color: #0098E6;
+  }
+  .hole_content{
+     
+      overflow: scroll;
+      text-indent:48rpx ;
+  }
+  .page_intro{
+    text-align:center;
+    color:#342158;
+    font-weight:bold
+  }
+  .tree_row{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 60rpx 0;
+  }
+  .tree_row>navigator{
+      background: #C9B7AD;
+      color: #FFFFFF;
+      padding: 12rpx 100rpx;
+  }
+
+  .bottom_bar{
+      width: 100%;
+      position: fixed;
+      bottom: 20rpx;
+  }

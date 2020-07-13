@@ -1,0 +1,18 @@
+<!--components/holeBar/index.wxml-->
+<view class="hole_row">
+    <view class="" data-index="0" bind:tap="go_detail">
+        <image src="{{my_hole.length>0?active:no}}"  class="hole_icon"/>
+    </view>
+    <view class="" data-index="1" bind:tap="go_detail">
+        <image src="{{my_hole.length>1?active:no}}"  class="hole_icon"/>
+    </view>
+    <view class="" data-index="2" bind:tap="go_detail">
+        <image src="{{my_hole.length>2?active:no}}"  class="hole_icon"/>
+    </view>
+    <view class="" data-index="3" bind:tap="go_detail">
+        <image src="{{my_hole.length>3?active:no}}"  class="hole_icon"/>
+    </view>
+    <view class="" data-index="4" bind:tap="go_detail">
+        <image src="{{my_hole.length>4?active:no}}"  class="hole_icon"/>
+    </view>
+</view>

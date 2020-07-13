@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "v-hole-bar":"/components/holeBar/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ECF7E7",
+  "navigationBarTitleText": "树洞",
+  "navigationBarTextStyle": "black"
+}

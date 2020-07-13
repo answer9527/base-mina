@@ -5,7 +5,7 @@
     "l-toast":"/miniprogram_npm/lin-ui/toast/index"
   },
   "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#10DFAB",
+  "navigationBarBackgroundColor": "#2B4ADC",
   "navigationBarTitleText": "陈湖旧事",
   "navigationBarTextStyle": "white"
 }

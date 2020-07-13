@@ -1,7 +1,10 @@
 <!--components/main/verse/listOne/index.wxml-->
-<view class="verse_con">
-    <view class="verse_box">
-        <image class="verse_image" src="{{image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
-        <text class="verse_title">{{title}}</text>
+<navigator class="" target="" url="/pages/homeDetail/index?id={{ids}}" hover-class="navigator-hover" open-type="navigate">
+    <view class="verse_con">
+        <view class="verse_box">
+            <image class="verse_image" src="{{image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <text class="verse_title">{{title}}</text>
+        </view>
     </view>
-</view>
+
+</navigator>

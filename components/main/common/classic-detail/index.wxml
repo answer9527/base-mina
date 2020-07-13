@@ -9,7 +9,7 @@
                 —— {{author}}
             </view>
         </view>
-        <view class="" bindtap="playOrPause">
+        <view class="" bindtap="playOrPause" wx:if="{{src}}">
              <image class="play_icon {{playing?'roll':''}}" src="/images/music_icon.png" mode="aspectFit|aspectFill|widthFix" > </image>
         </view>
 

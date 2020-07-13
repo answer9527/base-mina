@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     VersionModel.getVersionList().then(res=>{
-      console.log(res)
+     
       this.setData({
         version_list:res.data
       })
@@ -25,7 +25,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

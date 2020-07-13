@@ -2,7 +2,7 @@
 <view class="detail_page">
     <image class="" src="{{classic.image}}" class="top_img"></image>
     <view class="detail_box" hover-class="none" hover-stop-propagation="false">
-        <v-music-detail title="{{classic.title}}" intro="{{classic.intro}}" author="{{classic.author}}" content="{{classic.content}}" src="{{classic.url}}"/>
+        <v-classic-detail title="{{classic.title}}" intro="{{classic.intro}}" author="{{classic.author}}" content="{{classic.content}}" src="{{classic.url}}"/>
         <v-comment commentList="{{commentList}}" bind:showReplay="showReplay"/>
     </view>
     <view class="bottom-bar">

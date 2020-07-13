@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-action-sheet":"/miniprogram_npm/lin-ui/action-sheet/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#2B4ADC",
+  "navigationBarTitleText": "创建树洞",
+  "navigationBarTextStyle": "white"
+}

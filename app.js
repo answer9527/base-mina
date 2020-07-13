@@ -24,10 +24,13 @@ App({
                   url: '/pages/login/index',
                 });
               }else{
-                let token = res.data.token;
+                let token = res.data.token
+                let uid = Number(res.data.uid)
                 // wx.setStorageSync("token",token);
-                this.globalData.token=token;
-                wx.setStorageSync("token",token);
+                this.globalData.token=token
+                this.globalData.uid=uid
+                wx.setStorageSync("token",token)
+                wx.setStorageSync("uid",uid)
               }
             })
         }
@@ -59,6 +62,7 @@ App({
   },
   globalData: {
     userInfo:null,
-    token:null
+    token:null,
+    uid:null
   }
 })

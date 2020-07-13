@@ -23,12 +23,12 @@
     padding:30rpx 50rpx 50rpx 50rpx;
     width: 100%;
     box-sizing: border-box;
-    background-color: #10DFAB;
+    background-color: #2B4ADC;
     position: relative;
   }
   .login{
     /* background: #FFC107; */
-    background: #10DFAB;
+    background: #506ce6;
     color: #FFFFFF;
     font-size: 28rpx;
     border: 1rpx solid #FFFFFF;

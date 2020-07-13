@@ -1,0 +1,23 @@
+<view class="page_container">
+    <view class="list-wrapper" hover-class="none" hover-stop-propagation="false">
+        <view class="card_list" x-scroll='false' style='transform: translateX( {{distance}}rpx)' bindtouchstart="onTouchStart" bindtouchend="onTouchEnd">
+            <navigator url="/pages/holeDetail/index?id={{item.id}}" class="card-item {{currentIndex==index?'active':currentIndex==index-1?'next':currentIndex==index+1?'prev':''}}" wx:for="{{holeList}}">
+               <view class="user_name {{item.gender==1?'man':''}}">
+                   <view>·</view>
+                   {{item.userName}}
+                   <view>·</view>
+                </view>
+               <view class="hole_content">{{item.content}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="page_intro">
+        — 让渣叔为你寄存心事、秘密。—
+    </view>
+    <view class="tree_row">
+        <navigator url="/pages/addHole/index">创建树洞</navigator>
+    </view>
+    <view class="bottom_bar">
+        <v-hole-bar/>
+    </view>
+</view>

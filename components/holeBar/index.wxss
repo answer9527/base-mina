@@ -1,0 +1,13 @@
+/* components/holeBar/index.wxss */
+.hole_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.hole_icon{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    border: 2rpx solid #FFFFFF;
+    background: #ffffff;
+}

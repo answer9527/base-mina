@@ -27,7 +27,7 @@ Page({
       {
         "tabName": "树洞",
         "tabImage": "./images/talk@tag.png",
-        "tagUrl": ""
+        "tagUrl": "/pages/hole/index"
       }
     ],
     colList:[

@@ -12,7 +12,10 @@
     "pages/writeLetter/index",
     "pages/aboutUs/index",
     "pages/version/index",
-    "pages/suggest/index"
+    "pages/suggest/index",
+    "pages/hole/index",
+    "pages/addHole/index",
+    "pages/holeDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

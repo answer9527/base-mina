@@ -12,7 +12,7 @@
                         font-color="#3963BC" 
                         slot="more"
                         size="large">
-                        + 点赞
+                        + 喜欢
                 </l-tag>
         </l-card>
 </view>
