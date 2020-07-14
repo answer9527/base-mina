@@ -20,11 +20,23 @@ const promisic = function(func){
       const args = Object.assign(params,{
         success:res=>{
           if(res.data.code){
+
             wx.showToast({
               title: res.data.message,
               icon: 'none',
               duration: 2000
             })
+            // token无效时候强制跳转登录
+            if(res.data.code==403){
+              wx.navigateTo({
+                url: '/pages/login/index',
+                success: (result)=>{
+                  
+                },
+                fail: ()=>{},
+                complete: ()=>{}
+              });
+            }
           }else{
             resolve(res)
           }
