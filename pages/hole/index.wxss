@@ -47,7 +47,7 @@ page{
   }
   .user_name{
       text-align: center;
-      color: #F38E26;
+      color: #E8961F;
       padding-bottom: 20rpx;
       display: flex;
       flex-direction: row;

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "v-comment":"/components/comment/index"
+  },
   "navigationBarTitleText": "树洞详情"
 }

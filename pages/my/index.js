@@ -140,6 +140,7 @@ Page({
     })
     app.globalData.userInfo=e.detail.userInfo
     app.globalData.token = result.data.token
+    app.globalData.uid = result.data.uid
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true  

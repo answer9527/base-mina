@@ -26,6 +26,14 @@ class HoleModel{
             url:"/hole/getById/"+id
         })
     }
+    // 获取树洞的评论
+    static async get_Comment(data){
+        return Http.request({
+            url:"/hole/comment/selectByHid",
+            data,
+            method:"POST"
+        })
+    }
 }
 export {
     HoleModel 

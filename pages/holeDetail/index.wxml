@@ -1,2 +1,31 @@
-<!--pages/holeDetail/index.wxml-->
-<text>pages/holeDetail/index.wxml</text>
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="page_container">
+    <view class="page_in">
+        <view class="hole_box">
+            <view class="user">
+                <view class="user_left">
+                    <image src="{{holeInfo.avatarUrl}}" class="user_avatar"/>
+                    <view class="user_name {{holeInfo.gender==1?'man':''}}">{{holeInfo.userName}}</view>
+                </view>
+                <view class="type_tag public_tag" wx:if="{{holeInfo.type==1}}">公开</view>
+                <view class="type_tag no_name_tag" wx:if="{{holeInfo.type==2}}">匿名</view>
+                <view class="type_tag secret_tag" wx:if="{{holeInfo.type==3}}">秘密</view>
+            </view>
+            <view class="hole_detail">
+                <view class="hole_title">{{holeInfo.title}}</view>
+                <view class="hole_content">{{holeInfo.content}}</view>
+                <view class="hole_time">{{filter.formatTime(holeInfo.createTime,"-",2)}}</view>
+            </view>
+        </view>
+        <view class="comment_box">
+            <v-comment commentList="{{commentList}}"  wx:if="{{holeInfo.uid==uid||holeInfo.commentVisible==1}}"/>
+            <view wx:else class="no_limits_box">
+                <image class="no_limits" src="/images/no_limits.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                    
+                </image>
+                <view>该树洞设置了评论不可见</view>
+            </view>
+            
+        </view>
+    </view>
+</view>

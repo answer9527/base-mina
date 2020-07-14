@@ -1,1 +1,97 @@
 /* pages/holeDetail/index.wxss */
+page{
+    /* background: #F5F5F5;  */
+
+}
+.page_container{
+    width: 100%;
+    
+}
+.page_in{
+    width: 100%;
+}
+.hole_box{
+    width: 100%;
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-bottom: 20rpx solid #F5F5F5;
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #F5F5F5;
+    padding: 30rpx;
+    border-radius: 20rpx;
+
+}
+.user_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.user_left>.user_name{
+    color: #E8961F;
+    padding: 0 20rpx;
+    font-size: 32rpx;
+}
+.user_left>.man{
+    color: #0098E6;
+}
+.user_left>.user_avatar{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.type_tag{
+    padding: 10rpx 30rpx;
+    color: #FFFFFF;
+    font-size: 26rpx;
+    border-radius: 10rpx;
+}
+.public_tag{
+    background: #34BFA3;
+    
+
+}
+.no_name_tag{
+    background: #3683D6;
+    
+}
+.secret_tag{
+    background:#F4516C
+}
+.hole_detail{
+    padding: 30rpx 0 0 0;
+    font-size: 30rpx;
+}
+.hole_title{
+    padding: 10rpx 0;
+    font-weight: bold;
+    font-size: 32rpx;
+    
+}
+.hole_content{
+    padding: 20rpx 0;
+    text-indent: 60rpx;
+}
+.hole_time{
+    text-align: right;
+    color: #9E9E9E;
+}
+
+.no_limits_box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60rpx;
+    padding-top: 30rpx;
+}
+.no_limits{
+    width: 400rpx;
+    height: 400rpx;
+    
+}
