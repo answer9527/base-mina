@@ -8,7 +8,9 @@ Page({
    */
   data: {
     uid:null,
-    holeInfo:{}
+    hid:0,
+    holeInfo:{},
+    commentList:[]
   },
 
   /**
@@ -17,6 +19,10 @@ Page({
   onLoad: function (options) {
 
     let id = options.id
+    this.setData({
+      hid:id,
+      uid:app.globalData.uid
+    })
     HoleModel.get_by_id(id).then(res=>{
      
       this.setData({
@@ -24,8 +30,9 @@ Page({
       })
 
     })
-    console.log(app.globalData.uid)
+   
     
+    this.getComment()
   },
 
   /**
@@ -75,5 +82,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 获取树洞评论
+  getComment(){
+    HoleModel.get_Comment({key:this.data.hid}).then(res=>{
+      this.setData({
+        commentList:res.data
+      })
+      console.log(res.data)
+    })
   }
+
 })
