@@ -26,17 +26,7 @@ const promisic = function(func){
               icon: 'none',
               duration: 2000
             })
-            // token无效时候强制跳转登录
-            if(res.data.code==403){
-              wx.navigateTo({
-                url: '/pages/login/index',
-                success: (result)=>{
-                  
-                },
-                fail: ()=>{},
-                complete: ()=>{}
-              });
-            }
+
           }else{
             resolve(res)
           }
@@ -44,6 +34,7 @@ const promisic = function(func){
         },
         fail:err=>{
           reject(err)
+          console.log(err)
         }
       })
       func(args)

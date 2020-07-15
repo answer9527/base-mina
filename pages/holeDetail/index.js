@@ -1,13 +1,13 @@
 // pages/holeDetail/index.js
 var app =  getApp();
 import {HoleModel} from "../../models/hole"
+import {Paging} from "../../utils/util"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
     uid:null,
     hid:0,
     holeInfo:{},
@@ -16,14 +16,17 @@ Page({
     // 回复的评论的父id
     pid:0,
     // 需要回复的人的id
-    uid_r:0
+    uid_r:0,
+    // 分页参数
+    page:1,
+    size:10,
+    show:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     let id = options.id
     this.setData({
       hid:id,
@@ -33,11 +36,8 @@ Page({
       this.setData({
         holeInfo:res.data
       })
-
+      this.getComment()
     })
-   
-    
-    this.getComment()
   },
 
   /**
@@ -79,7 +79,11 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let page = this.data.page
+    this.setData({
+      page:page+1
+    })
+    this.getComment()
   },
 
   /**
@@ -90,11 +94,19 @@ Page({
   },
   // 获取树洞评论
   getComment(){
-    HoleModel.get_Comment({key:this.data.hid}).then(res=>{
-      this.setData({
-        commentList:res.data
-      })
-     
+    this.setData({
+      show:true
+    })
+    let paging = new Paging(this.data.page,this.data.size,this.data.holeInfo.id);
+    HoleModel.get_Comment(paging).then(res=>{
+      let commentList = this.data.commentList
+      commentList=commentList.concat(res.data)
+      setTimeout(() => {
+        this.setData({
+          commentList:commentList,
+          show:false
+        })
+      }, 2000);
     })
   },
   // 显示根评论输入框
@@ -106,6 +118,7 @@ Page({
     }
    
   },
+  // 提交评论
   send_comment(e){
     let is_root = e.detail.is_root
     let comment_txt = e.detail.comment_txt

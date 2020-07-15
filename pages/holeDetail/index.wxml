@@ -30,6 +30,16 @@
     <view class="bottom-bar">
         <v-input-box bind:tap="showCommentInput" inputTxt="{{holeInfo.canComment==0?'该树洞设置不可评论！':'请填写您的评论，文明发言！'}}"/>
     </view>
-    
+    <l-loading
+        l-container-class="l-container"
+        bg-color="#f3f3f3"
+        z-index="776"
+        opacity="0.8"
+        show="{{show}}"
+        full-screen="{{true}}"
+        custom="{{true}}"
+        >
+        <image class="loading-img" src="/images/loading.gif"></image>
+    </l-loading>
 </view>
 <v-comment-input class="commnet-box" id="commentInput" bind:sendComment="send_comment" placeholder="{{placeholder}}"/>
