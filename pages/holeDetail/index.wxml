@@ -18,14 +18,18 @@
             </view>
         </view>
         <view class="comment_box">
-            <v-comment commentList="{{commentList}}"  wx:if="{{holeInfo.uid==uid||holeInfo.commentVisible==1}}"/>
+            <v-comment commentList="{{commentList}}" bind:showReplay="showReplay"  wx:if="{{holeInfo.uid==uid||holeInfo.commentVisible==1}}"/>
             <view wx:else class="no_limits_box">
                 <image class="no_limits" src="/images/no_limits.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                     
                 </image>
                 <view>该树洞设置了评论不可见</view>
             </view>
-            
         </view>
     </view>
+    <view class="bottom-bar">
+        <v-input-box bind:tap="showCommentInput" inputTxt="{{holeInfo.canComment==0?'该树洞设置不可评论！':'请填写您的评论，文明发言！'}}"/>
+    </view>
+    
 </view>
+<v-comment-input class="commnet-box" id="commentInput" bind:sendComment="send_comment" placeholder="{{placeholder}}"/>

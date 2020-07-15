@@ -23,7 +23,9 @@ Component({
   methods: {
     // 点击
     showReplay(e){
-      let params={
+
+
+      let  params={
         "placeholder":"回复@"+e.currentTarget.dataset.usernamer+":",
         "pid":e.currentTarget.dataset.pid,
         "uid_r":e.currentTarget.dataset.uidr

@@ -34,6 +34,15 @@ class HoleModel{
             method:"POST"
         })
     }
+    // 评论树洞
+    static async insert_comment(data){
+        return Http.request({
+            url:"/hole/comment/insert",
+            data,
+            method:"POST"
+        })
+    }
+
 }
 export {
     HoleModel 

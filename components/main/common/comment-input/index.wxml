@@ -1,0 +1,17 @@
+<!--components/main/common/comment-input/index.wxml-->
+<view style="width:100%">
+    <view class="{{show_dialog?'mask':''}}" bind:tap="hideDialog"></view>
+    <view class="dialog_form" animation="{{ani}}">
+        <view class="dialog_form_in" hover-class="none" hover-stop-propagation="false">
+            <view class="send_row">
+                <view>
+                    
+                </view>
+                <view bind:tap="sendComment">
+                    发送
+                </view>
+            </view>
+            <textarea  class="dialog_txt" placeholder="{{placeholder}}" value="{{comment_txt}}" bindinput="changeCommentTxt"></textarea>
+        </view>
+    </view>
+</view>

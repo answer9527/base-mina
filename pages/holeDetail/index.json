@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "v-comment":"/components/comment/index"
+    "v-comment":"/components/comment/index",
+    "v-input-box":"/components/main/common/input-box/index",
+    "v-comment-input":"/components/main/common/comment-input/index"
   },
   "navigationBarTitleText": "树洞详情"
 }

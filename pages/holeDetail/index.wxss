@@ -9,6 +9,7 @@ page{
 }
 .page_in{
     width: 100%;
+    padding-bottom: 100rpx;
 }
 .hole_box{
     width: 100%;
@@ -94,4 +95,25 @@ page{
     width: 400rpx;
     height: 400rpx;
     
+}
+
+.bottom-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    border-top: 2rpx solid #EAEAEA;
+    width: 100%;
+    padding: 15rpx 40rpx;
+    background: #FFFFFF;
+    color: #c1c1c1;
+    box-sizing: border-box;
+}
+.commnet-box{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
 }

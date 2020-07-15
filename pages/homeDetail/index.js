@@ -135,7 +135,6 @@ Page({
   },
   // 其他子评论点击后的弹出输入框
   showReplay(e){
-    console.log(e)
     this.setData({
       placeholder:e.detail.placeholder,
       comment_txt:"",

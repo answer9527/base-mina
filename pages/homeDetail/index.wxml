@@ -6,7 +6,7 @@
         <v-comment commentList="{{commentList}}" bind:showReplay="showReplay"/>
     </view>
     <view class="bottom-bar">
-        <v-input-box bind:tap="showDialog"/>
+        <v-input-box inputTxt="请输入您的点评！" bind:tap="showDialog"/>
         <v-like/>
     </view>
     <view class="{{show_dialog?'mask':''}}" bind:tap="hideDialog"></view>
