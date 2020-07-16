@@ -9,6 +9,7 @@ Page({
     suggest_list:[],
     page:1,
     size:10,
+    hasNextPage:false,
     keyword:"",
     show_dialog:false,
     ani:null,
@@ -62,19 +63,14 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let page = this.data.page+1;
-    let paging = {
-      page:page,
-      size:this.data.size,
-      keyword:this.data.keyword
-    }
-    SuggestModel.getList(paging).then(res=>{
-      let suggest_list =this.data.suggest_list.concat(res.data); 
+    if(this.data.hasNextPage){
+      let page = this.data.page
       this.setData({
-        suggest_list:suggest_list,
-        page:page
+        page:page+1
       })
-    })
+      this.getSuggestList()
+    }
+
   },
 
   /**
@@ -88,7 +84,8 @@ Page({
     let keyword = e.detail.value;
     this.setData({
       page:1,
-      keyword:keyword
+      keyword:keyword,
+      suggest_list:[]
     })
     this.getSuggestList()
   },
@@ -96,7 +93,8 @@ Page({
   clearSearch(){
     this.setData({
       page:1,
-      keyword:""
+      keyword:"",
+      suggest_list:[]
     })
     this.getSuggestList()
   },
@@ -107,8 +105,11 @@ Page({
       keyword:this.data.keyword
     }
     SuggestModel.getList(paging).then(res=>{
+      let suggest_list = this.data.suggest_list
+      suggest_list=suggest_list.concat(res.data.list)
       this.setData({
-        suggest_list:res.data
+        suggest_list:suggest_list,
+        hasNextPage:res.data.hasNextPage
       })
     })
   },

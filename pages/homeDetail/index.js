@@ -22,7 +22,8 @@ Page({
     comment_other:null,
     cid:null,
     page:1,
-    size:10
+    size:10,
+    hasNextPage:false
 
   },
 
@@ -38,10 +39,11 @@ Page({
       "page":this.data.page,
       "size":this.data.size
     }
-    let commentList = await this.getClassicComment(paging)
+    let commentData = await this.getClassicComment(paging)
     this.setData({
       classic:classicDetail,
-      commentList:commentList,
+      commentList:commentData.list,
+      hasNextPage:commentData.hasNextPage,
       cid:id
     })
   },
@@ -88,18 +90,22 @@ Page({
   onReachBottom: async function () {
 
     // 后期要修改分页的问题，减少请求次数
-    let page = this.data.page +1;
-    let paging = {
-      "key":this.data.cid,
-      "page":page,
-      "size":this.data.size
+    if(this.data.hasNextPage){
+      let page = this.data.page +1;
+      let paging = {
+        "key":this.data.cid,
+        "page":page,
+        "size":this.data.size
+      }
+      let commentData = await this.getClassicComment(paging)
+      let commentList = this.data.commentList.concat(commentData.list)
+      this.setData({
+        commentList:commentList,
+        page:page,
+        hasNextPage:commentData.hasNextPage
+      })
     }
-    let commentList = await this.getClassicComment(paging)
-    commentList = this.data.commentList.concat(commentList)
-    this.setData({
-      commentList:commentList,
-      page:page
-    })
+
   
   },
 
@@ -176,6 +182,7 @@ Page({
   // 获取评论列表
   async getClassicComment(paging){
     let res = await CommentModel.getCommentByCid(paging)
+
     return res.data
   },
   // 提交评论
