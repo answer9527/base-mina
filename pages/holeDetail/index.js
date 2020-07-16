@@ -20,7 +20,10 @@ Page({
     // 分页参数
     page:1,
     size:10,
-    show:true
+    // 总页数
+    pages:1,
+    show:true,
+    
   },
 
   /**
@@ -80,10 +83,14 @@ Page({
    */
   onReachBottom: function () {
     let page = this.data.page
-    this.setData({
-      page:page+1
-    })
-    this.getComment()
+    let pages = this.data.pages;
+    if(page<pages){
+      this.setData({
+        page:page+1
+      })
+      this.getComment()
+    }
+
   },
 
   /**
@@ -100,13 +107,15 @@ Page({
     let paging = new Paging(this.data.page,this.data.size,this.data.holeInfo.id);
     HoleModel.get_Comment(paging).then(res=>{
       let commentList = this.data.commentList
-      commentList=commentList.concat(res.data)
+      let pages = res.data.pages
+      commentList=commentList.concat(res.data.list)
       setTimeout(() => {
         this.setData({
+          pages:pages,
           commentList:commentList,
           show:false
         })
-      }, 2000);
+      },100);
     })
   },
   // 显示根评论输入框
