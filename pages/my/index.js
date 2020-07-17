@@ -12,7 +12,7 @@ Page({
       {
         "tabName": "我的喜欢",
         "tabImage": "./images/like@tag.png",
-        "tagUrl": ""
+        "tagUrl": "/pages/likeList/index"
       },
       {
         "tabName": "我的消息",

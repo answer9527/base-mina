@@ -47,6 +47,15 @@ class ClassicModel{
       url:"/classic/detail/"+id
     })
   }
+
+  // 获取的我喜欢的classic列表
+  static async getMyLikeList(data){
+    return await Http.request({
+      url:"/classic/getMyLike",
+      data,
+      method:"POST"
+    })
+  }
 }
 export{
   ClassicModel

@@ -1,0 +1,4 @@
+<!--pages/likeList/index.wxml-->
+<view>
+    <v-music-one wx:for="{{likeList}}" title="{{item.title}}" image="{{item.image}}" intro="{{item.intro}}" ids="{{item.id}}" author="{{item.author}}"/>
+</view>

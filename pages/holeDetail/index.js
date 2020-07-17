@@ -39,6 +39,7 @@ Page({
       this.setData({
         holeInfo:res.data
       })
+      
       this.getComment()
     })
   },

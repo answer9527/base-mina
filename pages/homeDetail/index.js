@@ -217,6 +217,11 @@ Page({
        })
       })
     })
+  },
+  setLike(e){
+    let behavior = e.detail.behavior
+    let cid = this.data.classic.id
+    ClassicModel.likeIt(behavior,cid)
   }
 
 

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-music-one":"/components/main/music/listOne/index"
+  },
+  "navigationBarTitleText": "我喜欢的"
+}
