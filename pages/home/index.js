@@ -11,20 +11,16 @@ Page({
     // 分页传参
     activeKey:100,
     page:1,
-    size:10
-
+    size:10,
+    hasNextPage:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
-
-    this.getClassicListByType(paging)
-    console.log(this.data.classicList)
-
-
+   
+    this.getClassicListByType()
   },
 
   /**
@@ -66,7 +62,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(22)
+    if(this.data.hasNextPage){
+      let page = this.data.page
+      this.setData({
+        page:page+1
+      })
+      this.getClassicListByType()
+    }
   },
 
   /**
@@ -75,19 +77,25 @@ Page({
   onShareAppMessage: function () {
     
   },
+  // 切换选项卡
   changeTabs(e){
     this.setData({
       activeKey:e.detail.activeKey,
-      page:1
+      page:1,
+      classicList:[]
     })
-    let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
-    this.getClassicListByType(paging)
+    
+    this.getClassicListByType()
   },
   // 获取列表
-  getClassicListByType(Paging){
-    ClassicModel.getByListType(Paging).then(res=>{
+  getClassicListByType(){
+    let paging = new Paging(this.data.page,this.data.size,this.data.activeKey);
+    ClassicModel.getByListType(paging).then(res=>{
+      let classicList = this.data.classicList
+      classicList = classicList.concat(res.data.list)
       this.setData({
-        classicList:res.data.list
+        classicList,
+        hasNextPage:res.data.hasNextPage
       })
     })
   }

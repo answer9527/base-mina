@@ -134,7 +134,7 @@ Page({
     animation.height("0rpx").step()
     this.setData({
       show_dialog:false,
-      ani:  animation.export()
+      ani: animation.export()
     })
   },
   // 修改输入框的内容
@@ -149,7 +149,6 @@ Page({
       "suggestInfo":this.data.suggest_txt
     }
     SuggestModel.insert(param).then(res=>{
-      console.log(res)
       let {code,message} = res;
       this.setData({
         page:1,
