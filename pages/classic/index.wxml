@@ -9,7 +9,7 @@
 <view class="container" hover-class="none" hover-stop-propagation="false">
     <view class="header">
         <v-epsoide time="{{classicData.createTime}}" class="epsoide"></v-epsoide>
-        <v-like class="like"  count="{{classicData.like_count}}" bind:like="changeLike"></v-like>
+        <v-like class="like"  count="{{classicData.like_count}}" bind:like="changeLike" like="{{classicData.like_status}}"></v-like>
     </view>
     <v-essay image="{{classicData.image}}" intro="{{classicData.intro}}" wx:if="{{classicData.type==100}}"></v-essay>
     <v-music image="{{classicData.image}}" intro="{{classicData.intro}}" src="{{classicData.url}}" title="{{classicData.title}}" wx:if="{{classicData.type==200}}"></v-music>

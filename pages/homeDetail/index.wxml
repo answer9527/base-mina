@@ -7,7 +7,7 @@
     </view>
     <view class="bottom-bar">
         <v-input-box inputTxt="请输入您的点评！" bind:tap="showDialog"/>
-        <v-like bind:like="setLike" count="{{classic.like_count}}"/>
+        <v-like bind:like="setLike" count="{{classic.like_count}}" like="{{classic.like_status}}"/>
     </view>
     <view class="{{show_dialog?'mask':''}}" bind:tap="hideDialog"></view>
     <view class="dialog_form" animation="{{ani}}">

@@ -11,6 +11,7 @@ Component({
       type:Boolean,
       value:false
     }
+    
   },
 
   /**
