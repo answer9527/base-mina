@@ -59,15 +59,7 @@
       </view>
     </view>
   </l-tabpanel>
-  <!-- <l-tabpanel tab="树洞" key="700" slot="700" >
-    <view class="tab-content" wx:if="{{activeKey==700}}">
-      <view>
-        <block wx:for="{{classicList}}">
-          <v-mood-one ids="{{item.id}}" image="{{item.image}}" title="{{item.title}}" author="{{item.author}}" intro="{{item.intro}}" createTime="{{item.createTime}}" />
-        </block>
-      </view>
-    </view>
-  </l-tabpanel> -->
+
   
 </l-tabs>
 <view style="height:1rpx"></view>

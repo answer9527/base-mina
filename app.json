@@ -16,7 +16,8 @@
     "pages/hole/index",
     "pages/addHole/index",
     "pages/holeDetail/index",
-    "pages/likeList/index"
+    "pages/likeList/index",
+    "pages/msgList/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

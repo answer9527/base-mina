@@ -232,6 +232,20 @@
 					"pathName": "pages/likeList/index",
 					"query": "id=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/writeLetter/index",
+					"pathName": "pages/writeLetter/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msgList/index",
+					"pathName": "pages/msgList/index",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}
