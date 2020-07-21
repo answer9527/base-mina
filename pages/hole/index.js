@@ -77,6 +77,10 @@ Page({
   },
 // 结束拖动
   onTouchEnd(e){
+    let distance=this.data.distance
+    let currentIndex = this.data.currentIndex
+    let len = this.data.holeList.length
+
     let endPos = e.changedTouches[0].pageX
     // 拖动的距离绝对值
     let dis = Math.abs(startPos-endPos)
@@ -84,13 +88,13 @@ Page({
     if(dis<60){
       return false
     }
-    let distance=this.data.distance
-    let currentIndex = this.data.currentIndex
-    let len = this.data.holeList.length
-
 
     if(startPos>endPos){
 
+      if(currentIndex>12){
+        return false
+      }
+      
       if(currentIndex==len-2){
         this.get_list()
       }else{
@@ -103,6 +107,7 @@ Page({
 
 
     }else if(startPos<endPos){
+
       if(currentIndex>0){
         this.setData({
           distance:distance+550,
@@ -119,7 +124,7 @@ Page({
       let data =res.data
       let holeList=this.data.holeList
       holeList=holeList.concat(data)
-      console.log(holeList)
+      // return false
       this.setData({
         holeList
       })

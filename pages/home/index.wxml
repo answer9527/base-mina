@@ -1,5 +1,5 @@
 <!--pages/home/index.wxml-->
-<l-tabs  l-header-class="tab-header"  bind:linchange="changeTabs" scrollable="true" equal-width="false"  >
+<l-tabs  l-header-class="tab-header" l-content-class="tab-box"  bind:linchange="changeTabs" scrollable="true" equal-width="false"  >
   <l-tabpanel tab="电影" key="100" slot="100" >
     <view class="tab-content" wx:if="{{activeKey==100}}">
       <view>
@@ -62,5 +62,8 @@
 
   
 </l-tabs>
+<view wx:if="{{hasNextPage}}" class="get_more" bind:tap="getMore">
+  加载更多
+</view>
 <view style="height:1rpx"></view>
 
