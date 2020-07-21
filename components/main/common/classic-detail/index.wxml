@@ -12,11 +12,8 @@
         <view class="" bindtap="playOrPause" wx:if="{{src}}">
              <image class="play_icon {{playing?'roll':''}}" src="/images/music_icon.png" mode="aspectFit|aspectFill|widthFix" > </image>
         </view>
-
     </view>
-   
     <view class="detail_intro" hover-class="none" hover-stop-propagation="false">
-        
         <view class="intro_left_box" hover-class="none" hover-stop-propagation="false">
             <image class="intro_left" src="/images/intro_left.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
         </view>
@@ -27,6 +24,5 @@
     </view>
     <view class="detail_content" hover-class="none" hover-stop-propagation="false">
         <rich-text class="" nodes="{{content}}"></rich-text>
-    </view>
-    
+    </view>  
 </view>

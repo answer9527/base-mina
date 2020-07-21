@@ -80,7 +80,6 @@ Page({
       "page":this.data.page
     }
     ClassicModel.getMyLikeList(paging).then(res=>{
-      console.log(res)
       let likeInfo = res.data
       let likeList = this.data.likeList
       likeList = likeList.concat(likeInfo.list)
