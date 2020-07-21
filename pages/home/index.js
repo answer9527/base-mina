@@ -62,13 +62,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.hasNextPage){
-      let page = this.data.page
-      this.setData({
-        page:page+1
-      })
-      this.getClassicListByType()
-    }
+    // if(this.data.hasNextPage){
+    //   let page = this.data.page
+    //   this.setData({
+    //     page:page+1
+    //   })
+    //   this.getClassicListByType()
+    // }
   },
 
   /**
@@ -98,5 +98,13 @@ Page({
         hasNextPage:res.data.hasNextPage
       })
     })
+  },
+  // 加载更多
+  getMore(){
+    let page = this.data.page
+    this.setData({
+      page:page+1
+    })
+    this.getClassicListByType()
   }
 })

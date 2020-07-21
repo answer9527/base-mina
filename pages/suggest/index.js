@@ -119,7 +119,7 @@ Page({
       duration:800,
       timingFunction: 'ease',
     })
-    animation.height("360rpx").step()
+    animation.height("560rpx").step()
     this.setData({
       show_dialog:true,
       ani:  animation.export()
