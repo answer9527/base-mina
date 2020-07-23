@@ -20,12 +20,27 @@ const promisic = function(func){
       const args = Object.assign(params,{
         success:res=>{
           if(res.data.code){
+           
+            if(res.data.code==40005||res.data.code==40006){
+             
+              wx.navigateTo({
+                url: '/pages/login/index',
+                success:()=>{
+                  wx.showToast({
+                    title: res.data.message,
+                    icon: 'none',
+                    duration: 2000
+                  })
+                }
+              });
+            }else{
+              wx.showToast({
+                title: res.data.message,
+                icon: 'none',
+                duration: 2000
+              })
+            }
 
-            wx.showToast({
-              title: res.data.message,
-              icon: 'none',
-              duration: 2000
-            })
 
           }else{
             resolve(res)

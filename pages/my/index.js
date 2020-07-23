@@ -17,7 +17,7 @@ Page({
       {
         "tabName": "我的消息",
         "tabImage": "./images/msg@tag.png",
-        "tagUrl": ""
+        "tagUrl": "/pages/msgList/index"
       },
       {
         "tabName": "时光邮局",
@@ -31,11 +31,11 @@ Page({
       }
     ],
     colList:[
-      {
-        "colName":"申请加入",
-        "colImage":"./images/setting@col.png",
-        "colUrl":""
-      },
+      // {
+      //   "colName":"申请加入",
+      //   "colImage":"./images/setting@col.png",
+      //   "colUrl":""
+      // },
       {
         "colName": "意见反馈",
         "colImage": "./images/idea@col.png",
@@ -54,7 +54,7 @@ Page({
       {
         "colName": "联系我们",
         "colImage": "./images/contact@col.png",
-        "colUrl": ""
+        "colUrl": "/pages/contact/index"
       }
     ],
     userInfo: {},

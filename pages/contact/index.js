@@ -1,22 +1,18 @@
-// pages/likeList/index.js
-import {ClassicModel} from "../../models/classic"
+// pages/contact/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    likeList:[],
-    hasNextPage:false,
-    page:1,
-    size:10
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.get_like_list()
+
   },
 
   /**
@@ -58,13 +54,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.hasNextPage){
-      let page = this.data.page;
-      this.setData({
-        page:page+1
-      })
-      this.get_like_list()
-    }
+
   },
 
   /**
@@ -72,22 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 获取我喜欢的列表
-  get_like_list(){
-    let paging={
-      "size":this.data.size,
-      "page":this.data.page
-    }
-    ClassicModel.getMyLikeList(paging).then(res=>{
-      let likeInfo = res.data
-      let likeList = this.data.likeList
-      likeList = likeList.concat(likeInfo.list)
-      this.setData({
-        likeList,
-        hasNextPage:likeInfo.hasNextPage
-      })
-    })
   }
-  
 })
