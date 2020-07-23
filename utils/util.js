@@ -1,3 +1,4 @@
+import {UserModel} from "../models/user"
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -20,9 +21,12 @@ const promisic = function(func){
       const args = Object.assign(params,{
         success:res=>{
           if(res.data.code){
-           
-            if(res.data.code==40005||res.data.code==40006){
-             
+            
+            let error_code = res.data.code
+            if(error_code==40005||error_code==40006||error_code==40001){
+              // wx.removeStorage({
+              //   key: 'token',
+              // })
               wx.navigateTo({
                 url: '/pages/login/index',
                 success:()=>{
@@ -33,6 +37,29 @@ const promisic = function(func){
                   })
                 }
               });
+
+
+              // wx.login({
+              //   success: res => {
+              //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+              //     UserModel.login({
+              //       code:res.code
+              //     }).then(res=>{    
+              //       // 暂未注册的跳转 
+              //       if(res.code==40005){
+              //         wx.navigateTo({
+              //           url: '/pages/login/index',
+              //         });
+              //       }else{
+              //         let token = res.data.token
+              //         let uid = Number(res.data.uid)
+              //         wx.setStorageSync("token",token)
+              //         wx.setStorageSync("uid",uid)
+              //       }
+              //     })
+              //   }
+              // })
+
             }else{
               wx.showToast({
                 title: res.data.message,
@@ -40,8 +67,6 @@ const promisic = function(func){
                 duration: 2000
               })
             }
-
-
           }else{
             resolve(res)
           }

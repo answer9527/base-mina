@@ -54,16 +54,26 @@ Page({
       avatarUrl:userInfo.avatarUrl,
       gender:userInfo.gender
     })
+    
     wx.lin.showToast({
       title: "登录成功",
       icon: 'success',
     })
+    let uid = Number(result.data.uid)
+    let token = result.data.token
     app.globalData.userInfo = e.detail.userInfo
-    app.globalData.token = result.data.token
+    app.globalData.token = token
+    app.globalData.uid=uid
+
+    wx.setStorageSync("token",token)
+    wx.setStorageSync("uid",uid)
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+
+
+
   },
 
 })

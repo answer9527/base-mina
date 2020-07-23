@@ -21,6 +21,9 @@ class Http{
     return res.data
   }
 }
+
+
+
 export{
   Http
 }

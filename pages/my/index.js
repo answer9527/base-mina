@@ -138,9 +138,14 @@ Page({
       title:"登录成功",
       icon:"success"
     })
-    app.globalData.userInfo=e.detail.userInfo
-    app.globalData.token = result.data.token
-    app.globalData.uid = result.data.uid
+    let uid = Number(result.data.uid)
+    let token = result.data.token
+    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.token = token
+    app.globalData.uid=uid
+
+    wx.setStorageSync("token",token)
+    wx.setStorageSync("uid",uid)
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true  
