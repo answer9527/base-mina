@@ -1,4 +1,15 @@
 <!--pages/login/index.wxml-->
- <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-<navigator url="/pages/logs/logs">日志</navigator>
+<view class="page_con">
+    <view class="intro_row">
+        <view>欢迎来到陈湖旧事</view>
+        <view>立即登录开启新生活</view>
+    </view>
+    <view class="logo_row">
+        <image src="/images/login_bg.png" style="height:750rpx;width:500rpx" />
+    </view>
+    <view class="login_row">
+        <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+    </view>
+</view>
+
 <l-toast></l-toast>

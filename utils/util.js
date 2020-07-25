@@ -23,10 +23,25 @@ const promisic = function(func){
           if(res.data.code){
             
             let error_code = res.data.code
-            if(error_code==40005||error_code==40006||error_code==40001){
-              // wx.removeStorage({
-              //   key: 'token',
-              // })
+
+            // 当token失效时候
+            if(error_code==40006){
+              wx.login({
+                success: res => {
+                  // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                  UserModel.login({
+                    code:res.code
+                  }).then(res=>{    
+                    let token = res.data.token
+                    let uid = Number(res.data.uid)
+                    wx.setStorageSync("token",token)
+                    wx.setStorageSync("uid",uid)
+                  })
+                }
+              })
+            }
+            if(error_code==40005||error_code==40001){
+
               wx.navigateTo({
                 url: '/pages/login/index',
                 success:()=>{
@@ -39,26 +54,6 @@ const promisic = function(func){
               });
 
 
-              // wx.login({
-              //   success: res => {
-              //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-              //     UserModel.login({
-              //       code:res.code
-              //     }).then(res=>{    
-              //       // 暂未注册的跳转 
-              //       if(res.code==40005){
-              //         wx.navigateTo({
-              //           url: '/pages/login/index',
-              //         });
-              //       }else{
-              //         let token = res.data.token
-              //         let uid = Number(res.data.uid)
-              //         wx.setStorageSync("token",token)
-              //         wx.setStorageSync("uid",uid)
-              //       }
-              //     })
-              //   }
-              // })
 
             }else{
               wx.showToast({
