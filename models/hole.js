@@ -42,6 +42,18 @@ class HoleModel{
             method:"POST"
         })
     }
+    // 删除树洞
+    static async del_hole(data){
+        return Http.request({
+            url:"/hole/del/"+data.id
+        })
+    }
+    // 删除树洞我的评论
+    static async del_hole_comment(data){
+        return Http.request({
+            url:"/hole/comment/del/"+data.id
+        })
+    }
 
 }
 export {

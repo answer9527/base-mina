@@ -80,6 +80,15 @@ page{
 .hole_time{
     text-align: right;
     color: #9E9E9E;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* justify-content: space-between; */
+
+}
+.del_btn{
+    padding-left: 30rpx;
+    color: #3683D6;
 }
 
 .no_limits_box{

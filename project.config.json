@@ -24,7 +24,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false,
 		"compileHotReLoad": false
 	},
@@ -251,6 +251,21 @@
 					"id": -1,
 					"name": "pages/login/index",
 					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/holeDetail/index",
+					"pathName": "pages/holeDetail/index",
+					"query": "id=9",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/holeDetail/index",
+					"pathName": "pages/holeDetail/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

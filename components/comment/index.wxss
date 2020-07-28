@@ -96,6 +96,9 @@
 .replay_color{
     color: #295C9D; 
 }
+.del_color{
+    color: #F4516C;
+}
 
 .no_more_box{
     width: 100%;

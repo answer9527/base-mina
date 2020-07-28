@@ -14,11 +14,14 @@
             <view class="hole_detail">
                 <view class="hole_title">{{holeInfo.title}}</view>
                 <view class="hole_content">{{holeInfo.content}}</view>
-                <view class="hole_time">{{filter.formatTime(holeInfo.createTime,"-",2)}}</view>
+                <view class="hole_time">
+                    <view>{{filter.formatTime(holeInfo.createTime,"-",2)}}</view>
+                    <view class="del_btn" wx:if="{{uid==holeInfo.uid}}" bind:tap="show_del_dialog">删除</view>
+                </view>
             </view>
         </view>
         <view class="comment_box">
-            <v-comment commentList="{{commentList}}" bind:showReplay="showReplay"  wx:if="{{holeInfo.uid==uid||holeInfo.commentVisible==1}}"/>
+            <v-comment commentList="{{commentList}}" bind:showReplay="showReplay" uidl="{{uid}}" bind:delComment="del_comment"  wx:if="{{holeInfo.uid==uid||holeInfo.commentVisible==1}}"/>
             <view wx:else class="no_limits_box">
                 <image class="no_limits" src="/images/no_limits.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                     
@@ -43,3 +46,14 @@
     </l-loading>
 </view>
 <v-comment-input class="commnet-box" id="commentInput" bind:sendComment="send_comment" placeholder="{{placeholder}}"/>
+<l-dialog 
+  show="{{dialog_show}}"
+  type="confirm"  
+  title="警告"
+  content="您确定删除吗？"
+  confirm-text="yes"
+  confirm-color="#f60"
+  cancel-text="no~"
+  cancel-color="#999"
+  bind:linconfirm="confirm_del" 
+  />

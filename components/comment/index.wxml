@@ -14,8 +14,9 @@
                         </view>
                     </view>            
                 </view>
-
-                <view class="root_right replay_color" bind:tap="showReplay" data-pid="{{item.id}}" data-uidr="{{item.uid}}" data-usernamer="{{item.userName}}">回复</view>
+                <view class="root_right del_color" bind:tap="show_del" wx:if="{{item.uid==uidl}}" data-delId="{{item.id}}" data-pid="{{item.id}}" data-uidr="{{item.uid}}" data-usernamer="{{item.userName}}">删除</view>
+                <view class="root_right replay_color" bind:tap="showReplay" wx:else  data-pid="{{item.id}}" data-uidr="{{item.uid}}" data-usernamer="{{item.userName}}">回复</view>
+                
             </view>
             <view class="comment_content">{{item.content}}</view>
             <view class="" hover-class="none" hover-stop-propagation="false">
@@ -32,7 +33,9 @@
                         </view>
                         <view class="right_bottom">
                             <view>{{filter.formatTime(child.createTime,'-',1)}}</view>
-                            <view class="replay_color"  bind:tap="showReplay" data-pid="{{item.id}}" data-uidr="{{child.uid}}" data-usernamer="{{child.userName}}">回复</view>
+                            <view class="del_color" wx:if="{{child.uid==uidl}}"  bind:tap="show_del" data-delId="{{child.id}}" data-pid="{{item.id}}" data-uidr="{{child.uid}}" data-usernamer="{{child.userName}}">删除</view>
+                            <view class="replay_color" wx:else  bind:tap="showReplay"  data-pid="{{item.id}}" data-uidr="{{child.uid}}" data-usernamer="{{child.userName}}">回复</view>
+                            
                         </view>
                     </view>
                     
@@ -47,6 +50,18 @@
             </view>
         </view>    
     </view>
+
+    <l-dialog 
+    show="{{dialog_show}}"
+    type="confirm"  
+    title="警告"
+    content="确定删除该评论？"
+    confirm-text="yes"
+    confirm-color="#f60"
+    cancel-text="no~"
+    cancel-color="#999"
+    bind:linconfirm="confirm_del" 
+    />
     
 </view>
 
