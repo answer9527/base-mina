@@ -1,20 +1,24 @@
 // components/comment/index.js
-import {CommentModel} from "../../models/comment"
-var appInst =  getApp();
 
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    commentList:Array
+    commentList:Array,
+    // 登录账号的用户id
+    uidl:{
+      type:Number
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    // 删除的确认显示
+    dialog_show:false,
+    del_id:null
   },
 
   /**
@@ -31,7 +35,27 @@ Component({
         "uid_r":e.currentTarget.dataset.uidr
       }
       this.triggerEvent("showReplay",params)
+    },
+
+    // 展示删除dialog
+    show_del(e){
+      
+      let del_id = e.target.dataset.delid
+      console.log(e)
+      this.setData({
+        dialog_show:true,
+        del_id:del_id
+      })
+    },
+
+    // 确定删除
+    confirm_del(){
+      let params = {
+        del_id:this.data.del_id
+      }
+      this.triggerEvent("delComment",params)
     }
+    
 
   },
   attached(){

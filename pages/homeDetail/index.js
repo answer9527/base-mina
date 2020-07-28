@@ -23,7 +23,8 @@ Page({
     cid:null,
     page:1,
     size:10,
-    hasNextPage:false
+    hasNextPage:false,
+    uid:null
 
   },
 
@@ -31,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-
+    let uid = app.globalData.uid
     let id = options.id
     let classicDetail = await this.getClassicDetail(id)
     let paging = {
@@ -44,7 +45,8 @@ Page({
       classic:classicDetail,
       commentList:commentData.list,
       hasNextPage:commentData.hasNextPage,
-      cid:id
+      cid:id,
+      uid:uid
     })
   },
 
@@ -182,7 +184,6 @@ Page({
   // 获取评论列表
   async getClassicComment(paging){
     let res = await CommentModel.getCommentByCid(paging)
-
     return res.data
   },
   // 提交评论
@@ -205,23 +206,41 @@ Page({
       })
      
       this.hideDialog()
-      let paging ={
-        "key":this.data.cid,
-        "page":1,
-        "size":this.data.size
-      }
-      this.getClassicComment(paging).then(res=>{
-       this.setData({
-         page:1,
-         commentList:res
-       })
-      })
+      this.resetClassicComment()
     })
   },
+  // 重置评论列表
+  resetClassicComment(){
+    let paging ={
+      "key":this.data.cid,
+      "page":1,
+      "size":this.data.size
+    }
+    this.getClassicComment(paging).then(res=>{
+     this.setData({
+       page:1,
+       commentList:res.list,
+       hasNextPage:res.hasNextPage
+     })
+    })
+  },
+  //设置或取消喜欢
   setLike(e){
     let behavior = e.detail.behavior
     let cid = this.data.classic.id
     ClassicModel.likeIt(behavior,cid)
+  },
+  // 删除评论
+  del_comment(e){
+    let del_id = e.detail.del_id
+    CommentModel.delComment({id:del_id}).then(res=>{
+      wx.showToast({
+        title: res.message,
+        icon: 'none',
+        duration: 2000
+      })
+      this.resetClassicComment()
+    })
   }
 
 

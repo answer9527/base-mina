@@ -22,7 +22,13 @@ Page({
     size:10,
     // 总页数
     pages:1,
+
+    // 是否有下一页
+    hasNextPage:false,
+    // 显示加载中
     show:true,
+    // 删除提示框
+    dialog_show:false,
     
   },
 
@@ -39,9 +45,9 @@ Page({
       this.setData({
         holeInfo:res.data
       })
-      
-      this.getComment()
+      this.resetCommentList()
     })
+    
   },
 
   /**
@@ -83,13 +89,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let page = this.data.page
-    let pages = this.data.pages;
-    if(page<pages){
+    if(this.data.hasNextPage){
+      let page = this.data.page
       this.setData({
         page:page+1
       })
-      this.getComment()
+      this.getMoreComment()
     }
 
   },
@@ -100,24 +105,40 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 获取树洞评论
-  getComment(){
+  // 获取更多树洞评论
+  getMoreComment(){
     this.setData({
       show:true
     })
     let paging = new Paging(this.data.page,this.data.size,this.data.holeInfo.id);
-    HoleModel.get_Comment(paging).then(res=>{
+    this.getHoleCommentList(paging).then(res=>{
       let commentList = this.data.commentList
-      let pages = res.data.pages
-      commentList=commentList.concat(res.data.list)
+      commentList=commentList.concat(res.list)
       setTimeout(() => {
         this.setData({
-          pages:pages,
+          hasNextPage:res.hasNextPage,
           commentList:commentList,
           show:false
         })
       },100);
     })
+  },
+  async getHoleCommentList(paging){
+    let res = await HoleModel.get_Comment(paging)
+    return res.data
+  },
+  // 重置列表
+  resetCommentList(){
+    let paging = new Paging(1,this.data.size,this.data.holeInfo.id);
+    this.getHoleCommentList(paging).then(res=>{
+      this.setData({
+        page:1,
+        commentList:res.list,
+        hasNextPage:res.hasNextPage,
+        show:false
+      })
+    })
+
   },
   // 显示根评论输入框
   showCommentInput(){
@@ -151,7 +172,7 @@ Page({
         duration: 2000
       })
       this.selectComponent("#commentInput").hideDialog()
-      this.getComment()
+      this.resetCommentList()
     })
   },
   // 显示子评论输入框
@@ -171,6 +192,44 @@ Page({
       })
       this.selectComponent("#commentInput").showReplay()
     }
+  },
+  // 弹出删除
+  show_del_dialog(){
+    
+    this.setData({
+      dialog_show:true
+    })
+  },
+  // 确定树洞删除
+  confirm_del(){
+    let id = this.data.holeInfo.id
+    HoleModel.del_hole({id}).then(res=>{
+      wx.navigateTo({
+        url: '/pages/hole/index',
+        success: (result)=>{
+          wx.showToast({
+            title: "删除成功！",
+            icon: 'none',
+            duration: 2000
+          })
+        },
+        fail: ()=>{},
+        complete: ()=>{}
+      });
+
+    })
+  },
+  // 删除自己的评论
+  del_comment(e){
+     let del_id = e.detail.del_id
+    HoleModel.del_hole_comment({id:del_id}).then(res=>{
+      wx.showToast({
+        title: res.message,
+        icon: 'none',
+        duration: 2000
+      })
+      this.resetCommentList()
+    })
   }
 
 })

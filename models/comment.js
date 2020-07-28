@@ -15,6 +15,11 @@ class CommentModel{
             method:"POST"
         })
     }
+    static async delComment(data){
+        return await Http.request({
+            url:"/comment/del/"+data.id
+        })
+    }
 }
 export {
     CommentModel
