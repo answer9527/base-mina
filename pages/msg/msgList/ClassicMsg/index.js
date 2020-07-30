@@ -7,7 +7,9 @@ Page({
    */
   data: {
     msg_list:[],
-    hasNextPage:false
+    hasNextPage:false,
+    page:1,
+    size:10
   },
 
   /**
@@ -49,14 +51,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+   
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.hasNextPage){
+      let page = this.data.page;
+      this.setData({
+        page:page+1
+      })
+      this.getMsgList()
+    }
   },
 
   /**
@@ -67,10 +75,16 @@ Page({
   },
   // 获取Classic评论的消息提醒
   getMsgList(){
-    MsgModel.getClassicCommentMsg({}).then(res=>{
+    let params = {
+      page:this.data.page,
+      size:this.data.size
+    }
+    MsgModel.getClassicCommentMsg(params).then(res=>{
       let {data} =res
+      let msg_list = this.data.msg_list
+      msg_list=msg_list.concat(data.list)
       this.setData({
-        msg_list:data.list,
+        msg_list:msg_list,
         hasNextPage:data.hasNextPage
       })
     })

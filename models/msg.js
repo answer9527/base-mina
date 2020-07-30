@@ -8,6 +8,13 @@ class MsgModel{
             method:"POST"
         })
     }
+    static async getHoleCommentMsg(data){
+        return Http.request({
+            url:"/comment/msg/hole/mylist",
+            data,
+            method:"POST"
+        })
+    }
 }
 export{
     MsgModel

@@ -1,2 +1,8 @@
-<!--pages/msg/msgList/HoleMsg/index.wxml-->
-<text>pages/msg/msgList/HoleMsg/index.wxml</text>
+<view class="">
+    <view class="msg_list">
+        <view wx:for="{{msg_list}}" class="msg_box">
+            <v-time time="{{item.createTime}}" class="msg_time"/>
+            <v-msg-card title="{{item.title}}" userName="{{item.userName}}" content="{{item.content}}" isRoot="{{item.isRoot}}" style="width:100%" />
+        </view>
+    </view>
+</view>

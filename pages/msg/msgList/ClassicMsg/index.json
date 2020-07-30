@@ -3,5 +3,5 @@
     "v-time":"/components/msg/time/index",
     "v-msg-card":"/components/msg/msgCard/index"
   },
-  "navigationBarTitleText": "消息中心"
+  "navigationBarTitleText": "视听消息"
 }

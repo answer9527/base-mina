@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "v-time":"/components/msg/time/index",
+    "v-msg-card":"/components/msg/msgCard/index"
+  },
+  "navigationBarTitleText": "树洞消息"
 }
