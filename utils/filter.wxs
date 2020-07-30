@@ -15,6 +15,10 @@ var formatTime=function(time_str,str,type=1){
             break;
         case 3:
             result = y+str+add0(m)+str+add0(d) +" "+add0(h)+":"+add0(mm);
+            break;
+        case 4:
+            result = add0(m)+str+add0(d) +" "+add0(h)+":"+add0(mm);
+            break;
         default:
             result = y+str+add0(m)+str+add0(d) +" "+add0(h)+":"+add0(mm)+":"+add0(s);
             break;

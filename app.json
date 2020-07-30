@@ -17,8 +17,10 @@
     "pages/addHole/index",
     "pages/holeDetail/index",
     "pages/likeList/index",
-    "pages/msgList/index",
-    "pages/contact/index"
+    "pages/contact/index",
+    "pages/msg/msgSelect/index",
+    "pages/msg/msgList/ClassicMsg/index",
+    "pages/msg/msgList/HoleMsg/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

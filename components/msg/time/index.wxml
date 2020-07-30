@@ -1,0 +1,2 @@
+<!--components/msg/time/index.wxml-->
+<view class="time_view">{{tiem_view}}</view>

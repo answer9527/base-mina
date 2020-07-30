@@ -1,4 +1,4 @@
-// pages/msgList/index.js
+// pages/msg/msgSelect/index.js
 Page({
 
   /**

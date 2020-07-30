@@ -1,0 +1,15 @@
+<!--components/msg/msgCard/index.wxml-->
+<view class="msg_card">
+    <view class="title">{{title}}</view>
+    <view class="card_in">
+        <view class="comment">
+            {{userName}}{{isRoot?"点评说":"回复说"}}:
+            <view class="content">{{content}}</view>
+        </view>
+        <view class="card_bottom">
+            <view>查看</view>
+            <view>|</view>
+            <view>回复</view>
+        </view>
+    </view>
+</view>

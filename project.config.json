@@ -24,16 +24,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-<<<<<<< HEAD
-<<<<<<< HEAD
 		"useIsolateContext": true,
-=======
->>>>>>> 4d0c2d9d9f2d76a8f5b9c6eb2abbe1a57f6c6a10
-		"useCompilerModule": false,
-=======
 		"useCompilerModule": true,
->>>>>>> 867b88abb926515a49e1534f641bfeb80367b6f9
-		"userConfirmedUseCompilerModuleSwitch": false,
 		"compileHotReLoad": false
 	},
 	"compileType": "miniprogram",
@@ -273,6 +265,13 @@
 					"id": -1,
 					"name": "pages/holeDetail/index",
 					"pathName": "pages/holeDetail/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgList/ClassicMsg/index",
+					"pathName": "pages/msg/msgList/ClassicMsg/index",
 					"query": "id=1",
 					"scene": null
 				}

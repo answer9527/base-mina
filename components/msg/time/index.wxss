@@ -1,0 +1,10 @@
+/* components/msg/time/index.wxss */
+.time_view{
+    background: #DDDDDD;
+    color: #FFFFFF;
+    width: 180rpx;
+    text-align: center;
+    border-radius: 30rpx;
+    padding: 10rpx;
+    font-size: 24rpx;
+}

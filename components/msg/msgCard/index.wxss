@@ -1,0 +1,29 @@
+/* components/msg/msgCard/index.wxss */
+.msg_card{
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    padding: 20rpx;
+    border-radius: 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+.title{
+    border-bottom: 1px solid #cccccc;
+}
+.card_in{
+    display: flex;
+    flex-direction: column;
+}
+.comment{
+    display: flex;
+    flex-direction: row;
+    font-size: 28rpx;
+}
+.content{
+    color: #949494;
+}
+.card_bottom{
+    display: flex;
+    flex-direction: row;
+}
