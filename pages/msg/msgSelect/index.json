@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "v-msg-type":"/components/msg/type/index"
+  },
+  "navigationBarTitleText": "消息中心"
 }

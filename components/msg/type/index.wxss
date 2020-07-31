@@ -1,0 +1,62 @@
+/* components/msg/type/index.wxss */
+.type_con{
+    padding: 20rpx;
+    display: flex;
+    flex-direction: row;
+}
+.type_left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.left_in{
+    position: relative;
+    width: 100rpx;
+}
+.msg_icon{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    /* background: #FA7B62; */
+    /* background: #E4B774; */
+    /* background: #3BB29F; */
+    background: #705FF9;
+    padding: 20rpx;
+}
+.msg_count{
+    position: absolute;
+    right: -10rpx;
+    top: -10rpx;
+    background: #F8872A;
+    color: #FFFFFF;
+    border: 2rpx solid #FFFFFF;
+    font-size: 20rpx;
+    padding: 6rpx;
+    border-radius: 50%;
+}
+
+.type_right{
+    flex: 1;
+    padding: 0 0 0 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.right_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.right_top>.type_title{
+    font-weight: bold;
+}
+.right_top>.last_time{
+    color: #ACACAC;
+    font-size: 24rpx;
+}
+.right_bottom{
+    color: #ACACAC;
+    font-size: 24rpx;
+}

@@ -1,2 +1,7 @@
-<!--pages/msg/msgSelect/index.wxml-->
-<text>pages/msg/msgSelect/index.wxml</text>
+<view>
+    <view>
+        <v-msg-type/>
+        <v-msg-type/>
+        <v-msg-type/>
+    </view>
+</view>

@@ -15,6 +15,9 @@ Component({
     },
     isRoot:{
       type:Boolean
+    },
+    avatarUrl:{
+      type:String
     }
   },
 

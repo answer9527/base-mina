@@ -17,7 +17,7 @@ Page({
       {
         "tabName": "我的消息",
         "tabImage": "./images/msg@tag.png",
-        "tagUrl": "/pages/msgList/index"
+        "tagUrl": "/pages/msg/msgSelect/index"
       },
       {
         "tabName": "时光邮局",

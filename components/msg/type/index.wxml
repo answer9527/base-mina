@@ -1,0 +1,24 @@
+<!--components/msg/type/index.wxml-->
+<view class="type_con">
+    <view class="type_left">
+        <!-- <view class="left_in">
+            <image src="/images/classic_msg.png" class="msg_icon"/>
+            <view class="msg_count">13</view>
+        </view> -->
+        <!-- <view class="left_in">
+            <image src="/images/hole_msg.png" class="msg_icon"/>
+            <view class="msg_count">13</view>
+        </view> -->
+        <view class="left_in">
+            <image src="/images/sys_msg.png" class="msg_icon"/>
+            <view class="msg_count">13</view>
+        </view>
+    </view>
+    <view class="type_right">
+        <view class="right_top">
+            <view class="type_title">视听消息</view>
+            <view class="last_time">昨天</view>
+        </view>
+        <view class="right_bottom">你有15条视听相关的消息，请注意查收</view>
+    </view>
+</view>

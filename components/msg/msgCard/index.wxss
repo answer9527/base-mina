@@ -1,12 +1,17 @@
 /* components/msg/msgCard/index.wxss */
 .msg_card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background: #FFFFFF;
     padding: 20rpx;
     border-radius: 20rpx;
     width: 100%;
     box-sizing: border-box;
+}
+.card_left>image{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
 }
 .title{
     border-bottom: 1px solid #cccccc;

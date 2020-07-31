@@ -308,6 +308,14 @@
 					"id": -1,
 					"name": "pages/msg/msgList/ClassicMsg/index",
 					"pathName": "pages/msg/msgList/ClassicMsg/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgSelect/index",
+					"pathName": "pages/msg/msgSelect/index",
+					"query": "",
 					"scene": null
 				}
 			]
