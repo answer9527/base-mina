@@ -1,7 +1,7 @@
 <view>
     <view>
-        <v-msg-type/>
-        <v-msg-type/>
-        <v-msg-type/>
+        <v-msg-type type="0" count="0"/>
+        <v-msg-type type="1" count="5"/>
+        <v-msg-type type="2" count="12"/>
     </view>
 </view>

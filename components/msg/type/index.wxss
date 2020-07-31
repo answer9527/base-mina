@@ -21,9 +21,20 @@
     /* background: #FA7B62; */
     /* background: #E4B774; */
     /* background: #3BB29F; */
-    background: #705FF9;
+    /* background: #705FF9; */
     padding: 20rpx;
 }
+.msg_icon0{
+    background: #705FF9;
+}
+.msg_icon1{
+    background: #FA7B62;
+}
+.msg_icon2{
+    background: #E4B774;
+}
+
+
 .msg_count{
     position: absolute;
     right: -10rpx;

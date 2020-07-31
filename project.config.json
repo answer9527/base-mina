@@ -317,6 +317,12 @@
 					"pathName": "pages/msg/msgSelect/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgSelect/index",
+					"pathName": "pages/msg/msgSelect/index",
+					"scene": null
 				}
 			]
 		}
