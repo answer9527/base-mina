@@ -4,7 +4,7 @@
     <view class="msg_list">
         <view wx:for="{{msg_list}}" class="msg_box">
             <v-time time="{{item.createTime}}" class="msg_time"/>
-            <v-msg-card title="{{item.title}}" userName="{{item.userName}}" content="{{item.content}}" isRoot="{{item.isRoot}}" avatarUrl="{{item.avatarUrl}}" style="width:100%" />
+           <v-msg-card ids="{{item.id}}" title="{{item.title}}" commentId="{{item.commentId}}" commentPid="{{item.commentPid}}" commentUid="{{item.commentUid}}" holeOrClassicId="{{item.holeOrClassicId}}" userName="{{item.userName}}" content="{{item.content}}" isRoot="{{item.isRoot}}" isRead="{{item.isRead}}" type="{{item.type}}" avatarUrl="{{item.avatarUrl}}" style="width:100%" />
         </view>
     </view>
 </view>

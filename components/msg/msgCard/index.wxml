@@ -1,22 +1,37 @@
 <!--components/msg/msgCard/index.wxml-->
 <view class="msg_card">
-    <view class="card_left">
-        <image src="{{avatarUrl}}" />
-    </view>
-    <view class="card_right">
-        <view class="comment">
-            <text >{{userName}}</text> {{isRoot?"点评":"回复"}}:  
+    <view class="card_con">
+        <view class="card_left">
+            <image src="{{avatarUrl}}" />   
         </view>
-        <view class="content">  {{content}}</view>   
-        <view class="card_in">
-            <view class="title">{{title}}</view>
-
-            <view class="card_bottom">
-                <view>查看</view>
-                <view>|</view>
-                <view>回复</view>
+        <view  class="card_right" bind:tap="go_detail">
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                <view class="comment">
+                    <text class="user">{{userName}}</text> {{isRoot?"点评道":"回复道"}}:  
+                </view>
+                <view class="">
+                    <view class="content"> 
+                        <image class="con_left" src="/images/intro_left.png"/>
+                        <view>{{content}}</view>
+                        <image class="con_right" src="/images/intro_right.png"/>
+                    </view>  
+                </view>
+                <view class="card_in">
+                    <view class="title_row">
+                        <view>来自:</view>
+                        <view class="title" catchtap="go_host">《{{title}}》</view>
+                    </view>
+                </view>
             </view>
         </view>
     </view>
-
+    <!-- <view class="reply_box">
+        <view class="show_reply" bind:tap="show_reply">回复</view>
+       
+    </view> -->
+     <view class="reply_row">
+            <input type="text" placeholder="请填写回复的内容" value="{{reply_txt}}" bindinput="changeReplyTxt" />
+            <view class="reply_btn" bind:tap="reply_it">快速回复</view>
+        </view>
+    <image src="/images/isRead.png" class="status" wx:if="{{isRead}}"/>
 </view>

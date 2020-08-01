@@ -15,6 +15,21 @@ class MsgModel{
             method:"POST"
         })
     }
+    static async getMyMsgCountTotal(){
+        return Http.request({
+            url:"/comment/msg/unread/total"
+        })
+    }
+    static async getMyMsgCount(){
+        return Http.request({
+            url:"/comment/msg/unread/count"
+        })
+    }
+    static async setMyMsgRead(data){
+        return Http.request({
+            url:"/comment/msg/setRead?id="+data.id
+        })
+    }
 }
 export{
     MsgModel

@@ -20,7 +20,8 @@
     "pages/contact/index",
     "pages/msg/msgSelect/index",
     "pages/msg/msgList/ClassicMsg/index",
-    "pages/msg/msgList/HoleMsg/index"
+    "pages/msg/msgList/HoleMsg/index",
+    "pages/msg/msgDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

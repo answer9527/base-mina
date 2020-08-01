@@ -1,21 +1,18 @@
-// pages/msg/msgSelect/index.js
-import {MsgModel} from "../../../models/msg"
+// pages/msg/msgDetail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    count_box:{
 
-    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyMsgCount()
+
   },
 
   /**
@@ -65,15 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 获取各种消息的数量
-  getMyMsgCount(){
-    MsgModel.getMyMsgCount().then(res=>{
-      console.log(res)
-      let count_box=res.data
-      this.setData({
-        count_box
-      })
-    })
   }
 })

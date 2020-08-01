@@ -12,6 +12,9 @@ Component({
     },
     tagImage:{
       type: String
+    },
+    count:{
+      type:Number
     }
   },
 
@@ -29,6 +32,6 @@ Component({
 
   },
   attached(){
-    console.log(6666)
+    
   }
 })

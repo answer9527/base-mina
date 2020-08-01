@@ -1,8 +1,9 @@
-.container{
+.tab_container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .tagImage{
   width: 60rpx;
@@ -11,4 +12,14 @@
 }
 .tagName{
   font-size: 22rpx;
+}
+.count{
+  position: absolute;
+  top: -10rpx;
+  right: -6rpx;
+  font-size: 20rpx;
+  background: #F8872A;
+  color: #FFFFFF;
+  border-radius:50% ;
+  padding: 2rpx 6rpx;
 }

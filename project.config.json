@@ -322,6 +322,42 @@
 					"id": -1,
 					"name": "pages/msg/msgSelect/index",
 					"pathName": "pages/msg/msgSelect/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/index",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgSelect/index",
+					"pathName": "pages/msg/msgSelect/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgList/ClassicMsg/index",
+					"pathName": "pages/msg/msgList/ClassicMsg/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgDetail/index",
+					"pathName": "pages/msg/msgDetail/index",
+					"query": "id=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgList/HoleMsg/index",
+					"pathName": "pages/msg/msgList/HoleMsg/index",
+					"query": "id=34",
 					"scene": null
 				}
 			]

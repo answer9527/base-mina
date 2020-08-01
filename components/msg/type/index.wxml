@@ -9,7 +9,7 @@
     <view class="type_right">
         <view class="right_top">
             <view class="type_title">{{type==0?"系统消息":type==1?"视听消息":"树洞消息"}}</view>
-            <view class="last_time">昨天</view>
+            <!-- <view class="last_time">昨天</view> -->
         </view>
         <view class="right_bottom" wx:if="{{count>0}}">你有{{count}}条未读的消息，请注意查收</view>
         <view class="right_bottom" wx:else>暂无未读信息</view>

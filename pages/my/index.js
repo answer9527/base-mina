@@ -2,6 +2,7 @@
 const app  =  getApp();
 import {UserModel} from "../../models/user"
 import {promisic2} from "../../utils/util"
+import {MsgModel} from "../../models/msg"
 Page({
 
   /**
@@ -12,22 +13,27 @@ Page({
       {
         "tabName": "我的喜欢",
         "tabImage": "./images/like@tag.png",
-        "tagUrl": "/pages/likeList/index"
+        "tagUrl": "/pages/likeList/index",
+        "count":0
       },
       {
         "tabName": "我的消息",
         "tabImage": "./images/msg@tag.png",
-        "tagUrl": "/pages/msg/msgSelect/index"
+        "tagUrl": "/pages/msg/msgSelect/index",
+        "count":0
       },
+      
       {
         "tabName": "时光邮局",
         "tabImage": "./images/mail@tag.png",
-        "tagUrl": "/pages/beforeLetter/index"
+        "tagUrl": "/pages/beforeLetter/index",
+        "count":0
       },
       {
         "tabName": "树洞",
         "tabImage": "./images/talk@tag.png",
-        "tagUrl": "/pages/hole/index"
+        "tagUrl": "/pages/hole/index",
+        "count":0
       }
     ],
     colList:[
@@ -67,6 +73,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    this.getMsgTotal()
     if(app.globalData.userInfo){
       this.setData({
         userInfo:app.globalData.userInfo,
@@ -88,7 +96,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**
@@ -149,6 +157,15 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true  
+    })
+  },
+  getMsgTotal(){
+    var changeOne = "tabList["+1+"].count"
+    MsgModel.getMyMsgCountTotal().then(res=>{
+      let count = res.data.unread
+      this.setData({
+        [changeOne ]:count
+      })
     })
   }
 })

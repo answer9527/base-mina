@@ -15,7 +15,7 @@
   </view>
   <view class="tab">
     <block wx:for="{{tabList}}">
-      <v-my-tab tagName="{{item.tabName}}" tagImage="{{item.tabImage}}" tagUrl="{{item.tagUrl}}"/>
+      <v-my-tab tagName="{{item.tabName}}" tagImage="{{item.tabImage}}" tagUrl="{{item.tagUrl}}" count="{{item.count}}"/>
     </block>
   </view>
   <view class="column">
