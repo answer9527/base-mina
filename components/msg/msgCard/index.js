@@ -49,21 +49,35 @@ Component({
    * 组件的初始数据
    */
   data: {
-    reply_txt:""
+    reply_txt:"",
+    dialog_show:false,
+    // 某条消息是否显示，做删除是的假更新  隐藏掉
+    show_card:true,
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    // 查看回复详情
-    go_detail(){
-       
-      wx.navigateTo({
-        url: '/pages/msg/msgDetail/index?id='+this.data.ids,
-        success:()=>{
-          this.setRead()
-        }
+    // 弹出删除
+    delete_it(){
+      this.setData({
+        dialog_show:true
+      })
+    },
+    // 确认删除
+    confirm_del(){
+      MsgModel.deleteMyMsgById({
+        id:this.data.ids
+      }).then(res=>{
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+        this.setData({
+          show_card:false
+        })
       })
     },
     // 回到主体内容
@@ -132,6 +146,7 @@ Component({
       }
       
     },
+    // 回复成功后的操作
     sendSuccess(){
       wx.showToast({
         title: "回复成功！",

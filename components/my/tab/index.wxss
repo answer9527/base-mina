@@ -16,10 +16,14 @@
 .count{
   position: absolute;
   top: -10rpx;
-  right: -6rpx;
+  right: -2rpx;
   font-size: 20rpx;
   background: #F8872A;
   color: #FFFFFF;
   border-radius:50% ;
-  padding: 2rpx 6rpx;
+  /* padding: 2rpx 6rpx; */
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
 }

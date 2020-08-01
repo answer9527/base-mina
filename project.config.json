@@ -359,6 +359,19 @@
 					"pathName": "pages/msg/msgList/HoleMsg/index",
 					"query": "id=34",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/index",
+					"pathName": "pages/my/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sentence/index",
+					"pathName": "pages/sentence/index",
+					"scene": null
 				}
 			]
 		}

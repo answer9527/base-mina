@@ -1,0 +1,10 @@
+<!--pages/sentence/index.wxml-->
+<view>
+    <view class="">
+        <image class="" src="{{sentence_logo}}" class="logo"></image>
+        <view>{{sentence_txt}}</view>
+    </view>
+    <view>
+        <view bind:tap="rand">随机</view>
+    </view>
+</view>

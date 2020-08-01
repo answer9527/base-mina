@@ -1,5 +1,5 @@
 <navigator url="{{tagUrl}}" class="tab_container">
   <image src="{{tagImage}}" class="tagImage"/>
-  <view wx:if="{{count>0}}" class="count">{{count}}</view>
+  <view wx:if="{{count>0}}" class="count">{{count>99?99:count}}</view>
   <text class="tagName">{{tagName}}</text>
 </navigator>

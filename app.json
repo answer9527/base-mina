@@ -21,7 +21,7 @@
     "pages/msg/msgSelect/index",
     "pages/msg/msgList/ClassicMsg/index",
     "pages/msg/msgList/HoleMsg/index",
-    "pages/msg/msgDetail/index"
+    "pages/sentence/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

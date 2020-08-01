@@ -1,7 +1,7 @@
 import {Http} from "../utils/http"
 class VersionModel{
     static async getVersionList(){
-        return Http.request({
+        return await Http.request({
             url:"/version/list"
         })
     }

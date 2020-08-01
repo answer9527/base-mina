@@ -1,10 +1,10 @@
 <!--components/msg/msgCard/index.wxml-->
-<view class="msg_card">
+<view class="msg_card" wx:if="{{show_card}}">
     <view class="card_con">
         <view class="card_left">
             <image src="{{avatarUrl}}" />   
         </view>
-        <view  class="card_right" bind:tap="go_detail">
+        <view  class="card_right" bind:longtap="delete_it">
             <view class="" hover-class="none" hover-stop-propagation="false">
                 <view class="comment">
                     <text class="user">{{userName}}</text> {{isRoot?"点评道":"回复道"}}:  
@@ -35,3 +35,14 @@
         </view>
     <image src="/images/isRead.png" class="status" wx:if="{{isRead}}"/>
 </view>
+<l-dialog 
+  show="{{dialog_show}}"
+  type="confirm"  
+  title="警告"
+  content="您确定删除消息吗？"
+  confirm-text="yes"
+  confirm-color="#f60"
+  cancel-text="no~"
+  cancel-color="#999"
+  bind:linconfirm="confirm_del" 
+  />

@@ -1,19 +1,23 @@
-// pages/msg/msgSelect/index.js
-import {MsgModel} from "../../../models/msg"
+// pages/sentence/index.js
+import {SentenceModel} from "../../models/sentence"
+var mMgr = wx.getBackgroundAudioManager();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    count_box:{}
+    sentence_txt:"",
+    sentence_image:"",
+    sentence_logo:"/images/light.jpg",
+    bgmSrc:"http://music.163.com/song/media/outer/url?id=317245.mp3",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyMsgCount()
+    this.get_rand()
   },
 
   /**
@@ -27,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad()
+
   },
 
   /**
@@ -64,14 +68,31 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 获取各种消息的数量
-  getMyMsgCount(){
-    MsgModel.getMyMsgCount().then(res=>{
-      console.log(res)
-      let count_box=res.data
-      this.setData({
-        count_box
-      })
+  get_rand(){
+    SentenceModel.getRand().then(res=>{
+      let sentence_image = res.data.image||""
+      let sentence_txt = res.data.txt
+      setTimeout(() => {
+        this.setData({
+          sentence_image,sentence_txt,
+          sentence_logo:"/images/light.jpg"
+        })       
+      }, 3000);
     })
-  }
+  },
+  rand(){
+    mMgr.title="111"
+    mMgr.src=this.data.bgmSrc
+    let time = new Date()
+    if(time){
+
+    }else{
+
+    }
+    this.setData({
+      sentence_logo:"/images/light.gif"
+    });
+    this.get_rand()
+  },
+
 })

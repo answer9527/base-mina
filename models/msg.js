@@ -2,21 +2,21 @@
 import {Http} from "../utils/http"
 class MsgModel{
     static async getClassicCommentMsg(data){
-        return Http.request({
+        return await Http.request({
             url:"/comment/msg/classic/mylist",
             data,
             method:"POST"
         })
     }
     static async getHoleCommentMsg(data){
-        return Http.request({
+        return await Http.request({
             url:"/comment/msg/hole/mylist",
             data,
             method:"POST"
         })
     }
     static async getMyMsgCountTotal(){
-        return Http.request({
+        return await Http.request({
             url:"/comment/msg/unread/total"
         })
     }
@@ -26,8 +26,13 @@ class MsgModel{
         })
     }
     static async setMyMsgRead(data){
-        return Http.request({
+        return await Http.request({
             url:"/comment/msg/setRead?id="+data.id
+        })
+    }
+    static async deleteMyMsgById(data){
+        return await Http.request({
+            url:"/comment/msg/del?id="+data.id
         })
     }
 }

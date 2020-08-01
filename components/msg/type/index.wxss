@@ -43,7 +43,11 @@
     color: #FFFFFF;
     border: 2rpx solid #FFFFFF;
     font-size: 20rpx;
-    padding: 6rpx;
+    /* padding: 6rpx; */
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
     border-radius: 50%;
 }
 

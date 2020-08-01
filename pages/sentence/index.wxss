@@ -1,0 +1,6 @@
+/* pages/sentence/index.wxss */
+.logo{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
