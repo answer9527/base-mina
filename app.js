@@ -6,10 +6,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-
- 
-    
     // 判断是否有token没有就发起请求
     if(this.globalData.token==null){
       wx.login({
