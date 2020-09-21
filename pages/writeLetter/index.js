@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scope:false,
     date: '2018-10-01',
     time: '12:00',
     // 年月日的序号
@@ -27,7 +28,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(new Date())
+    let scope = wx.getStorageSync('scope') || false
+    this.setData({
+      scope:scope
+    })
+
     var obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     var time = dateTimePicker.getHourMinu();
     obj.dateTime[2] = parseInt((obj.defaultDay).substring(0, 2)) - 1; //day 字符串 'xx日' 转 'int'

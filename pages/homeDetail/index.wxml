@@ -3,9 +3,9 @@
     <image class="" src="{{classic.image}}" class="top_img"></image>
     <view class="detail_box" hover-class="none" hover-stop-propagation="false">
         <v-classic-detail title="{{classic.title}}" intro="{{classic.intro}}" author="{{classic.author}}" content="{{classic.content}}" src="{{classic.url}}"/>
-        <v-comment commentList="{{commentList}}" bind:showReplay="showReplay" bind:delComment="del_comment" uidl="{{uid}}"/>
+        <v-comment commentList="{{commentList}}" bind:showReplay="showReplay" bind:delComment="del_comment" uidl="{{uid}}" wx:if="{{scope}}"/>
     </view>
-    <view class="bottom-bar">
+    <view class="bottom-bar" wx:if="{{scope}}">
         <v-input-box inputTxt="请输入您的点评！" bind:tap="showDialog"/>
         <v-like bind:like="setLike" count="{{classic.like_count}}" like="{{classic.like_status}}"/>
     </view>

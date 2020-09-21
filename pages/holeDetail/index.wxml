@@ -1,5 +1,5 @@
 <wxs src="../../utils/filter.wxs" module="filter"></wxs>
-<view class="page_container">
+<view class="page_container" wx:if="{{scope}}">
     <view class="page_in">
         <view class="hole_box">
             <view class="user">

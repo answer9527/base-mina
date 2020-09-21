@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scope:false,
     uid:null,
     hid:0,
     holeInfo:{},
@@ -36,6 +37,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let scope = wx.getStorageSync('scope') || false
+    this.setData({
+      scope:scope
+    })
     let id = options.id
     this.setData({
       hid:id,
@@ -120,7 +125,7 @@ Page({
           commentList:commentList,
           show:false
         })
-      },100);
+      },1500);
     })
   },
   async getHoleCommentList(paging){

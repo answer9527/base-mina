@@ -1,6 +1,6 @@
 <!--pages/suggest/index.wxml-->
 <wxs src="../../utils/filter.wxs" module="filter"></wxs>
-<view class="page_container">
+<view class="page_container" wx:if="{{scope}}">
    <view class="search_out">
         <l-search-bar placeholder="搜索"
                 bg-color="#f6f6f6"

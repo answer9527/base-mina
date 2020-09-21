@@ -9,8 +9,9 @@ Page({
   data: {
     sentence_txt:"",
     sentence_image:"",
-    sentence_logo:"/images/light.jpg",
-    bgmSrc:"http://music.163.com/song/media/outer/url?id=317245.mp3",
+    sentence_logo:"/images/light.png",
+    bgmSrc:"https://mina.huzhihua.cn/uploadFile/2020/08/02/08c0f84d-dd7f-4d96-b5e6-b5ad1ebc3733.mp3",
+    disabled:false
   },
 
   /**
@@ -70,27 +71,23 @@ Page({
   },
   get_rand(){
     SentenceModel.getRand().then(res=>{
-      let sentence_image = res.data.image||""
+    
       let sentence_txt = res.data.txt
       setTimeout(() => {
         this.setData({
-          sentence_image,sentence_txt,
-          sentence_logo:"/images/light.jpg"
+          sentence_txt,
+          sentence_logo:"/images/light.png",
+          disabled:false
         })       
-      }, 3000);
+      }, 2500);
     })
   },
   rand(){
-    mMgr.title="111"
+    mMgr.title="bgm"
     mMgr.src=this.data.bgmSrc
-    let time = new Date()
-    if(time){
-
-    }else{
-
-    }
     this.setData({
-      sentence_logo:"/images/light.gif"
+      sentence_logo:"/images/light.gif",
+      disabled:true
     });
     this.get_rand()
   },
