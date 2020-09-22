@@ -1,4 +1,4 @@
-<view class="write_page">
+<view class="write_page" wx:if="{{scope}}">
     <view class="block_one">
         <view class="block_title_row">
             <view class="block_title">填写内容</view>

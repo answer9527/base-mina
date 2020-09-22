@@ -43,6 +43,12 @@ Page({
       })
     }
   },
+  onShareAppMessage(){
+
+  },
+  onShareTimeline(){
+
+  },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

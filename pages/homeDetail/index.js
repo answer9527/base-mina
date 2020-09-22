@@ -24,7 +24,8 @@ Page({
     page:1,
     size:10,
     hasNextPage:false,
-    uid:null
+    uid:null,
+    scope:false
 
   },
 
@@ -32,6 +33,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
+
+    // 关于scope的问题
+    let scope = wx.getStorageSync('scope') || false
+
     let uid = app.globalData.uid
     let id = options.id
     let classicDetail = await this.getClassicDetail(id)
@@ -46,7 +51,8 @@ Page({
       commentList:commentData.list,
       hasNextPage:commentData.hasNextPage,
       cid:id,
-      uid:uid
+      uid:uid,
+      scope
     })
   },
 

@@ -1,11 +1,20 @@
 //app.js
 import {UserModel} from "./models/user"
+import {ScopeModel} from "./models/scope"
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+
+    ScopeModel.getScope().then(res=>{
+      let scope = res.data.scope
+      wx.setStorageSync("scope",scope)
+    })
+    
+
     // 判断是否有token没有就发起请求
     if(this.globalData.token==null){
       wx.login({

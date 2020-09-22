@@ -1,4 +1,4 @@
-<view class="page_container">
+<view class="page_container" wx:if="{{scope}}">
     <view class="list-wrapper" hover-class="none" hover-stop-propagation="false">
         <view class="card_list" x-scroll='false' style='transform: translateX( {{distance}}rpx)' bindtouchstart="onTouchStart" bindtouchend="onTouchEnd">
             <navigator url="/pages/holeDetail/index?id={{item.id}}" class="card-item {{currentIndex==index?'active':currentIndex==index-1?'next':currentIndex==index+1?'prev':''}}" wx:for="{{holeList}}">
@@ -18,6 +18,6 @@
         <navigator url="/pages/addHole/index">创建树洞</navigator>
     </view>
     <view class="bottom_bar">
-        <v-hole-bar/>
+        <v-hole-bar myHole="{{my_hole}}"/>
     </view>
 </view>

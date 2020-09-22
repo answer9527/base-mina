@@ -9,58 +9,59 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scope:false,
     tabList:[
       {
-        "tabName": "我的喜欢",
-        "tabImage": "./images/like@tag.png",
-        "tagUrl": "/pages/likeList/index",
-        "count":0
+        "tabName": "网抑一下",
+        "tabImage": "./images/sentence@tag.png",
+        "tagUrl": "/pages/sentence/index",
+        "count":0,
       },
       {
         "tabName": "我的消息",
         "tabImage": "./images/msg@tag.png",
         "tagUrl": "/pages/msg/msgSelect/index",
-        "count":0
+        "count":0,
       },
       
       {
         "tabName": "时光邮局",
         "tabImage": "./images/mail@tag.png",
         "tagUrl": "/pages/beforeLetter/index",
-        "count":0
+        "count":0,
       },
       {
         "tabName": "树洞",
         "tabImage": "./images/talk@tag.png",
         "tagUrl": "/pages/hole/index",
-        "count":0
+        "count":0,
       }
     ],
     colList:[
-      // {
-      //   "colName":"申请加入",
-      //   "colImage":"./images/setting@col.png",
-      //   "colUrl":""
-      // },
+      {
+        "colName":"我的喜欢",
+        "colImage":"./images/like@col.png",
+        "colUrl":"/pages/likeList/index",
+      },
       {
         "colName": "意见反馈",
         "colImage": "./images/idea@col.png",
-        "colUrl": "/pages/suggest/index"
+        "colUrl": "/pages/suggest/index",
       },
       {
         "colName": "关于我们",
         "colImage": "./images/about@col.png",
-        "colUrl": "/pages/aboutUs/index"
+        "colUrl": "/pages/aboutUs/index",
       },
       {
         "colName": "版本说明",
         "colImage": "./images/version@col.png",
-        "colUrl": "/pages/version/index"
+        "colUrl": "/pages/version/index",
       },
       {
         "colName": "联系我们",
         "colImage": "./images/contact@col.png",
-        "colUrl": "/pages/contact/index"
+        "colUrl": "/pages/contact/index",
       }
     ],
     userInfo: {},
@@ -73,10 +74,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let scope = wx.getStorageSync('scope') || false
+    this.setData({
+      scope:scope
+    })
     this.getMsgTotal()
     if(app.globalData.userInfo){
       this.setData({
+        
         userInfo:app.globalData.userInfo,
         hasUserInfo:true
       })

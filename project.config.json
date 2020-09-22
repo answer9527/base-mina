@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -26,7 +26,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -371,6 +371,55 @@
 					"id": -1,
 					"name": "pages/sentence/index",
 					"pathName": "pages/sentence/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sentence/index",
+					"pathName": "pages/sentence/index",
+					"query": "id=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addHole/index",
+					"pathName": "pages/addHole/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/beforeLetter/index",
+					"pathName": "pages/beforeLetter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/holeDetail/index",
+					"pathName": "pages/holeDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgList/ClassicMsg/index",
+					"pathName": "pages/msg/msgList/ClassicMsg/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/msg/msgList/ClassicMsg/index",
+					"pathName": "pages/msg/msgList/ClassicMsg/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/index",
+					"pathName": "pages/login/index",
 					"scene": null
 				}
 			]

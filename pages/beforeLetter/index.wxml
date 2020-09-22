@@ -1,6 +1,6 @@
 <!--pages/beforeMessage/index.wxml-->
 <wxs src="../../utils/filter.wxs" module="filter"></wxs>
-<view class="page_box">
+<view class="page_box" wx:if="{{scope}}">
     <image class="wave_icon" src="/images/wave_icon.png"  mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bind:longtap="goMessage"  animation="{{ani}}"></image>
     <image class="page_bg" src="/images/message_bg.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" animation="{{ani}}"></image>
     <view class="pageContent" wx:if="{{showContent}}" hover-class="none" hover-stop-propagation="false">

@@ -74,8 +74,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage(){
+
+  },
+  onShareTimeline(){
+
   },
   // 切换选项卡
   changeTabs(e){

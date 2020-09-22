@@ -1,5 +1,5 @@
 <!--pages/addHole/index.wxml-->
-<view class="page_container">
+<view class="page_container" wx:if="{{scope}}">
     <view class="page_top">
         New-build
     </view>
@@ -35,7 +35,7 @@
             </l-button>
         </view>
         <view class="add_row">
-            <l-button l-class="button" bg-color="#2B4ADC"  width="600" loading="{{loading}}" disabled="{{disabled}}" bind:lintap="createHole">立即创建</l-button>
+            <l-button l-class="button"   width="600" loading="{{loading}}" disabled="{{disabled}}" bind:lintap="createHole">立即创建</l-button>
         </view>
     </view>
     <l-action-sheet l-title-class="sheet_title" bind:linitemtap="comfirm_sheet"/>

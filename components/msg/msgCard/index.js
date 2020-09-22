@@ -2,6 +2,8 @@
 import {MsgModel} from "../../../models/msg"
 import {HoleModel} from "../../../models/hole"
 import {CommentModel} from "../../../models/comment"
+import {config} from "../../../config/config"
+var mMgr = wx.getBackgroundAudioManager();
 Component({
   /**
    * 组件的属性列表
@@ -53,6 +55,7 @@ Component({
     dialog_show:false,
     // 某条消息是否显示，做删除是的假更新  隐藏掉
     show_card:true,
+    bgmSrc:config.domain_url+"/uploadFile/2020/08/02/104ef08a-7cb5-428f-bd0b-16b32f473814.mp3"
   },
 
   /**
@@ -142,12 +145,15 @@ Component({
         params.hid = this.data.holeOrClassicId
         HoleModel.insert_comment(params).then(res=>{
           this.sendSuccess()
+
         })
       }
       
     },
     // 回复成功后的操作
     sendSuccess(){
+      mMgr.title="bgm"
+      mMgr.src=this.data.bgmSrc
       wx.showToast({
         title: "回复成功！",
         icon: 'none',
