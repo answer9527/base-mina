@@ -21,7 +21,11 @@ Page({
     post_title:"",
     post_content:"",
     post_email:"",
-    plan_time:null
+    plan_time:null,
+    post_type:{
+      name: '普通信件',
+      value:1
+    }
   },
 
   /**
@@ -129,6 +133,29 @@ Page({
       post_email:e.detail.value
     })
   },
+  open_type(){
+    wx.lin.showActionSheet({
+      title:"请选择树洞的性质",
+      itemList:[{
+        name: '普通信件',
+        value:1
+      },
+      {
+        name: '手抄信件',
+        value:2
+      },
+      {
+        name: "语音信件",
+        value:3
+      }
+    ]
+    })
+  },
+  comfirm_sheet(e){
+    this.setData({
+      post_type:e.detail.item
+    })
+  },
   // 提交信件
   send_letter(){
 
@@ -137,7 +164,8 @@ Page({
       title:data.post_title,
       content:data.post_content,
       email:data.post_email,
-      planTime:data.plan_time
+      planTime:data.plan_time,
+      type:data.post_type.value,
     }    
     // 如果有空值
     if(Object.values(param).indexOf("")>=0){
@@ -160,18 +188,15 @@ Page({
    
 
     LetterModel.insertLetter(param).then(res=>{
-      wx.navigateTo({
-        url: '/pages/beforeLetter/index',
-        success: (result)=>{
-          wx.showToast({
-            title: "提交成功",
-            icon: 'none',
-            duration: 2000
-          })
-        },
-        fail: ()=>{},
-        complete: ()=>{}
-      });
+      this.setData({
+        post_title:"",
+        post_content:""
+      })
+      wx.showToast({
+        title: res.message,
+        icon: 'none',
+        duration: 2000
+      })
     })
-  }
+  },
 })

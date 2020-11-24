@@ -11,7 +11,7 @@ Page({
     sentence_txt:"",
     sentence_image:"",
     sentence_logo:"/images/light.png",
-    bgmSrc:config.domain_url+"/uploadFile/2020/08/02/08c0f84d-dd7f-4d96-b5e6-b5ad1ebc3733.mp3",
+    bgmSrc:config.domain_url+"/uploadFile/assets/08c0f84d-dd7f-4d96-b5e6-b5ad1ebc3733.mp3",
     disabled:false
   },
 

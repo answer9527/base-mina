@@ -1,0 +1,29 @@
+<wxs src="../../../utils/filter.wxs" module="filter"></wxs>
+<view class="secret_content_card"  hover-class="none" hover-stop-propagation="false" wx:if="{{not_del}}">
+    <view class="letter_title" hover-class="none" hover-stop-propagation="false">
+        {{letter.title}}
+        
+    </view>
+    <view class="del_btn" bind:tap="del_letter">×</view>
+    <view class="letter_content">
+        {{letter.content}}
+    </view>
+    <view class="bottom_row" hover-class="none" hover-stop-propagation="false">
+    <view class="create_time">创建时间:{{filter.formatTime(letter.createTime,"-",2)}}</view>
+    <view class="remaining">剩余寄达:<text>{{filter.formatOver(letter.planTime)}}</text></view>
+    </view>
+    <navigator url="/pages/letterDetail/index?id={{letter.id}}"  class="detail_btn">
+        查看详情
+    </navigator>
+</view>
+<l-dialog 
+    show="{{dialog_show}}"
+    type="confirm"  
+    title="警告"
+    content="确定删除该信件？"
+    confirm-text="yes"
+    confirm-color="#f60"
+    cancel-text="no~"
+    cancel-color="#999"
+    bind:linconfirm="confirm_del" 
+/>

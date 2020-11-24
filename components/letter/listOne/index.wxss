@@ -1,0 +1,68 @@
+.secret_content_card{
+    width: 100%;
+    background: #ffffff;
+    /* height: 460rpx; */
+    position: relative;
+    top: -160rpx;
+    margin-top:60rpx ;
+    border-radius: 10rpx;
+    border: 2rpx solid #F5F5F5;
+    padding:30rpx 40rpx 60rpx 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.secret_content_card>.del_btn{
+    position: absolute;
+    right: 20rpx;
+    top: 10rpx;
+}
+.secret_content_card>.letter_title{
+    font-weight: bold;
+    font-size: 32rpx;
+    text-align: center;
+    padding: 10rpx 0;
+}
+.secret_content_card>.letter_content{
+    font-size: 28rpx;
+    /* text-indent: 56rpx; */
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:8;
+    overflow: hidden;
+    /* overflow: hidden; */
+
+}
+.bottom_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20rpx 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.bottom_row>.create_time{
+    font-size: 24rpx;
+}
+.bottom_row>.remaining{
+    font-size: 24rpx;
+}
+.detail_btn{
+    position: absolute;
+    background: #7BC623;
+    bottom: -32rpx;
+    font-size: 32rpx;
+    padding: 10rpx 60rpx;
+    color: #FFFFFF;
+    border-radius: 30rpx;
+
+}
+.go_write{
+background: #B8C7FF;
+color: #ffffff;
+padding: 10rpx 100rpx;
+border-radius: 20rpx;
+margin-top: 70rpx;
+
+}

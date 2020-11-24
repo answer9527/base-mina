@@ -55,7 +55,7 @@ Component({
     dialog_show:false,
     // 某条消息是否显示，做删除是的假更新  隐藏掉
     show_card:true,
-    bgmSrc:config.domain_url+"/uploadFile/2020/08/02/104ef08a-7cb5-428f-bd0b-16b32f473814.mp3"
+    bgmSrc:config.domain_url+"/uploadFile/assets/104ef08a-7cb5-428f-bd0b-16b32f473814.mp3"
   },
 
   /**

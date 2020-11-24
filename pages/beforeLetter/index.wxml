@@ -1,31 +1,19 @@
 <!--pages/beforeMessage/index.wxml-->
-<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+
 <view class="page_box" wx:if="{{scope}}">
     <image class="wave_icon" src="/images/wave_icon.png"  mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bind:longtap="goMessage"  animation="{{ani}}"></image>
     <image class="page_bg" src="/images/message_bg.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" animation="{{ani}}"></image>
+    <view class="wave_tip" hover-class="none" hover-stop-propagation="false" animation="{{ani}}">长按指纹解锁。</view>
     <view class="pageContent" wx:if="{{showContent}}" hover-class="none" hover-stop-propagation="false">
         <view class="secret_top_bg" hover-class="none" hover-stop-propagation="false" bind:tap="test">
-           <image class="secret_icon" wx:if="{{letter!=null}}" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
-           <image class="notfound_icon"  wx:if="{{letter==null}}" src="/images/notfound.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+           <image class="secret_icon" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" bind:tap="go_add" lazy-load="false" binderror="" bindload=""></image>
+           <view class="go_add" hover-class="none" hover-stop-propagation="false">
+               点一点瓶体，立刻创建给你未来的信！
+           </view>
+           <!-- <image class="notfound_icon"  wx:if="{{letter==null}}" src="/images/notfound.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image> -->
          </view>
-         <view class="secret_content_card" wx:if="{{letter!=null}}" hover-class="none" hover-stop-propagation="false">
-             <view class="letter_title" hover-class="none" hover-stop-propagation="false">
-                 {{letter.title}}
-                 
-             </view>
-             <view class="letter_content">
-                 {{letter.content}}
-             </view>
-             <view class="bottom_row" hover-class="none" hover-stop-propagation="false">
-                <view class="create_time">创建时间:{{filter.formatTime(letter.createTime,"-",2)}}</view>
-                <view class="remaining">剩余寄达:<text>{{filter.formatOver(letter.planTime)}}</text></view>
-             </view>
-             <navigator url="/pages/letterDetail/index"  class="detail_btn">
-                 查看详情
-             </navigator>
-         </view>
-         <navigator url="/pages/writeLetter/index" class="go_write" wx:if="{{letter==null}}" >
-             写一封
-         </navigator>
+         <view class="letter_list" hover-class="none" hover-stop-propagation="false">
+            <v-letter-one  wx:for="{{list}}" letter="{{item}}"  style="width:90%"/>
+         </view>   
     </view>
 </view>

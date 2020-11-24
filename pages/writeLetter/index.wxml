@@ -24,7 +24,7 @@
         </view>
         <view class="block_content">
             <view class="content_intro" selectable="false" space="false" decode="false">
-                请留下您的接受信件的电子邮箱以及接受信件的日期。届时系统将会自动投递信件至您的邮箱。
+                请务必确认邮箱填写正确，届时系统将会自动投递信件至您的邮箱。(温馨提示:手抄信件在邮寄信件时将会由管理员手抄一份信件发送至您的邮箱，语音信件同理。不想让管理员看到信件内容请务必选择普通信件。)
             </view>
             <view style="padding:20rpx 0">
                 <view class="form_row">
@@ -43,6 +43,15 @@
                         </picker>
                     </view>
                 </view>
+                <view class="form_row">
+                    <image class="" src="/images/type_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <view class="form_title">信件类型</view>
+                    <view class="date">
+                        <view class="" bind:tap="open_type">
+                            {{post_type.name}}
+                        </view>
+                    </view>
+                </view>
             </view>
         </view>
     </view>
@@ -52,3 +61,4 @@
 
 </view>
 <l-toast/>
+<l-action-sheet l-title-class="sheet_title" bind:linitemtap="comfirm_sheet"/>

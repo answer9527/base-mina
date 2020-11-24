@@ -29,25 +29,40 @@ var formatTime=function(time_str,str,type=1){
 var add0=function(m){
     return m<10?'0'+m:m 
 }
+var formatLetterType = function(type){
+    var typeName;
+    switch (type) {
+        case 2:
+            typeName = "手抄信件"
+            break;
+        case 3:
+            typeName = "语音信件"
+            break;
+        default:
+            typeName = "普通信件"
+            break;
+    }
+    return typeName
+}
 
 var formatOver = function(end){
     var t1 = getDate()
     var t2 = getDate(end)
     var time_num = t2.getTime()-t1.getTime()
-    var year =Math.floor(time_num/(24*3600*1000*365))
-    var days = Math.floor((time_num-year*(24*3600*1000*365))/(24*3600*1000))
-    var str;
-    if(year>0){
-        str= year+"年零"+days+"天"
+   
+    if(time_num<0){
+        return "信件已过期"
     }else{
-        str= days+"天"
+        var year =Math.floor(time_num/(24*3600*1000*365))
+        var days = Math.floor((time_num-year*(24*3600*1000*365))/(24*3600*1000))
+        return year>0?(year+"年零"+days+"天"):(days+"天")
     }
-    return str
 }
 
 
 
 module.exports={
     formatTime:formatTime,
-    formatOver:formatOver
+    formatOver:formatOver,
+    formatLetterType:formatLetterType
 }

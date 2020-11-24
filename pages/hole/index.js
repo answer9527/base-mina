@@ -16,7 +16,7 @@ Page({
     distance:0,
     // 当前index
     currentIndex:0,
-    bgmSrc:config.domain_url+"/uploadFile/2020/08/02/b3294b0b-3e99-4afa-b3ef-01d166e24c01.mp3",
+    bgmSrc:config.domain_url+"/uploadFile/assets/b3294b0b-3e99-4afa-b3ef-01d166e24c01.mp3",
     my_hole:[],
     createScope:false
     

@@ -29,7 +29,7 @@
     padding: 20rpx 0;
 }
 .content_intro{
-    font-size: 28rpx;
+    font-size: 24rpx;
 }
 .form_row{
     display: flex;

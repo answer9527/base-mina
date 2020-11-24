@@ -9,6 +9,12 @@
         <view class="create_time" hover-class="none" hover-stop-propagation="false">
             {{filter.formatTime(letter.createTime,"-",1)}}
         </view>
+        <view class="type_block">
+            <view class="type_tag">
+                 {{filter.formatLetterType(letter.type)}}
+            </view>
+           
+        </view>
     </view>
     <view class="sub_box" hover-class="none" hover-stop-propagation="false">
         <view class="sub_box_in" hover-class="none" hover-stop-propagation="false">

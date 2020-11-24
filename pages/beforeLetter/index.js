@@ -8,7 +8,12 @@ Page({
   data: {
     scope:false,
     showContent:false,
-    letter:null
+    letter:null,
+    page:1,
+    size:10,
+    list:[],
+    hasNextPage:false,
+    
   },
 
   /**
@@ -60,7 +65,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.hasNextPage){
+      let page = this.data.page
+      this.setData({
+        page:page+1
+      })
+      this.getMyLetter()
+    }
   },
 
   /**
@@ -84,10 +95,22 @@ Page({
   },
   // 获取我的书信详情
   async getMyLetter(){
-    let result = await LetterModel.getMyLetter({});
+    let params = {
+      "page":this.data.page,
+      "size":this.data.size
+    }
+    let result = await LetterModel.getMyLetterList(params);
+    let temp = this.data.list
+    temp = temp.concat(result.data.list)
     this.setData({
-      letter:result.data
+      list:temp,
+      hasNextPage:result.data.hasNextPage
     })
+  },
+  go_add(){
+    wx.navigateTo({
+      url: '/pages/writeLetter/index',
+    });
   }
 
 

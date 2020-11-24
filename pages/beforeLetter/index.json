@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "v-letter-one":"/components/letter/listOne/index"
+  },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#ECF7E7",
   "navigationBarTitleText": "给自己的信",

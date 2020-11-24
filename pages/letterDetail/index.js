@@ -8,14 +8,18 @@ Page({
    */
   data: {
     userInfo:null,
-    letter:null
+    letter:null,
+    letter_id:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    let letter_id = options.id
     this.setData({
+      letter_id:letter_id,
       userInfo:app.globalData.userInfo
     })
     this.getMyLetter()
@@ -71,7 +75,7 @@ Page({
   },
     // 获取我的书信详情
     async getMyLetter(){
-      let result = await LetterModel.getMyLetter({});
+      let result = await LetterModel.getMyLetterDetail({id:this.data.letter_id});
       this.setData({
         letter:result.data
       })
