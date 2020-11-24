@@ -2,7 +2,7 @@
 <view class="top_box" hover-class="none" hover-stop-propagation="false">
     <image src="/images/future.png" class="top_img" />
 </view>
-<view class="detail_box" hover-class="none" hover-stop-propagation="false">
+<view class="detail_box" hover-class="none" hover-stop-propagation="false" wx:if="{{scope}}">
     <view class="title">{{letter.title}}</view>
     <view class="userInfo_row" hover-class="none" hover-stop-propagation="false">
         <view class="user_name">{{userInfo.nickName}}</view>
@@ -33,3 +33,5 @@
     </view>
 
 </view>
+
+<view wx:else>及时当勉励岁月不待人。</view>

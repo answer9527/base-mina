@@ -23,11 +23,21 @@
 }
 .login_row{
     display: flex;
-    padding: 40rpx 0;
+    flex-direction: row;
+    padding:0 100rpx;
+    /* padding: 40rpx 0; */
 }
 .login_row>button{
-   padding: 0 180rpx;
-   background: #EF6423;
+   /* padding: 0 180rpx; */
+   background: #07C160;
+  
    color: #FFFFFF;
-   border-radius: 60rpx;
+   /* border-radius: 60rpx; */
+   font-size: 14px;
 }
+.login_row>button:nth-child(2){
+    /* padding: 0 180rpx; */
+    background: #F2F2F2;
+    color: #000000;
+
+ }

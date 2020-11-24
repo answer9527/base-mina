@@ -75,5 +75,13 @@ Page({
 
 
   },
+  goFirstPage(){
+    wx.switchTab({
+      url: '/pages/classic/index',
+      success: (res) => {},
+      fail: (res) => {},
+      complete: (res) => {},
+    })
+  }
 
 })

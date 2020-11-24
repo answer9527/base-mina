@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scope:false,
     userInfo:null,
     letter:null,
     letter_id:null
@@ -16,13 +17,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    let letter_id = options.id
+    let scope = wx.getStorageSync('scope') || false
     this.setData({
-      letter_id:letter_id,
-      userInfo:app.globalData.userInfo
+      scope:scope
     })
-    this.getMyLetter()
+    if(this.data.scope){
+      let letter_id = options.id
+      this.setData({
+        letter_id:letter_id,
+        userInfo:app.globalData.userInfo
+      })
+      this.getMyLetter()
+    }
+
   },
 
   /**

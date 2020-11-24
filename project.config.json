@@ -426,6 +426,24 @@
         {
           "name": "pages/writeLetter/index",
           "pathName": "pages/writeLetter/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addHole/index",
+          "pathName": "pages/addHole/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/letterDetail/index",
+          "pathName": "pages/letterDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/hole/index",
+          "pathName": "pages/hole/index",
           "scene": null
         }
       ]

@@ -9,7 +9,9 @@
     </view>
     <view class="login_row">
         <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+        <button bind:tap="goFirstPage">暂不登录 </button>
     </view>
+
 </view>
 
 <l-toast></l-toast>

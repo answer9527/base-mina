@@ -40,3 +40,4 @@
     </view>
     <l-action-sheet l-title-class="sheet_title" bind:linitemtap="comfirm_sheet"/>
 </view>
+<view class="" wx:else>树洞、给人内心的温暖</view>

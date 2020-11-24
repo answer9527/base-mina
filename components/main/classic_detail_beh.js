@@ -31,7 +31,7 @@ let classic_detail_beh =Behavior({
 
     },
     attached(){
-        console.log("测试")
+        // console.log("测试")
     },
     methods:{
 
