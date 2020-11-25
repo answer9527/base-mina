@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    scope:false,
     classicList:[],
     // 分页传参
     activeKey:100,
@@ -19,7 +20,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    let scope = wx.getStorageSync('scope') || false
+    this.setData({
+      scope:scope
+    })
+    
     this.getClassicListByType()
   },
 
@@ -62,13 +67,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // if(this.data.hasNextPage){
-    //   let page = this.data.page
-    //   this.setData({
-    //     page:page+1
-    //   })
-    //   this.getClassicListByType()
-    // }
+    if(this.data.hasNextPage){
+      let page = this.data.page
+      this.setData({
+        page:page+1
+      })
+      this.getClassicListByType()
+    }
   },
 
   /**
