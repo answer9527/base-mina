@@ -2,8 +2,8 @@
 <view class="container">
   <view class="userInfo">
     <image src="{{userInfo.avatarUrl||default_avatar}}" class="avatar"/>
-    <text class="nickName">{{userInfo.nickName||'未登陆'}}</text>
-    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login">授权登录</button>
+    <text class="nickName">{{userInfo.userName||'未登陆'}}</text>
+    <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="login">更新授权</button>
   </view>
   
   <!-- <view class="score">

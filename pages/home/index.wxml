@@ -69,7 +69,6 @@
   <view style="height:1rpx"></view>
 </view>
 <view wx:else>
-  <image class="" src="/images/secret_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" style="width: 300rpx;height: 400rpx;margin:0 auto"></image>
   <view class="">
     人生要善于感悟，生活要善于发现
   </view>

@@ -16,8 +16,8 @@ Page({
    * 生命周期函数--监听页面加载1
    */
   onLoad: async function (options) {
-  //获取最新的一条 
-    this.getLatest()  
+
+   
   },
 
   /**
@@ -32,6 +32,8 @@ Page({
    */
   onShow: function () {
     this.onLoad()
+      //获取最新的一条 
+    this.getLatest()  
   },
 
   /**

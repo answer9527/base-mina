@@ -5,7 +5,7 @@
 <view class="detail_box" hover-class="none" hover-stop-propagation="false" wx:if="{{scope}}">
     <view class="title">{{letter.title}}</view>
     <view class="userInfo_row" hover-class="none" hover-stop-propagation="false">
-        <view class="user_name">{{userInfo.nickName}}</view>
+        <view class="user_name">{{userInfo.userName}}</view>
         <view class="create_time" hover-class="none" hover-stop-propagation="false">
             {{filter.formatTime(letter.createTime,"-",1)}}
         </view>
