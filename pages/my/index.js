@@ -75,14 +75,15 @@ Page({
    */
   onLoad: function (options) {
     let scope = wx.getStorageSync('scope') || false
+    let userInfo =  wx.getStorageSync("userInfo")
     this.setData({
       scope:scope
     })
     this.getMsgTotal()
-    if(app.globalData.userInfo){
+    if(userInfo){
       this.setData({
         
-        userInfo:app.globalData.userInfo,
+        userInfo:userInfo,
         hasUserInfo:true
       })
     }
@@ -139,11 +140,15 @@ Page({
 
   },
   async getUserInfo(e){
-    let userInfo = e.detail.userInfo
+    let userInfo = {
+      "userName":e.detail.userInfo.nickName,
+      "gender":e.detail.userInfo.gender,
+      "avatarUrl":e.detail.userInfo.avatarUrl
+    }
     let session = await promisic2(wx.login)();
     let result = await UserModel.reigsterAndLogin({
       code:session.code,
-      nickName:userInfo.nickName,
+      nickName:userInfo.userName,
       avatarUrl:userInfo.avatarUrl,
       gender:userInfo.gender
     })
@@ -153,14 +158,13 @@ Page({
     })
     let uid = Number(result.data.uid)
     let token = result.data.token
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.token = token
-    app.globalData.uid=uid
+
 
     wx.setStorageSync("token",token)
     wx.setStorageSync("uid",uid)
+    wx.setStorageSync("userInfo",userInfo)
     this.setData({
-      userInfo: e.detail.userInfo,
+      userInfo: userInfo,
       hasUserInfo: true  
     })
   },

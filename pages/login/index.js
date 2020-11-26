@@ -17,10 +17,10 @@ Page({
     })
   },
   onLoad: async function () {
-  
-    if (app.globalData.userInfo) {
+    let userInfo =  wx.getStorageSync("userInfo")
+    if (userInfo) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userInfo: userInfo,
         hasUserInfo: true
       })
     } else if (this.data.canIUse){
@@ -36,7 +36,7 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+          // app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -46,11 +46,15 @@ Page({
     }
   },
   getUserInfo: async function(e) {
-    let userInfo = e.detail.userInfo
+    let userInfo = {
+      "userName":e.detail.userInfo.nickName,
+      "gender":e.detail.userInfo.gender,
+      "avatarUrl":e.detail.userInfo.avatarUrl
+    }
     let session = await promisic2(wx.login)()
     let result = await UserModel.reigsterAndLogin({
       code:session.code,
-      nickName:userInfo.nickName,
+      nickName:userInfo.userName,
       avatarUrl:userInfo.avatarUrl,
       gender:userInfo.gender
     })
@@ -61,15 +65,15 @@ Page({
     })
     let uid = Number(result.data.uid)
     let token = result.data.token
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.token = token
-    app.globalData.uid=uid
-
     wx.setStorageSync("token",token)
     wx.setStorageSync("uid",uid)
+    wx.setStorageSync("userInfo",userInfo)
     this.setData({
-      userInfo: e.detail.userInfo,
+      userInfo:userInfo,
       hasUserInfo: true
+    })
+    wx.navigateBack({
+        delta: 1
     })
 
 

@@ -23,9 +23,11 @@ Page({
     })
     if(this.data.scope){
       let letter_id = options.id
+      let userInfo = wx.getStorageSync("userInfo")
+      console.log(userInfo)
       this.setData({
         letter_id:letter_id,
-        userInfo:app.globalData.userInfo
+        userInfo:userInfo
       })
       this.getMyLetter()
     }

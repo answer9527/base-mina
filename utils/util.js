@@ -51,56 +51,11 @@ const promisic = function(func){
     return new Promise((resolve,reject)=>{
       const args = Object.assign(params,{
         success:res=>{
-          if(res.data.code){
-            
-            let error_code = res.data.code
-
-            // 当token失效时候
-            if(error_code==40006){
-              wx.login({
-                success: res => {
-                  // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                  UserModel.login({
-                    code:res.code
-                  }).then(res=>{    
-                    let token = res.data.token
-                    let uid = Number(res.data.uid)
-                    wx.setStorageSync("token",token)
-                    wx.setStorageSync("uid",uid)
-                  })
-                }
-              })
-            }
-            if(error_code==40005||error_code==40001){
-
-              wx.navigateTo({
-                url: '/pages/login/index',
-                success:()=>{
-                  wx.showToast({
-                    title: res.data.message,
-                    icon: 'none',
-                    duration: 2000
-                  })
-                }
-              });
-
-
-
-            }else{
-              wx.showToast({
-                title: res.data.message,
-                icon: 'none',
-                duration: 2000
-              })
-            }
-          }else{
-            resolve(res)
-          }
-         
+         resolve(res)
         },
         fail:err=>{
           reject(err)
-          console.log(err)
+         
         }
       })
       func(args)

@@ -37,7 +37,7 @@ Page({
     // 关于scope的问题
     let scope = wx.getStorageSync('scope') || false
 
-    let uid = app.globalData.uid
+    let uid = wx.getStorageSync("uid")
     let id = options.id
     let classicDetail = await this.getClassicDetail(id)
     let paging = {

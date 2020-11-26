@@ -1,6 +1,7 @@
 //app.js
 import {UserModel} from "./models/user"
 import {ScopeModel} from "./models/scope"
+import {Token} from "./utils/token"
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -14,35 +15,9 @@ App({
       wx.setStorageSync("scope",scope)
     })
     
+    // 进入验证token
+    Token.getToken()
 
-    // 判断是否有token没有就发起请求
-    if(this.globalData.token==null){
-      wx.login({
-        success: res => {
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            UserModel.login({
-              code:res.code
-            }).then(res=>{    
-              // 暂未注册的跳转 
-              if(res.code==40005){
-                wx.navigateTo({
-                  url: '/pages/login/index',
-                });
-              }else{
-                let token = res.data.token
-                let uid = Number(res.data.uid)
-                // wx.setStorageSync("token",token);
-                this.globalData.token=token
-                this.globalData.uid=uid
-                wx.setStorageSync("token",token)
-                wx.setStorageSync("uid",uid)
-              }
-            })
-        }
-      })
-    }
-
-    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -50,9 +25,14 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log(res)
+     
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              let userInfo = {
+                "userName":res.userInfo.nickName,
+                "gender":res.userInfo.gender,
+                "avatarUrl":res.userInfo.avatarUrl
+              }
+              wx.setStorageSync("userInfo",userInfo)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

@@ -44,7 +44,7 @@ Page({
     let id = options.id
     this.setData({
       hid:id,
-      uid:app.globalData.uid
+      uid:wx.getStorageSync("uid")
     })
     HoleModel.get_by_id(id).then(res=>{
       this.setData({
