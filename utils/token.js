@@ -40,7 +40,7 @@ class Token{
                     title:result.message,
                     icon: 'none',
                     duration: 2000
-                  })
+                })
             }
         } 
 
