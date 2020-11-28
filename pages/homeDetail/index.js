@@ -40,6 +40,7 @@ Page({
     let uid = wx.getStorageSync("uid")
     let id = options.id
     let classicDetail = await this.getClassicDetail(id)
+    classicDetail.content = classicDetail.content.replace(/\<img/gi, "<img style='width:100%;height:auto;display:block;'")
     let paging = {
       "key":id,
       "page":this.data.page,

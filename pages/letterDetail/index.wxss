@@ -13,6 +13,9 @@
     justify-content: center;
     align-items: center;
 }
+.detail_box>.image_box{
+    padding: 40rpx 0;
+}
 .title{
    font-size: 40rpx;
     font-weight: bold;
@@ -20,6 +23,7 @@
     border-bottom: 2rpx dashed #383838;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 .userInfo_row{
     display: flex;
@@ -52,7 +56,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40rpx;
+    padding: 40rpx 0;
 }
 .sub_box_in{
     position: relative;
@@ -75,8 +79,25 @@
 
 
 .letter_content{
+    width: 100%;
     padding: 30rpx 0;
     text-indent: 56rpx;
+   
+}
+.end_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px 0;
+}
+.end_row>.end_line{
+    width: 200rpx;
+    height: 4rpx;
+    background: #c2c2c2;
+}
+.end_row>view:nth-child(2){
+    color:#c2c2c2 ;
+    padding: 0 20rpx;
 }
 /* .userInfo_row>.user_avatar{
     width: 80rpx;

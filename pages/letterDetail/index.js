@@ -1,6 +1,7 @@
 // pages/letterDetail/index.js
 var app =  getApp();
 import {LetterModel} from "../../models/letter"
+
 Page({
 
   /**
@@ -24,7 +25,6 @@ Page({
     if(this.data.scope){
       let letter_id = options.id
       let userInfo = wx.getStorageSync("userInfo")
-      console.log(userInfo)
       this.setData({
         letter_id:letter_id,
         userInfo:userInfo
@@ -87,6 +87,13 @@ Page({
       let result = await LetterModel.getMyLetterDetail({id:this.data.letter_id});
       this.setData({
         letter:result.data
+      })
+    },
+    preview(){
+      
+      wx.previewImage({
+        current: this.data.letter.image, 
+        urls: [ this.data.letter.image]
       })
     }
 })

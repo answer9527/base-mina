@@ -1,6 +1,7 @@
 // pages/writeLetter/index.js
 var dateTimePicker = require('../../utils/dateTimePicker.js');
 import {LetterModel} from "../../models/letter"
+import {TemplateMsgModel} from "../../models/templateMsg"
 Page({
 
   /**
@@ -8,6 +9,8 @@ Page({
    */
   data: {
     scope:false,
+    // 模板消息id列表
+    tmplIds: ['2hbbRktn9dBnQ6Sni4l3cQgzkJvtgcVUoSy7psVCxPQ'],
     date: '2018-10-01',
     time: '12:00',
     // 年月日的序号
@@ -32,6 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.get_wx_temp_list()
     let scope = wx.getStorageSync('scope') || false
     this.setData({
       scope:scope
@@ -96,6 +100,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 获取小程序推送消息模板列表
+  get_wx_temp_list(){
+    let that = this
+    TemplateMsgModel.getList().then(res=>{
+      let temp = res.data.slice(0,3)
+      // tmplIds
+      let tmplIds=[];
+      temp.forEach(element => {
+        tmplIds.push(element.priTmplId)
+      });
+      that.setData({
+        tmplIds:tmplIds
+      })
+
+    })
   },
   // 设置时间的回调
   changeDateTimeColumn(e) {
@@ -185,18 +205,35 @@ Page({
       })
       return false
     }
-   
+    let tmplIds = this.data.tmplIds
+    let that = this;
+    wx.requestSubscribeMessage({
+      tmplIds:tmplIds,
+      success (res) { 
+        console.log(res)
+      },
+      complete(com){
+        LetterModel.insertLetter(param).then(res=>{
+          that.setData({
+            post_title:"",
+            post_content:""
+          })
+          that.toast(res.message)
 
-    LetterModel.insertLetter(param).then(res=>{
-      this.setData({
-        post_title:"",
-        post_content:""
-      })
-      wx.showToast({
-        title: res.message,
-        icon: 'none',
-        duration: 2000
-      })
+        })
+      }
     })
+
+
+    // ['2hbbRktn9dBnQ6Sni4l3cQgzkJvtgcVUoSy7psVCxPQ']
+
+
   },
+  toast(msg){
+    wx.showToast({
+      title:msg,
+      icon: 'none',
+      duration: 2000
+    })
+  }
 })
