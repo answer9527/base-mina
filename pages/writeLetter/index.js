@@ -124,7 +124,7 @@ Page({
 
     arr[e.detail.column] = e.detail.value;
     dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
-    let time_str= dateArr[0][arr[0]].substring(0,4)+"-"+dateArr[1][arr[1]].substring(0,2)+"-"+dateArr[2][arr[2]].substring(0, 2)+" 00:00:00"
+    let time_str= dateArr[0][arr[0]].substring(0,4)+"/"+dateArr[1][arr[1]].substring(0,2)+"/"+dateArr[2][arr[2]].substring(0, 2)+" 00:00:00"
    
     let plan_time = new Date(time_str)
   
@@ -230,10 +230,16 @@ Page({
 
   },
   toast(msg){
-    wx.showToast({
-      title:msg,
-      icon: 'none',
-      duration: 2000
+    wx.navigateTo({
+      url: '/pages/beforeLetter/index',
+      success:()=>{
+        wx.showToast({
+          title:msg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
     })
+
   }
 })

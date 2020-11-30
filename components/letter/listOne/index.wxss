@@ -3,7 +3,7 @@
     background: #ffffff;
     /* height: 460rpx; */
     position: relative;
-    top: -160rpx;
+    /* top: -160rpx; */
     margin-top:60rpx ;
     border-radius: 10rpx;
     border: 2rpx solid #F5F5F5;
